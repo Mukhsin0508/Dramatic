@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { GenerateDemo } from "@/components/generate-demo";
 import { NavGitHubLink, RepoCardStats } from "@/components/repo-stats";
 import { LANDING_STORIES as stories } from "@/data/stories.generated";
 import styles from "./page.module.css";
@@ -356,6 +357,19 @@ export default async function Home() {
           Five playable media previews are checked in. Cold opens and teasers are
           labeled by their real runtime; full episodes still require human review.
         </p>
+      </section>
+
+      <section className={styles.forgeSection} id="forge" aria-label="Generate a scene live">
+        <div className={styles.forgeCopy}>
+          <p className={styles.sectionKicker}>The engine, on stage</p>
+          <h2>Generate a scene. Right now.</h2>
+          <p>
+            The same pipeline that produced tonight’s episodes, wired to this
+            page: pick a story, pick a twist, and the model renders brand-new
+            key art live — cost-estimated, capped, and receipted.
+          </p>
+        </div>
+        <GenerateDemo />
       </section>
 
       <section className={styles.engineSection}>

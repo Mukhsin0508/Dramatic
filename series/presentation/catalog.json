@@ -1,42 +1,137 @@
 {
   "schemaVersion": 1,
   "series": {
-    "the-last-alibi": {
+    "opening-night": {
       "featuredRank": 1,
+      "currentEpisode": 1,
+      "episodeTitle": "The Empty House",
+      "episodeLogline": "June walks into an empty theater for one last performance and finds an identical woman waiting to take the microphone before she can.",
+      "hook": "Her replacement is already waiting.",
+      "activeVoters": 0,
+      "likes": "New",
+      "comments": "0",
+      "progress": 0,
+      "mediaKind": "cold-open",
+      "runtimeLabel": "30 sec",
+      "captionsAvailable": false,
+      "videoFit": "contain",
+      "vote": {
+        "question": "How should June answer the double's control?",
+        "choices": ["Fight the pull", "Follow the motion", "Call out Martin"]
+      }
+    },
+    "two-rings-at-the-funeral": {
+      "featuredRank": 2,
+      "currentEpisode": 1,
+      "episodeTitle": "The Other Widow",
+      "episodeLogline": "A stranger stops Elias's burial by claiming to be his wife, but matching rings and simultaneous bank thefts turn accusation into a shared emergency.",
+      "hook": "One coffin. Two wives. No body.",
+      "activeVoters": 0,
+      "likes": "New",
+      "comments": "0",
+      "progress": 0,
+      "mediaKind": "teaser",
+      "runtimeLabel": "10 sec teaser",
+      "captionsAvailable": false,
+      "videoFit": "cover",
+      "vote": {
+        "question": "Which lead should the widows follow first?",
+        "choices": ["Open the coffin", "Trace the transfer", "Follow Theo"]
+      }
+    },
+    "crown-of-rust": {
+      "featuredRank": 3,
+      "currentEpisode": 1,
+      "episodeTitle": "The Sword Knows Her",
+      "episodeLogline": "Mara's last salvage dive wakes a coral-bound knight—and a sword that knows the name her mother buried.",
+      "hook": "The kingdom drowned. Its last knight didn't.",
+      "activeVoters": 0,
+      "likes": "New",
+      "comments": "0",
+      "progress": 0,
+      "mediaKind": "teaser",
+      "runtimeLabel": "6 sec teaser",
+      "captionsAvailable": false,
+      "videoFit": "contain",
+      "vote": {
+        "question": "What should Mara do with the awakened knight?",
+        "choices": ["Bring him ashore", "Follow him deeper"]
+      }
+    },
+    "midnight-ramen": {
+      "featuredRank": 4,
+      "currentEpisode": 1,
+      "episodeTitle": "The Unopened Letter",
+      "episodeLogline": "After a brutal night shift, Aiko brings a dead man's sealed letter to a ramen counter—and finds its recipient two stools away.",
+      "hook": "The letter can open only if Emi is dead.",
+      "activeVoters": 0,
+      "likes": "New",
+      "comments": "0",
+      "progress": 0,
+      "mediaKind": "teaser",
+      "runtimeLabel": "6 sec teaser",
+      "captionsAvailable": false,
+      "videoFit": "contain",
+      "vote": {
+        "question": "What should Aiko do with the sealed letter?",
+        "choices": ["Open it together", "Deliver it privately"]
+      }
+    },
+    "neon-harvest": {
+      "featuredRank": 5,
+      "currentEpisode": 1,
+      "episodeTitle": "The Rice Glows at Midnight",
+      "episodeLogline": "Iri's dying rooftop crop flares back to life in poison rain, drawing an inspector and an armed courier to her locked greenhouse.",
+      "hook": "The stolen seed belongs to her missing mother.",
+      "activeVoters": 0,
+      "likes": "New",
+      "comments": "0",
+      "progress": 0,
+      "mediaKind": "teaser",
+      "runtimeLabel": "6 sec teaser",
+      "captionsAvailable": false,
+      "videoFit": "contain",
+      "vote": {
+        "question": "Who should Iri trust with the first glowing seed?",
+        "choices": ["Give it to Kade", "Give it to Sela", "Hide it herself"]
+      }
+    },
+    "the-last-alibi": {
+      "featuredRank": 6,
       "currentEpisode": 14,
       "episodeTitle": "The Signature",
       "episodeLogline": "Nora finds her name on the deed—and a memory that says she never signed it.",
       "hook": "The signature was hers. The memory wasn’t.",
-      "activeVoters": 18240,
-      "likes": "18.2K",
-      "comments": "642",
-      "progress": 0.42,
+      "activeVoters": 0,
+      "likes": "New",
+      "comments": "0",
+      "progress": 0,
       "vote": {
         "question": "What should Nora do with the deed?",
         "choices": ["Show Silas now", "Follow the signature"]
       }
     },
     "borrowed-vows": {
-      "featuredRank": 2,
+      "featuredRank": 7,
       "currentEpisode": 8,
       "episodeTitle": "Dinner for Three",
       "episodeLogline": "The missing bride comes home just as Amara and Julian start believing their own vows.",
       "hook": "The bride vanished. Her marriage did not.",
-      "activeVoters": 11700,
-      "likes": "9.8K",
-      "comments": "311",
-      "progress": 0.16
+      "activeVoters": 0,
+      "likes": "New",
+      "comments": "0",
+      "progress": 0
     },
     "the-heir-upstairs": {
-      "featuredRank": 3,
+      "featuredRank": 8,
       "currentEpisode": 21,
       "episodeTitle": "The Key Above",
       "episodeLogline": "Leila’s new key opens Adrian’s oldest lie—and the room his family sealed years ago.",
       "hook": "Her new key opened his oldest lie.",
-      "activeVoters": 24600,
-      "likes": "24.1K",
-      "comments": "1.2K",
-      "progress": 0.66,
+      "activeVoters": 0,
+      "likes": "New",
+      "comments": "0",
+      "progress": 0,
       "locked": true
     }
   }

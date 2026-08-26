@@ -22,6 +22,8 @@ let episodeToken;
 let posterOnly;
 let reusePoster;
 let clipTier;
+let publishClip;
+let replacePublishedClip;
 let maxUsd;
 let credential;
 let apiBaseUrl;
@@ -34,9 +36,11 @@ let estimates;
 let artifacts;
 let submissionIntents;
 let client;
+let cliArguments;
 
 async function main() {
   const argumentsMap = parseArguments(process.argv.slice(2));
+  cliArguments = argumentsMap;
   validateArguments(argumentsMap);
   slug = requireSlug(argumentsMap.get("slug"));
   episodeNumber = requireEpisode(argumentsMap.get("episode") ?? "1");
@@ -44,6 +48,19 @@ async function main() {
   posterOnly = argumentsMap.has("poster-only");
   reusePoster = argumentsMap.has("reuse-poster");
   clipTier = readClipTier(argumentsMap.get("clip-tier"));
+  publishClip = argumentsMap.has("publish-clip");
+  replacePublishedClip = argumentsMap.has("replace-published-clip");
+  if (replacePublishedClip && !publishClip) {
+    throw new Error("--replace-published-clip requires --publish-clip.");
+  }
+  if (posterOnly && publishClip) {
+    throw new Error("--publish-clip cannot be used with --poster-only.");
+  }
+  const maintenanceOperation = argumentsMap.get("recover-operation")
+    ?? argumentsMap.get("confirm-not-submitted");
+  if (posterOnly && maintenanceOperation !== undefined && maintenanceOperation !== "poster") {
+    throw new Error("Clip recovery and confirmation cannot be used with --poster-only.");
+  }
   maxUsd = readPositiveNumber(process.env.HIGGSFIELD_MAX_USD ?? "5", "HIGGSFIELD_MAX_USD");
   credential = readCredential(process.env);
   apiBaseUrl = readApiBaseUrl(process.env.HIGGSFIELD_API_BASE_URL);
@@ -52,7 +69,7 @@ async function main() {
   const productionScript = JSON.parse(await readFile(scriptPath, "utf8"));
   assertScriptIdentity(productionScript, slug, episodeNumber);
   posterPrompt = readPosterPrompt(productionScript);
-  motionPrompt = posterOnly ? undefined : readMotionPrompt(productionScript);
+  motionPrompt = posterOnly ? undefined : readMotionPrompt(productionScript, clipTier);
   const privateDirectory = join(repositoryRoot, ".dramatic", "generation");
   checkpointPath = join(privateDirectory, `${slug}-${episodeToken}.json`);
   publicReceiptPath = join(
@@ -70,7 +87,17 @@ async function main() {
     estimates = checkpoint.estimates ?? {};
     artifacts = checkpoint.artifacts ?? {};
     submissionIntents = checkpoint.submissionIntents ?? {};
-    await applyRecoveryArguments(argumentsMap);
+    const posterInput = buildPosterInput(posterPrompt);
+    await upgradeLegacyPosterBinding(
+      "higgsfield-ai/soul/v2/standard",
+      posterInput,
+      canonicalInputFingerprint(posterInput),
+    );
+    await applyRecoveryArguments(argumentsMap, {
+      operation: "poster",
+      endpoint: "higgsfield-ai/soul/v2/standard",
+      inputFingerprint: canonicalInputFingerprint(posterInput),
+    });
 
     const { createSdkBackedHiggsfieldClient } = await import("../packages/higgsfield/dist/index.js");
     client = createSdkBackedHiggsfieldClient({
@@ -79,6 +106,7 @@ async function main() {
         clip: "higgsfield-ai/dop/lite",
         "clip-turbo": "higgsfield-ai/dop/turbo",
         "clip-standard": "higgsfield-ai/dop/standard",
+        "clip-seedance-fast": "bytedance/seedance/v1/pro/fast/image-to-video",
       },
       config: {
         baseUrl: apiBaseUrl,
@@ -116,7 +144,8 @@ async function generatePoster() {
   const operation = "poster";
   const endpoint = "higgsfield-ai/soul/v2/standard";
   const input = buildPosterInput(posterPrompt);
-  const handle = await submitOnce(operation, endpoint, input, "Poster");
+  const inputFingerprint = canonicalInputFingerprint(input);
+  const handle = await submitOnce(operation, endpoint, input, inputFingerprint, "Poster");
 
   const terminal = await waitFor(handle, "poster");
   assertCompleted(terminal, "poster");
@@ -149,6 +178,7 @@ async function generatePoster() {
     kind: "poster",
     requestId: handle.id,
     endpoint,
+    inputFingerprint,
     path: relative(mobilePath),
     webPath: relative(webPath),
     bytes: receipt.bytesWritten,
@@ -165,15 +195,20 @@ async function generateClip(posterAsset) {
   const operation = clipOperationForTier(clipTier);
   const endpoint = clipEndpointForTier(clipTier);
   const label = `Pilot ${clipTier} clip`;
+  const posterSha256 = await sha256File(posterAsset.path);
+  const inputFingerprint = canonicalInputFingerprint(
+    buildClipFingerprintInput(motionPrompt, posterSha256, posterAsset.contentType, clipTier),
+  );
+  await applyRecoveryArguments(cliArguments, { operation, endpoint, inputFingerprint });
   let handle = acceptedHandles[operation];
   if (!handle) {
     assertNoUnresolvedIntent(operation);
     const publicUrl = await uploadImage(posterAsset.path, posterAsset.contentType);
-    // Every allowed DoP tier uses the documented prompt and image_url contract.
-    const input = buildClipInput(motionPrompt, publicUrl);
-    handle = await submitOnce(operation, endpoint, input, label);
+    const input = buildClipInput(motionPrompt, publicUrl, clipTier);
+    handle = await submitOnce(operation, endpoint, input, inputFingerprint, label);
   } else {
-    console.log(`Resuming ${label.toLowerCase()} request ${handle.id}.`);
+    assertAcceptedHandleBinding(handle, operation, endpoint, inputFingerprint);
+    console.log(`Resuming the accepted ${label.toLowerCase()} request.`);
   }
 
   const terminal = await waitFor(handle, label.toLowerCase());
@@ -186,7 +221,8 @@ async function generateClip(posterAsset) {
     "mobile",
     "assets",
     "videos",
-    `${slug}-${episodeToken}.mp4`,
+    "variants",
+    `${slug}-${episodeToken}-${clipTier}.mp4`,
   );
   const receipt = await downloadIfNeeded(artifact, outputPath, "video");
   const webPath = join(
@@ -195,14 +231,17 @@ async function generateClip(posterAsset) {
     "web",
     "public",
     "media",
-    `${slug}-${episodeToken}.mp4`,
+    "variants",
+    `${slug}-${episodeToken}-${clipTier}.mp4`,
   );
   await mkdir(dirname(webPath), { recursive: true });
   await copyFile(outputPath, webPath);
-  artifacts.clip = {
+  artifacts[operation] = {
     kind: "video",
     requestId: handle.id,
     endpoint,
+    inputFingerprint,
+    tier: clipTier,
     path: relative(outputPath),
     webPath: relative(webPath),
     bytes: receipt.bytesWritten,
@@ -212,12 +251,30 @@ async function generateClip(posterAsset) {
   };
   await saveCheckpoint();
   await savePublicReceipt();
+  if (publishClip) {
+    const published = await promoteClipVariant(outputPath, webPath, receipt.sha256, {
+      replace: replacePublishedClip,
+    });
+    artifacts[operation] = {
+      ...artifacts[operation],
+      ...published,
+      publishedAt: new Date().toISOString(),
+    };
+    await saveCheckpoint();
+    await savePublicReceipt();
+  }
 }
 
-async function submitOnce(operation, endpoint, input, label) {
-  const disposition = operationDisposition(acceptedHandles, submissionIntents, operation);
+async function submitOnce(operation, endpoint, input, inputFingerprint, label) {
+  const disposition = operationDisposition(
+    acceptedHandles,
+    submissionIntents,
+    operation,
+    endpoint,
+    inputFingerprint,
+  );
   if (disposition.state === "resume") {
-    console.log(`Resuming ${label.toLowerCase()} request ${disposition.handle.id}.`);
+    console.log(`Resuming the accepted ${label.toLowerCase()} request.`);
     return disposition.handle;
   }
   assertNoUnresolvedIntent(operation);
@@ -237,6 +294,7 @@ async function submitOnce(operation, endpoint, input, label) {
   submissionIntents[operation] = {
     state: "dispatching",
     endpoint,
+    inputFingerprint,
     inputSha256,
     startedAt: new Date().toISOString(),
   };
@@ -244,11 +302,15 @@ async function submitOnce(operation, endpoint, input, label) {
 
   try {
     const handle = await client.submit(operation, input);
-    acceptedHandles[operation] = handle;
+    acceptedHandles[operation] = {
+      ...handle,
+      endpoint,
+      inputFingerprint,
+    };
     delete submissionIntents[operation];
     await saveCheckpoint();
-    console.log(`${label} accepted as request ${handle.id}.`);
-    return handle;
+    console.log(`${label} was accepted by Higgsfield.`);
+    return acceptedHandles[operation];
   } catch (error) {
     if (error?.code === "ambiguous_submission") {
       submissionIntents[operation] = {
@@ -278,11 +340,84 @@ function hasUnresolvedIntent(intents, operation) {
   return Boolean(intents[operation]);
 }
 
-function operationDisposition(operations, intents, operation) {
+function operationDisposition(operations, intents, operation, endpoint, inputFingerprint) {
   const handle = operations[operation];
-  if (handle) return { state: "resume", handle };
-  if (hasUnresolvedIntent(intents, operation)) return { state: "blocked" };
+  if (handle) {
+    assertAcceptedHandleBinding(handle, operation, endpoint, inputFingerprint);
+    return { state: "resume", handle };
+  }
+  if (hasUnresolvedIntent(intents, operation)) {
+    assertIntentBinding(intents[operation], operation, endpoint, inputFingerprint);
+    return { state: "blocked" };
+  }
   return { state: "submit" };
+}
+
+function assertAcceptedHandleBinding(handle, operation, endpoint, inputFingerprint) {
+  if (!isRecord(handle) || handle.operation !== operation) {
+    throw new Error(`The accepted ${operation} handle does not match its checkpoint operation.`);
+  }
+  if (typeof handle.endpoint !== "string" || typeof handle.inputFingerprint !== "string") {
+    throw new Error(
+      `The accepted ${operation} handle predates endpoint/input binding and cannot be resumed safely. Preserve it for audit, then start a fresh checkpoint after confirming provider state.`,
+    );
+  }
+  if (handle.endpoint !== endpoint || handle.inputFingerprint !== inputFingerprint) {
+    throw new Error(
+      `The accepted ${operation} handle does not match the current endpoint and canonical input; refusing to resume or resubmit.`,
+    );
+  }
+}
+
+function assertIntentBinding(intent, operation, endpoint, inputFingerprint) {
+  if (!isRecord(intent) || typeof intent.endpoint !== "string" || typeof intent.inputFingerprint !== "string") {
+    throw new Error(
+      `The unresolved ${operation} intent predates endpoint/input binding and cannot be recovered or cleared implicitly.`,
+    );
+  }
+  if (intent.endpoint !== endpoint || intent.inputFingerprint !== inputFingerprint) {
+    throw new Error(
+      `The unresolved ${operation} intent does not match the current endpoint and canonical input; refusing recovery or resubmission.`,
+    );
+  }
+}
+
+async function upgradeLegacyPosterBinding(endpoint, input, inputFingerprint) {
+  const operation = "poster";
+  const handle = acceptedHandles[operation];
+  const intent = submissionIntents[operation];
+  if (!handle && !intent) return;
+  const providerInputSha256 = createHash("sha256").update(JSON.stringify(input)).digest("hex");
+  const estimateRecord = estimates[operation];
+  if (
+    !isRecord(estimateRecord)
+    || estimateRecord.endpoint !== endpoint
+    || estimateRecord.inputSha256 !== providerInputSha256
+  ) return;
+
+  let changed = false;
+  if (
+    isRecord(handle)
+    && handle.operation === operation
+    && handle.endpoint === undefined
+    && handle.inputFingerprint === undefined
+  ) {
+    acceptedHandles[operation] = { ...handle, endpoint, inputFingerprint };
+    changed = true;
+  }
+  if (
+    isRecord(intent)
+    && intent.endpoint === endpoint
+    && intent.inputFingerprint === undefined
+    && intent.inputSha256 === providerInputSha256
+  ) {
+    submissionIntents[operation] = { ...intent, inputFingerprint };
+    changed = true;
+  }
+  if (changed) {
+    await saveCheckpoint();
+    console.log("Upgraded a legacy poster checkpoint using its matching provider-input estimate.");
+  }
 }
 
 async function estimate(endpoint, input) {
@@ -429,6 +564,62 @@ async function existingArtifactMatches(path, recorded) {
   return hash.digest("hex") === recorded.sha256;
 }
 
+async function sha256File(path) {
+  const hash = createHash("sha256");
+  for await (const chunk of createReadStream(path)) hash.update(chunk);
+  return hash.digest("hex");
+}
+
+async function promoteClipVariant(mobileVariantPath, webVariantPath, sha256, options = {}) {
+  const publishedPath = join(
+    repositoryRoot,
+    "apps",
+    "mobile",
+    "assets",
+    "videos",
+    `${slug}-${episodeToken}.mp4`,
+  );
+  const publishedWebPath = join(
+    repositoryRoot,
+    "apps",
+    "web",
+    "public",
+    "media",
+    `${slug}-${episodeToken}.mp4`,
+  );
+  const existingSha256Values = await Promise.all(
+    [publishedPath, publishedWebPath].map(sha256IfExists),
+  );
+  assertPublicationReplacement(existingSha256Values, sha256, options.replace);
+  await copyFileAtomic(mobileVariantPath, publishedPath);
+  await copyFileAtomic(webVariantPath, publishedWebPath);
+  console.log(`Published the ${clipTier} variant as the active pilot clip.`);
+  return {
+    publishedPath: relative(publishedPath),
+    publishedWebPath: relative(publishedWebPath),
+  };
+}
+
+function assertPublicationReplacement(existingSha256Values, nextSha256, replace = false) {
+  if (existingSha256Values.some((value) => value && value !== nextSha256) && !replace) {
+    throw new Error(
+      "A different clip is already published. Re-run with --publish-clip --replace-published-clip to replace it explicitly; the generated tier variant was preserved.",
+    );
+  }
+}
+
+async function sha256IfExists(path) {
+  return await exists(path) ? sha256File(path) : undefined;
+}
+
+async function copyFileAtomic(source, destination) {
+  await mkdir(dirname(destination), { recursive: true });
+  const temporaryPath = `${destination}.promote-${process.pid}.part`;
+  await unlink(temporaryPath).catch(() => undefined);
+  await copyFile(source, temporaryPath);
+  await rename(temporaryPath, destination);
+}
+
 async function existingPoster(seriesSlug) {
   const directory = join(repositoryRoot, "apps", "mobile", "assets", "images", "stories");
   for (const extension of [".jpg", ".jpeg", ".png", ".webp"]) {
@@ -460,17 +651,65 @@ function buildPosterInput(prompt) {
   };
 }
 
-function buildClipInput(prompt, imageUrl) {
+function buildClipInput(prompt, imageUrl, tier = "lite") {
+  if (readClipTier(tier) === "seedance-fast") {
+    return {
+      prompt,
+      image_url: imageUrl,
+      duration: 10,
+      resolution: "720",
+      aspect_ratio: "9:16",
+      camera_fixed: false,
+    };
+  }
   return { prompt, image_url: imageUrl };
 }
 
-function readMotionPrompt(value) {
-  const prompt = value.pilotMotionPrompt
-    ?? value.shots?.[0]?.dopMotionPrompt
+function buildClipFingerprintInput(prompt, posterSha256, contentType, tier = "lite") {
+  if (typeof posterSha256 !== "string" || !/^[0-9a-f]{64}$/u.test(posterSha256)) {
+    throw new Error("Clip input fingerprint requires the local poster SHA-256.");
+  }
+  const input = buildClipInput(prompt, `sha256:${posterSha256}`, tier);
+  return {
+    ...input,
+    image_url: {
+      sha256: posterSha256,
+      content_type: normalizeImageContentType(contentType, "poster.jpg"),
+    },
+  };
+}
+
+function canonicalInputFingerprint(input) {
+  return createHash("sha256").update(canonicalJson(input)).digest("hex");
+}
+
+function canonicalJson(value) {
+  if (value === null || typeof value === "boolean" || typeof value === "string") {
+    return JSON.stringify(value);
+  }
+  if (typeof value === "number" && Number.isFinite(value)) return JSON.stringify(value);
+  if (Array.isArray(value)) return `[${value.map(canonicalJson).join(",")}]`;
+  if (isRecord(value)) {
+    return `{${Object.keys(value).sort().map((key) => `${JSON.stringify(key)}:${canonicalJson(value[key])}`).join(",")}}`;
+  }
+  throw new Error("Generation inputs must contain only canonical JSON values.");
+}
+
+function readMotionPrompt(value, tier = "lite") {
+  const normalizedTier = readClipTier(tier);
+  const prompt = normalizedTier === "seedance-fast"
+    ? value.pilotMotionPrompt
+      ?? value.shots?.[0]?.dopMotionPrompt
+      ?? value.shots?.[0]?.dopPrompt
+      ?? value.shots?.[0]?.motionPrompt
+    : value.shots?.[0]?.dopMotionPrompt
     ?? value.shots?.[0]?.dopPrompt
     ?? value.shots?.[0]?.motionPrompt;
   if (typeof prompt !== "string" || prompt.length < 20) {
-    throw new Error("Production script needs pilotMotionPrompt or a first-shot DoP prompt.");
+    const requirement = normalizedTier === "seedance-fast"
+      ? "pilotMotionPrompt or a first-shot DoP prompt"
+      : "a first-shot DoP prompt; 10-second pilotMotionPrompt is reserved for Seedance Fast";
+    throw new Error(`Production script needs ${requirement}.`);
   }
   return prompt;
 }
@@ -573,6 +812,8 @@ function validateArguments(args) {
     "poster-only",
     "reuse-poster",
     "clip-tier",
+    "publish-clip",
+    "replace-published-clip",
     "confirm-not-submitted",
     "recover-operation",
     "request-id",
@@ -589,26 +830,42 @@ function validateArguments(args) {
   if (!args.has("recover-operation") && recoveryFields.some((name) => args.has(name))) {
     throw new Error("--request-id, --status-url, and --cancel-url require --recover-operation.");
   }
+  for (const name of ["poster-only", "reuse-poster", "publish-clip", "replace-published-clip"]) {
+    if (args.has(name) && args.get(name) !== true) throw new Error(`--${name} does not take a value.`);
+  }
 }
 
-async function applyRecoveryArguments(args) {
+async function applyRecoveryArguments(args, expectedBinding) {
   const confirmed = args.get("confirm-not-submitted");
   if (confirmed !== undefined) {
     const operation = requireOperation(confirmed, "--confirm-not-submitted");
     assertSelectedClipOperation(operation);
+    if (operation !== expectedBinding.operation) return false;
     if (!submissionIntents[operation] || acceptedHandles[operation]) {
       throw new Error(`No unresolved ${operation} submission can be confirmed as not submitted.`);
     }
     delete submissionIntents[operation];
     await saveCheckpoint();
     console.log(`Cleared the unresolved ${operation} dispatch after explicit operator confirmation.`);
+    return true;
   }
 
   const recovered = args.get("recover-operation");
-  if (recovered === undefined) return;
+  if (recovered === undefined) return false;
   const operation = requireOperation(recovered, "--recover-operation");
   assertSelectedClipOperation(operation);
+  if (operation !== expectedBinding.operation) return false;
   if (acceptedHandles[operation]) throw new Error(`${operation} already has an accepted request.`);
+  const intent = submissionIntents[operation];
+  if (!intent) {
+    throw new Error(`Recovery requires an unresolved ${operation} dispatch checkpoint.`);
+  }
+  assertIntentBinding(
+    intent,
+    operation,
+    expectedBinding.endpoint,
+    expectedBinding.inputFingerprint,
+  );
   const requestId = requireUuid(args.get("request-id"), "--request-id");
   const statusUrl = requireTrustedControlUrl(args.get("status-url"), requestId, "status", apiBaseUrl);
   const cancelValue = args.get("cancel-url");
@@ -621,16 +878,19 @@ async function applyRecoveryArguments(args) {
     id: requestId,
     statusToken: statusUrl,
     ...(cancelUrl ? { cancelToken: cancelUrl } : {}),
-    acceptedAt: submissionIntents[operation]?.startedAt ?? new Date().toISOString(),
+    acceptedAt: intent.startedAt,
+    endpoint: expectedBinding.endpoint,
+    inputFingerprint: expectedBinding.inputFingerprint,
   };
   delete submissionIntents[operation];
   await saveCheckpoint();
-  console.log(`Recovered ${operation} request ${requestId} from provider-issued control data.`);
+  console.log(`Recovered the ${operation} request from provider-issued control data.`);
+  return true;
 }
 
 function requireOperation(value, label) {
-  if (!["poster", "clip", "clip-turbo", "clip-standard"].includes(value)) {
-    throw new Error(`${label} must be poster, clip, clip-turbo, or clip-standard.`);
+  if (!["poster", "clip", "clip-turbo", "clip-standard", "clip-seedance-fast"].includes(value)) {
+    throw new Error(`${label} must be poster, clip, clip-turbo, clip-standard, or clip-seedance-fast.`);
   }
   return value;
 }
@@ -645,8 +905,8 @@ function assertSelectedClipOperation(operation, selectedTier = clipTier) {
 
 function readClipTier(value) {
   if (value === undefined) return "lite";
-  if (value !== "lite" && value !== "turbo" && value !== "standard") {
-    throw new Error("--clip-tier must be lite, turbo, or standard.");
+  if (value !== "lite" && value !== "turbo" && value !== "standard" && value !== "seedance-fast") {
+    throw new Error("--clip-tier must be lite, turbo, standard, or seedance-fast.");
   }
   return value;
 }
@@ -655,6 +915,7 @@ function clipOperationForTier(tier) {
   if (tier === "lite") return "clip";
   if (tier === "turbo") return "clip-turbo";
   if (tier === "standard") return "clip-standard";
+  if (tier === "seedance-fast") return "clip-seedance-fast";
   throw new Error("Unsupported clip tier.");
 }
 
@@ -662,10 +923,14 @@ function clipTierForOperation(operation) {
   if (operation === "clip") return "lite";
   if (operation === "clip-turbo") return "turbo";
   if (operation === "clip-standard") return "standard";
+  if (operation === "clip-seedance-fast") return "seedance-fast";
   throw new Error("Unsupported clip operation.");
 }
 
 function clipEndpointForTier(tier) {
+  if (readClipTier(tier) === "seedance-fast") {
+    return "bytedance/seedance/v1/pro/fast/image-to-video";
+  }
   return `higgsfield-ai/dop/${readClipTier(tier)}`;
 }
 
@@ -775,8 +1040,13 @@ function sanitizePublicArtifact(artifact) {
   return {
     kind: artifact.kind,
     endpoint: artifact.endpoint,
+    ...(artifact.inputFingerprint ? { inputFingerprint: artifact.inputFingerprint } : {}),
+    ...(artifact.tier ? { tier: artifact.tier } : {}),
     path: artifact.path,
     webPath: artifact.webPath,
+    ...(artifact.publishedPath ? { publishedPath: artifact.publishedPath } : {}),
+    ...(artifact.publishedWebPath ? { publishedWebPath: artifact.publishedWebPath } : {}),
+    ...(artifact.publishedAt ? { publishedAt: artifact.publishedAt } : {}),
     bytes: artifact.bytes,
     sha256: artifact.sha256,
     contentType: artifact.contentType,
@@ -804,7 +1074,8 @@ function verifiedMediaContentType(kind, value, url) {
   const normalized = value?.split(";", 1)[0]?.trim().toLowerCase();
   const extension = extname(new URL(url).pathname).toLowerCase();
   if (kind === "image") {
-    if (["image/jpeg", "image/jpg", "image/png", "image/webp"].includes(normalized)) return normalized;
+    if (normalized === "image/jpg") return "image/jpeg";
+    if (["image/jpeg", "image/png", "image/webp"].includes(normalized)) return normalized;
     if (!normalized || normalized === "application/octet-stream") {
       if (extension === ".png") return "image/png";
       if (extension === ".webp") return "image/webp";
@@ -819,7 +1090,8 @@ function verifiedMediaContentType(kind, value, url) {
 
 function normalizeImageContentType(value, path) {
   const normalized = value?.split(";", 1)[0]?.toLowerCase();
-  if (["image/jpeg", "image/jpg", "image/png", "image/webp"].includes(normalized)) return normalized;
+  if (normalized === "image/jpg") return "image/jpeg";
+  if (["image/jpeg", "image/png", "image/webp"].includes(normalized)) return normalized;
   const extension = extname(path).toLowerCase();
   if (extension === ".png") return "image/png";
   if (extension === ".webp") return "image/webp";
@@ -875,9 +1147,14 @@ function relative(path) {
 }
 
 export {
+  assertAcceptedHandleBinding,
+  assertIntentBinding,
+  assertPublicationReplacement,
   assertSelectedClipOperation,
   buildClipInput,
+  buildClipFingerprintInput,
   buildPosterInput,
+  canonicalInputFingerprint,
   clipEndpointForTier,
   clipOperationForTier,
   estimatedUsdTotal,

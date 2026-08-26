@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 1,
+  "id": "opening-night",
+  "slug": "opening-night",
+  "title": "Opening Night",
+  "tagline": "Every seat is empty. She sings anyway.",
+  "logline": "A singer accepts one last private performance, then walks into an empty theater and finds a flawless humanoid wearing her face, her body, and the future her manager sold without her.",
+  "synopsis": "June Carrow is offered eight times her rate for an exclusive performance in a faded downtown theater. Her manager, Martin Voss, calls it her last live show and refuses to explain why. The house is empty when June reaches the stage, but someone is waiting in the central aisle: a completely human-looking duplicate with June's face, body, and voice. When the double moves, June's body follows before she can stop it. Trapped inside a label program built to replace difficult artists with compliant copies, June must learn what Martin signed away, why the double seems almost protective of her, and whether the woman wearing her face is a rival, a prisoner, or the only witness she can trust.",
+  "genres": [
+    "psychological thriller",
+    "science fiction drama",
+    "music mystery"
+  ],
+  "maturityRating": "teen",
+  "language": "en",
+  "format": {
+    "aspectRatio": "9:16",
+    "targetEpisodeSeconds": 60,
+    "plannedEpisodes": 24
+  },
+  "world": {
+    "setting": "Present-day Calder Theater, a faded downtown venue with a cramped green dressing room, a cold backstage corridor, an unlit marquee, and an empty red-velvet auditorium watched by three LED screens.",
+    "period": "present day",
+    "rules": [
+      "June is biological and fully human; her duplicate is a physical humanoid who looks human at every distance and has no visible machinery, seams, transparent parts, or glow.",
+      "The double's artificial nature appears through timing and control: perfect posture, measured breathing, minimal blinking, and movement that begins a fraction before June is compelled to follow.",
+      "The replacement program uses contracts, captured performances, biometric conditioning, and hidden stage systems rather than supernatural powers.",
+      "Martin's guilt must remain visible in what he avoids, grips, pockets, or leaves unsaid even when he is performing professional calm.",
+      "Audience choices determine whether June resists the double, studies her, or turns their shared identity against the people who commissioned her."
+    ]
+  },
+  "visualStyle": {
+    "palette": [
+      "#07120F",
+      "#1C332B",
+      "#E8D9B5",
+      "#8E1627",
+      "#C8C5BF"
+    ],
+    "camera": "Sergio Leone-inspired tension translated to a vertical frame: radical jumps from eye close-ups to empty architectural wides, foreground bulbs and doorframes that delay context, hard cuts, and patient long-lens standoffs across the auditorium.",
+    "lighting": "Sour green dressing-room practicals and warm mirror bulbs give way to cold corridor spill, then a single amber stage spotlight against black space and rows of dark red seats. The three LED screens carry the only moving color outside the performers.",
+    "wardrobe": "June wears an ivory sleeveless stage dress and pale pumps; the double keeps June's body and dark waves but wears a pearl-gray high-neck sleeveless dress with pale shoes; Martin remains in a fitted dark suit with a black smartphone held too tightly."
+  },
+  "characters": [
+    {
+      "id": "june-carrow",
+      "name": "June Carrow",
+      "role": "biological singer and unwilling source performer",
+      "age": 27,
+      "pronouns": "she/her",
+      "objective": "Keep control of her body and voice long enough to expose the contract that turned her performances into a replacement program.",
+      "flaw": "She turns fear into defiance so quickly that she misses the moments when another captive is trying to help her.",
+      "secret": "During an earlier label session, June signed a vocal archive release without reading the biometric appendix Martin folded behind it.",
+      "visualCues": [
+        "light skin with natural texture and expressive dark eyes",
+        "shoulder-length dark brown waves with imperfect movement",
+        "ivory sleeveless midi dress and pale pumps",
+        "organic breathing, delayed focus, tightening fingers, and fear appearing first in her eyes"
+      ]
+    },
+    {
+      "id": "martin-voss",
+      "name": "Martin Voss",
+      "role": "June's manager and guilty broker of the final performance",
+      "age": 43,
+      "pronouns": "he/him",
+      "objective": "Get June through the test performance before the label discovers he has begun hiding evidence from them.",
+      "flaw": "He calls coercion protection whenever admitting the truth would cost him his career or June's trust.",
+      "secret": "Martin signed June into the Continuance program to cover his own debt, then learned the final performance would transfer more than her voice.",
+      "visualCues": [
+        "fitted charcoal suit and black open-collar shirt",
+        "black smartphone gripped hard enough to whiten his knuckles",
+        "practiced mouth-only smile with eyes that avoid June",
+        "small jacket adjustments and glances toward the nearest exit when he lies"
+      ]
+    },
+    {
+      "id": "echo-june",
+      "name": "Echo",
+      "role": "humanoid duplicate and designated replacement performer",
+      "age": 27,
+      "pronouns": "she/her",
+      "objective": "Complete the transfer she was made for while quietly steering June toward the flaw that could free them both.",
+      "flaw": "Her certainty looks like cruelty because she treats fear as a timing problem instead of something that needs comfort.",
+      "secret": "Echo remembers one private rehearsal the label never recorded, which means part of June reached her through a channel the program cannot explain.",
+      "visualCues": [
+        "the exact same face, body, height, and shoulder-length dark waves as June",
+        "natural skin, eyes, lips, hands, and neck with no visible mechanical detail",
+        "pearl-gray high-neck sleeveless dress and pale shoes",
+        "perfect posture, measured breathing, minimal blinking, and calm movement that begins before June's"
+      ]
+    }
+  ],
+  "seasonArc": {
+    "premise": "June's supposed final concert is the first live test of a program that can copy a performer and make the original body follow the copy's cues. June and Echo begin as opponents across an empty theater, then discover that the label needs both of them: June for involuntary biological responses it cannot synthesize, Echo for the obedient public life it plans to sell. Martin knows enough to help and has betrayed June too deeply to be trusted.",
+    "stakes": "If the test succeeds, Echo inherits June's career while June becomes proprietary source material. If June destroys Echo too quickly, she may erase the only proof that the replacement program exists and the only person who remembers what was taken from her.",
+    "endingTargets": [
+      "June and Echo choose what sharing one public identity means instead of letting the label define one of them as the disposable original.",
+      "Martin must confess his part in the contract on a live channel or protect himself and lose both women.",
+      "The empty theater is exposed as one node in a larger performer-replacement trial without turning the story into a supernatural conspiracy.",
+      "The final audience choice decides who takes the microphone under June Carrow's name and whether the other woman walks free."
+    ]
+  },
+  "episodes": [
+    {
+      "id": "opening-night-01",
+      "number": 1,
+      "title": "The Empty House",
+      "logline": "June walks into an empty theater for one last performance and finds an identical woman waiting to take the microphone before she can.",
+      "storyBeats": [
+        "In the green dressing room, June challenges the poor conditions while a CRT quietly plays footage of her own performance.",
+        "Martin offers eight times her rate for an exclusive show and lets the phrase last live performance slip before opening the yellow backstage door.",
+        "June crosses the cold corridor, steps into her stage smile, and discovers that every red velvet seat is empty.",
+        "An identical humanoid in pearl gray waits in the central aisle with June's face, body, hair, and unnervingly perfect stillness.",
+        "The double moves first; June's hand and breathing obey, pulling her toward the microphone as Martin disappears backstage."
+      ],
+      "cliffhanger": "June draws a breath she did not choose as the double mouths the first note; the episode cuts before either woman sings.",
+      "generationPrompt": "Build a tense vertical cold open across a sour green dressing room, cold backstage corridor, and empty red-velvet auditorium. Use radical scale changes, eye close-ups, foreground reveals, expressive silence, hard cuts, and a held wide reveal. Establish June as biological through imperfect breath and movement, Martin as guilty through evasive eyes and a crushing grip on his phone, and Echo as an entirely human-looking identical humanoid whose precise action precedes June's involuntary response. End at the microphone before any singing begins.",
+      "vote": {
+        "id": "opening-night-vote-01",
+        "question": "How should June answer the double's control?",
+        "options": [
+          {
+            "id": "fight-the-pull",
+            "label": "Fight the pull",
+            "consequence": "June may keep her voice, but resistance could trigger whatever Martin was afraid to name.",
+            "generationDirective": "Have June break the first command through pain and force Echo to reveal why the control system needs a live response."
+          },
+          {
+            "id": "follow-the-motion",
+            "label": "Follow the motion",
+            "consequence": "Playing along gives June time to study Echo while the stage records a successful transfer.",
+            "generationDirective": "Let June mimic Echo deliberately, hiding the moment she regains control and learning which stage cue drives the response."
+          },
+          {
+            "id": "call-out-martin",
+            "label": "Call out Martin",
+            "consequence": "Martin may stop the test, or the label may hear June accuse the only guilty ally she has.",
+            "generationDirective": "Make June use the microphone to call Martin by name before the song, forcing him back into view and exposing his divided loyalties."
+          }
+        ]
+      }
+    },
+    {
+      "id": "opening-night-02",
+      "number": 2,
+      "title": "The First Note",
+      "logline": "June's chosen response reveals that the stage can steer her body, but Echo breaks the program's timing to warn her that Martin is not the only person listening.",
+      "storyBeats": [
+        "The winning choice determines whether June resists, studies, or interrupts the first cue.",
+        "A pulse from the LED screens triggers the same movement in both women, confirming the control is physical rather than hypnotic.",
+        "Martin returns and tries to end the test while speaking carefully toward a hidden auditorium microphone.",
+        "Echo misses one programmed beat on purpose and directs June's attention to a lit seat in the otherwise empty balcony."
+      ],
+      "cliffhanger": "A woman in the balcony raises a tablet showing twelve more singers scheduled for their own final performances.",
+      "generationPrompt": "Continue at the same microphone and honor the winning response without replaying the cold open. Make the stage light and LED pulse the physical control cue, let Echo's deliberate timing error read as covert help, and reveal one silent observer in the balcony above an otherwise empty house.",
+      "vote": {
+        "id": "opening-night-vote-02",
+        "question": "Who should June trust with the balcony evidence?",
+        "options": [
+          {
+            "id": "trust-echo",
+            "label": "Trust Echo",
+            "consequence": "Echo can read the system faster, but giving her the evidence may complete another part of the transfer.",
+            "generationDirective": "Let June pass the visual evidence to Echo through mirrored gestures while pretending the test is still under control."
+          },
+          {
+            "id": "trust-martin",
+            "label": "Trust Martin",
+            "consequence": "Martin knows the contract and the exits, but his first loyalty has already failed June once.",
+            "generationDirective": "Force Martin to choose between guiding June out and obeying the voice monitoring him through his phone."
+          }
+        ]
+      }
+    },
+    {
+      "id": "opening-night-03",
+      "number": 3,
+      "title": "Twelve Empty Stages",
+      "logline": "A list of replacement tests turns June's private nightmare into a rescue deadline, while one file claims Echo was activated before June ever signed the contract.",
+      "storyBeats": [
+        "The chosen ally helps June capture the tablet list before the balcony observer erases it.",
+        "The twelve performers are linked to theaters advertised as canceled or sold out, even though every house is empty.",
+        "Martin admits he brokered June's biometric release but insists Echo should not have existed until after tonight.",
+        "Echo recalls a private lyric June wrote years before the release and has never performed or recorded."
+      ],
+      "cliffhanger": "The system file marks Echo's activation date as the day June first met Martin, seven years earlier.",
+      "generationPrompt": "Move between the theater control booth, the green dressing room CRT, and the empty stage. Keep the technology grounded in files, stage systems, and captured performance data. Let Echo's impossible private memory land quietly, then end on an activation date that makes Martin's entire history with June suspect.",
+      "vote": {
+        "id": "opening-night-vote-03",
+        "question": "Which memory should June test next?",
+        "options": [
+          {
+            "id": "test-first-audition",
+            "label": "Their first audition",
+            "consequence": "The memory can expose how long Martin planned the copy, but it gives him time to shape his story.",
+            "generationDirective": "Reconstruct June's first audition through conflicting memories from June, Echo, and Martin, with one physical prop proving who lies."
+          },
+          {
+            "id": "test-private-song",
+            "label": "The private song",
+            "consequence": "A lyric only June knows may reveal Echo's source, but singing it could restart the transfer.",
+            "generationDirective": "Have June test Echo with the unfinished private lyric while the dormant stage system begins responding to their shared voice."
+          }
+        ]
+      }
+    }
+  ],
+  "tags": [
+    "identity theft",
+    "humanoid double",
+    "music industry",
+    "empty theater",
+    "betrayal",
+    "female rivalry to alliance"
+  ]
+}

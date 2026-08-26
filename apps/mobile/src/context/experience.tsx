@@ -1,6 +1,9 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
+import { STORIES } from '@/data/stories';
+import { mediaProgressKey } from '@/lib/story-media';
+
 export type WatchProgress = {
   positionSeconds: number;
   durationSeconds: number;
@@ -17,7 +20,7 @@ type ExperienceState = {
   toggleLiked: (episodeId: string) => void;
   toggleSaved: (storyId: string) => void;
   selectVote: (episodeId: string, choice: string) => void;
-  setWatchProgress: (episodeId: string, positionSeconds: number, durationSeconds: number, completed?: boolean) => void;
+  setWatchProgress: (progressKey: string, positionSeconds: number, durationSeconds: number, completed?: boolean) => void;
 };
 
 type PersistedExperience = {
@@ -30,6 +33,11 @@ type PersistedExperience = {
 
 const STORAGE_KEY = '@dramatic/experience/v1';
 const ExperienceContext = createContext<ExperienceState | null>(null);
+const VALID_VOTE_CHOICES = new Map<string, ReadonlySet<string>>(
+  STORIES.flatMap(story => story.vote
+    ? [[story.episodeId, new Set(story.vote.choices)] as const]
+    : []),
+);
 
 function toggleId(previous: ReadonlySet<string>, storyId: string): Set<string> {
   const next = new Set(previous);
@@ -45,9 +53,12 @@ function stringSet(value: unknown): Set<string> {
 
 function stringRecord(value: unknown): Record<string, string> {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return {};
-  return Object.fromEntries(
-    Object.entries(value).filter((entry): entry is [string, string] => typeof entry[1] === 'string' && entry[1].length > 0),
-  );
+  const result: Record<string, string> = {};
+  for (const [episodeId, choice] of Object.entries(value)) {
+    if (typeof choice !== 'string' || !VALID_VOTE_CHOICES.get(episodeId)?.has(choice)) continue;
+    result[episodeId] = choice;
+  }
+  return result;
 }
 
 function progressRecord(value: unknown): Record<string, WatchProgress> {
@@ -64,6 +75,12 @@ function progressRecord(value: unknown): Record<string, WatchProgress> {
       completed: candidate.completed === true,
       updatedAt: Number.isFinite(candidate.updatedAt) ? Number(candidate.updatedAt) : 0,
     };
+  }
+  for (const story of STORIES) {
+    const legacy = result[story.episodeId];
+    const currentKey = mediaProgressKey(story);
+    if (legacy && !result[currentKey]) result[currentKey] = legacy;
+    delete result[story.episodeId];
   }
   return result;
 }
@@ -115,15 +132,16 @@ export function ExperienceProvider({ children }: { children: ReactNode }) {
   const toggleLiked = useCallback((episodeId: string) => setLikedIds(previous => toggleId(previous, episodeId)), []);
   const toggleSaved = useCallback((storyId: string) => setSavedIds(previous => toggleId(previous, storyId)), []);
   const selectVote = useCallback((episodeId: string, choice: string) => {
+    if (!VALID_VOTE_CHOICES.get(episodeId)?.has(choice)) return;
     setVoteChoices(previous => ({ ...previous, [episodeId]: choice }));
   }, []);
-  const setWatchProgress = useCallback((episodeId: string, positionSeconds: number, durationSeconds: number, completed = false) => {
+  const setWatchProgress = useCallback((progressKey: string, positionSeconds: number, durationSeconds: number, completed = false) => {
     if (!Number.isFinite(positionSeconds) || !Number.isFinite(durationSeconds) || durationSeconds <= 0) return;
     const safePosition = Math.max(0, Math.min(positionSeconds, durationSeconds));
     const finished = completed || safePosition >= durationSeconds - 0.5;
     setWatchProgressState(previous => ({
       ...previous,
-      [episodeId]: {
+      [progressKey]: {
         positionSeconds: finished ? durationSeconds : safePosition,
         durationSeconds,
         completed: finished,

@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "id": "crown-of-rust",
+  "slug": "crown-of-rust",
+  "title": "Crown of Rust",
+  "tagline": "The kingdom drowned. The oath didn't.",
+  "logline": "A salvage diver wakes a coral-bound knight beneath a drowned kingdom and learns that the sword calling her by name can either raise the lost city or bury it forever.",
+  "synopsis": "Three centuries after the sea swallowed Vael, salvage diver Mara Vey finds an untouched sword in the ruins below her harbor town. The blade speaks her name and wakes Sir Oren, a knight still guarding a crown that vanished with his queen. Mara needs the salvage money to save her family's boat, but every relic she lifts brings the drowned city closer to the surface. Rival captain Rook Sable wants the crown as proof of his own royal claim, while the knight believes Mara is the last person bound to Vael's unfinished oath. Audience choices decide which relics rise, who learns Mara's lineage, and whether the old kingdom deserves another dawn.",
+  "genres": ["fantasy adventure", "romantic mystery", "lost kingdom"],
+  "maturityRating": "teen",
+  "language": "en",
+  "format": {
+    "aspectRatio": "9:16",
+    "targetEpisodeSeconds": 74,
+    "plannedEpisodes": 24
+  },
+  "world": {
+    "setting": "The storm-beaten harbor of Greywake sits above Vael, a drowned medieval capital of coral halls, flooded bell towers, and throne rooms crossed by silver fish.",
+    "period": "timeless maritime fantasy",
+    "rules": [
+      "Vael's relics remember the last promise made while they were held and speak only to someone tied to that promise.",
+      "The Tide Crown can raise one district of Vael, but an equal piece of the surface must sink in its place.",
+      "Oren can move only while the recovered sword remains near him, and rust spreads across his armor whenever he breaks an oath.",
+      "Audience choices decide which oath guides the next episode, but every path preserves the cost of lifting the drowned city."
+    ]
+  },
+  "visualStyle": {
+    "palette": ["#071D2B", "#1F5963", "#8C6B43", "#C8B68A", "#DCECF0"],
+    "camera": "Slow underwater pushes make the ruins feel immense, while tight vertical frames hold Mara and Oren between pillars, ropes, and narrow shafts of surface light. Action stays close enough to read breath, hands, and failing equipment.",
+    "lighting": "Cold blue depths are cut by pale god rays and warm relic glow. Surface scenes use storm-gray daylight, lantern amber, and wet reflections that echo the city below.",
+    "wardrobe": "Mara wears a patched canvas dive coat over compact brass gear; Oren's ceremonial armor is dark with rust and living coral; Rook favors clean black salvage leathers marked by a stolen silver crest."
+  },
+  "characters": [
+    {
+      "id": "mara-vey",
+      "name": "Mara Vey",
+      "role": "salvage diver and unwilling heir",
+      "age": 27,
+      "pronouns": "she/her",
+      "objective": "Save her family's boat and learn why the drowned sword remembers a name her mother forbade her to use.",
+      "flaw": "She turns every burden into a private debt and refuses help until rescue becomes more dangerous than trust.",
+      "secret": "Her mother left her a rusted coronation coin and made Mara swear never to dive beneath Vael's eastern tower.",
+      "visualCues": [
+        "patched indigo dive coat with weighted brass seams",
+        "short dark curls tied beneath a red scarf",
+        "coronation coin worn inside one glove",
+        "steady hands that tremble only near royal relics"
+      ]
+    },
+    {
+      "id": "oren-cael",
+      "name": "Oren Cael",
+      "role": "last knight of Vael and keeper of the oath",
+      "age": 32,
+      "pronouns": "he/him",
+      "objective": "Recover the Tide Crown and finish the promise that kept him awake beneath the sea for three hundred years.",
+      "flaw": "He obeys the words of an oath long after its purpose has changed and mistakes endurance for honor.",
+      "secret": "The queen ordered him to destroy the crown, but Oren hid it because he could not accept Vael's final death.",
+      "visualCues": [
+        "ornate iron armor furred with red coral",
+        "pale scar running from temple to jaw",
+        "sea-green light behind the visor when the sword is near",
+        "rust blooming across one gauntlet after a broken promise"
+      ]
+    },
+    {
+      "id": "rook-sable",
+      "name": "Rook Sable",
+      "role": "rival salvage captain and claimant",
+      "age": 35,
+      "pronouns": "he/him",
+      "objective": "Raise enough of Vael to prove his blood claim and turn Greywake from a dying harbor into his capital.",
+      "flaw": "He treats loyalty as something won by rescue and collected later with interest.",
+      "secret": "Rook found the crown years ago and lost his younger brother when the relic demanded land in exchange for air.",
+      "visualCues": [
+        "black salvage leathers kept unnaturally clean",
+        "silver crest pinned upside down at his throat",
+        "missing tip of his left ring finger",
+        "calm smile whenever someone else is running out of air"
+      ]
+    },
+    {
+      "id": "lys-aurel",
+      "name": "Lys Aurel",
+      "role": "last queen preserved in the crown's memory",
+      "age": 30,
+      "pronouns": "she/her",
+      "objective": "Keep Vael buried until someone can raise its people without repeating the bargain that drowned them.",
+      "flaw": "She protects others by making irreversible choices before they can consent to the cost.",
+      "secret": "Lys caused the flood herself to stop the crown from consuming every coastal kingdom beyond Vael.",
+      "visualCues": [
+        "white ceremonial gown moving like smoke underwater",
+        "copper crown fractured above the left brow",
+        "face visible only in reflective metal or still water",
+        "black tide marks climbing her sleeves when the city stirs"
+      ]
+    }
+  ],
+  "seasonArc": {
+    "premise": "Mara and Oren recover pieces of Vael's last day while Rook turns each discovery into a claim on the surface. Their growing trust is tested by the truth that Oren preserved the weapon his queen ordered him to destroy.",
+    "stakes": "If the Tide Crown wakes unchecked, Greywake will sink as Vael rises. If Mara destroys it too soon, Oren and every memory trapped below disappear before the flood's real bargain can be undone.",
+    "endingTargets": [
+      "Mara chooses what her bloodline means instead of accepting a crown or rejecting it on someone else's command.",
+      "Oren breaks his oldest oath for a living person and survives the rust long enough to make a new one.",
+      "Rook must decide whether saving Greywake matters more than being recognized as Vael's heir.",
+      "The final audience choice determines whether Vael rises empty, remains a memorial, or returns one living district at a permanent cost."
+    ]
+  },
+  "episodes": [
+    {
+      "id": "crown-of-rust-01",
+      "number": 1,
+      "title": "The Sword Knows Her",
+      "logline": "Mara steals one last dive to save her family's boat and finds a sword that speaks her hidden name before waking its armored guardian.",
+      "storyBeats": [
+        "Mara descends through Vael's eastern tower despite the oath she made to her mother.",
+        "A clean blade beneath centuries of coral calls her Mara Aurel and unlocks a sealed throne room.",
+        "Oren wakes in rusted armor, mistakes Mara for his queen, and pulls her from a collapsing gallery.",
+        "Back on the salvage line, Rook hears the drowned coronation bells ringing below Greywake."
+      ],
+      "cliffhanger": "Oren kneels before Mara as her mother's coronation coin begins glowing inside her glove.",
+      "generationPrompt": "Create a mythic underwater discovery beneath a storm harbor. Follow Mara through a narrow flooded tower, reveal the untouched sword with restrained green light, wake coral-covered Oren during a collapse, and end on his kneeling silhouette beneath her glowing royal coin.",
+      "vote": {
+        "id": "crown-of-rust-vote-01",
+        "question": "What should Mara do with the awakened knight?",
+        "options": [
+          {
+            "id": "bring-oren-surface",
+            "label": "Bring him ashore",
+            "consequence": "Oren may explain the coin, but Greywake will see that Vael's old power is awake.",
+            "generationDirective": "Open with Mara hiding Oren aboard her small salvage boat as the harbor gathers around the ringing bells."
+          },
+          {
+            "id": "follow-oren-deeper",
+            "label": "Follow him deeper",
+            "consequence": "Mara keeps the discovery secret while spending the last safe air in her tank.",
+            "generationDirective": "Keep Mara underwater as Oren leads her through a newly opened passage toward the drowned royal crypt."
+          }
+        ]
+      }
+    },
+    {
+      "id": "crown-of-rust-02",
+      "number": 2,
+      "title": "The Last Oath",
+      "logline": "Mara's chosen path reveals why Oren waited beneath Vael, but Rook steals the first crown fragment before either can name its price.",
+      "storyBeats": [
+        "The winning path gives Mara a private moment to test Oren's memory and the limits of his bond to the sword.",
+        "Oren admits he was commanded to guard the crown chamber until an Aurel heir returned.",
+        "Mara finds a copper crown fragment fused into the bell rope that has begun lifting Vael toward the surface.",
+        "Rook cuts the salvage line, takes the fragment, and offers Greywake proof that he can raise dry land."
+      ],
+      "cliffhanger": "A whole drowned street breaks the waves as the harbor floor drops beneath Mara's family boat.",
+      "generationPrompt": "Honor the prior winning route, then converge on a flooded bell chamber and a copper crown shard fused into its rope. Let Rook steal the shard with controlled precision, and finish on a drowned avenue rising while a surface boat falls into the displaced water.",
+      "vote": {
+        "id": "crown-of-rust-vote-02",
+        "question": "Who should Mara save before chasing the crown shard?",
+        "options": [
+          {
+            "id": "save-family-boat",
+            "label": "Save her family",
+            "consequence": "Mara protects the people who raised her but gives Rook time to activate the fragment.",
+            "generationDirective": "Begin with Mara and Oren rescuing her family from the collapsing harbor while Rook reaches Vael's risen street."
+          },
+          {
+            "id": "stop-rook-first",
+            "label": "Stop Rook first",
+            "consequence": "Mara may contain the relic, but her family must trust a rusting knight to reach them in time.",
+            "generationDirective": "Send Mara after Rook across the half-submerged ruins while Oren turns back alone to save her family boat."
+          }
+        ]
+      }
+    },
+    {
+      "id": "crown-of-rust-03",
+      "number": 3,
+      "title": "The Queen in the Water",
+      "logline": "The rescue exposes Oren's broken command, and a reflection of Vael's dead queen tells Mara that raising the city will drown Greywake by dawn.",
+      "storyBeats": [
+        "The selected rescue leaves a visible rust fracture across Oren's gauntlet and changes who in Greywake trusts Mara.",
+        "Mara corners Rook in a risen market where every polished relic reflects Queen Lys instead of its holder.",
+        "Lys reveals that she ordered Oren to destroy the crown before the flood and he chose to hide it.",
+        "The crown fragment pulls water from beneath Greywake, opening a widening fault through the harbor square."
+      ],
+      "cliffhanger": "Lys tells Mara that the city can be stopped only if she kills the knight who kept its oath alive.",
+      "generationPrompt": "Stage a confrontation on a wet medieval market newly risen through a modern harbor. Use reflections in armor, coins, and standing water to reveal Queen Lys, show rust spreading across Oren when his lie is exposed, and end with Mara holding the speaking sword between Oren and a splitting harbor.",
+      "vote": {
+        "id": "crown-of-rust-vote-03",
+        "question": "Whose version of Vael's final night should Mara trust?",
+        "options": [
+          {
+            "id": "trust-lys",
+            "label": "Trust the queen",
+            "consequence": "Mara gains the truth behind the flood but must treat Oren as the danger he tried to hide.",
+            "generationDirective": "Let Mara follow Lys through crown memories while keeping Oren disarmed and under Rook's watch."
+          },
+          {
+            "id": "trust-oren",
+            "label": "Trust the knight",
+            "consequence": "Mara protects Oren long enough to hear his reason, while the queen turns every recovered relic against them.",
+            "generationDirective": "Have Mara free Oren and descend with him toward the crown chamber as Lys awakens the risen city's defenses."
+          }
+        ]
+      }
+    }
+  ],
+  "tags": ["drowned kingdom", "ancient oath", "salvage diver", "lost heir", "audience choice"]
+}

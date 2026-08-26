@@ -7,13 +7,14 @@ import { colors, radius, space } from '@/constants/tokens';
 import { useExperience } from '@/context/experience';
 import { usePreferences } from '@/context/preferences';
 import { STORIES } from '@/data/stories';
+import { mediaProgressKey } from '@/lib/story-media';
 
 const REPO_URL = 'https://github.com/Mukhsin0508/Dramatic';
 
 export default function YouScreen() {
   const preferences = usePreferences();
   const { savedIds, voteChoices, watchProgress } = useExperience();
-  const watchingCount = STORIES.filter(story => watchProgress[story.episodeId]).length;
+  const watchingCount = STORIES.filter(story => watchProgress[mediaProgressKey(story)]).length;
   const choiceCount = Object.keys(voteChoices).length;
 
   return (
@@ -45,7 +46,7 @@ export default function YouScreen() {
         <View style={styles.preferenceIcon}><SymbolView name="play.rectangle.fill" size={21} tintColor={colors.brand} /></View>
         <View style={styles.grow}>
           <AppText variant="label">Your watching setup</AppText>
-          <AppText variant="caption" color={colors.textSecondary}>{preferences.captions ? `${preferences.captionSize} captions` : 'Captions off'} · {preferences.playbackQuality}</AppText>
+          <AppText variant="caption" color={colors.textSecondary}>{preferences.hydrated ? `Autoplay ${preferences.autoplay ? 'on' : 'off'}` : 'Loading your playback preference'}</AppText>
         </View>
         <Pressable accessibilityRole="button" accessibilityLabel="Change watching settings" onPress={() => router.push('../settings')} hitSlop={8} style={({ pressed }) => [styles.changeButton, pressed && styles.pressed]}><AppText variant="label" color={colors.brand}>Change</AppText></Pressable>
       </View>

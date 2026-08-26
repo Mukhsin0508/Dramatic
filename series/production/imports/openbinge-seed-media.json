@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "sourceRepository": "OpenBinge",
+  "sourceCommit": "099b44647e84d4ad2739fa0f985e7c1fdacf7c11",
+  "importedAt": "2026-08-26T00:00:00.000Z",
+  "notes": "Media imported from the user's OpenBinge repository. This record keeps public provenance and file integrity without inventing unavailable provider request receipts.",
+  "artifacts": [
+    {
+      "seriesId": "opening-night",
+      "kind": "cold-open",
+      "provider": "higgsfield",
+      "model": null,
+      "provenance": "User-provided Higgsfield export; the original API request receipt is unavailable.",
+      "mobilePath": "apps/mobile/assets/videos/opening-night-01.mp4",
+      "webPath": "apps/web/public/media/opening-night-01.mp4",
+      "bytes": 7802764,
+      "sha256": "ceadda42b0136b20227092a20a45df1785ae7b5ead5ccdeb5d8a95cf767652d1",
+      "durationSeconds": 30.046,
+      "width": 1920,
+      "height": 824,
+      "hasAudio": true
+    },
+    {
+      "seriesId": "crown-of-rust",
+      "kind": "teaser",
+      "provider": "higgsfield",
+      "model": "Seedance 2.5",
+      "provenance": "Documented as Higgsfield-generated in the source repository; the original API request receipt is unavailable.",
+      "mobilePath": "apps/mobile/assets/videos/crown-of-rust-01.mp4",
+      "webPath": "apps/web/public/media/crown-of-rust-01.mp4",
+      "bytes": 2102599,
+      "sha256": "58471ab0cd44ff1f42d6862056b9fb6bfed460e0b9a312c37bc23924778469c9",
+      "durationSeconds": 6.042,
+      "width": 1280,
+      "height": 720,
+      "hasAudio": true
+    },
+    {
+      "seriesId": "midnight-ramen",
+      "kind": "teaser",
+      "provider": "higgsfield",
+      "model": "Seedance 2.5",
+      "provenance": "Documented as Higgsfield-generated in the source repository; the original API request receipt is unavailable.",
+      "mobilePath": "apps/mobile/assets/videos/midnight-ramen-01.mp4",
+      "webPath": "apps/web/public/media/midnight-ramen-01.mp4",
+      "bytes": 1573796,
+      "sha256": "907ac165fe34ae7d3ca79092edbe5c7a294709bd9165d2d456e2a8652bf0e54a",
+      "durationSeconds": 6.046,
+      "width": 1280,
+      "height": 720,
+      "hasAudio": true
+    },
+    {
+      "seriesId": "neon-harvest",
+      "kind": "teaser",
+      "provider": "higgsfield",
+      "model": "Seedance 2.5",
+      "provenance": "Documented as Higgsfield-generated in the source repository; the original API request receipt is unavailable.",
+      "mobilePath": "apps/mobile/assets/videos/neon-harvest-01.mp4",
+      "webPath": "apps/web/public/media/neon-harvest-01.mp4",
+      "bytes": 2508029,
+      "sha256": "315b0d70a02b3e1b854c966921ba14058025bc7e6ddb44a12c5659860fb2ba53",
+      "durationSeconds": 6.042,
+      "width": 1280,
+      "height": 720,
+      "hasAudio": true
+    }
+  ]
+}

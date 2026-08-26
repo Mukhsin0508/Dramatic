@@ -5,12 +5,27 @@
   "seriesId": "two-rings-at-the-funeral",
   "episodeNumber": 1,
   "sourceScript": "series/scripts/two-rings-at-the-funeral-01.json",
-  "generatedAt": "2026-08-26T03:02:37.394Z",
+  "generatedAt": "2026-08-26T04:29:50.094Z",
   "estimates": {
     "poster": {
       "credits": "0.150",
       "usd": "0.010",
       "observedAt": "2026-08-26T03:01:09.059Z"
+    },
+    "clip": {
+      "credits": "2.000",
+      "usd": "0.125",
+      "observedAt": "2026-08-26T03:02:39.184Z"
+    },
+    "clip-turbo": {
+      "credits": "6.500",
+      "usd": "0.407",
+      "observedAt": "2026-08-26T03:32:12.228Z"
+    },
+    "clip-seedance-fast": {
+      "credits": "3.360",
+      "usd": "0.210",
+      "observedAt": "2026-08-26T04:28:44.692Z"
     }
   },
   "artifacts": [
@@ -22,6 +37,15 @@
       "bytes": 2049436,
       "sha256": "c56b13d5aff062a5fa854f10937d7e47f965609ed1cdbe9f2937574cee0315ff",
       "contentType": "image/png"
+    },
+    {
+      "kind": "video",
+      "endpoint": "bytedance/seedance/v1/pro/fast/image-to-video",
+      "path": "apps/mobile/assets/videos/two-rings-at-the-funeral-01.mp4",
+      "webPath": "apps/web/public/media/two-rings-at-the-funeral-01.mp4",
+      "bytes": 8418935,
+      "sha256": "9ee9acf9fccd1913112ae2f300104b4497cb27168878dca62052cb6439a2c842",
+      "contentType": "video/mp4"
     }
   ]
 }

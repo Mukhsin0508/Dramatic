@@ -14,11 +14,144 @@ export type Story = {
   genres: string;
   poster: ImageSource | string | number;
   videoSource?: VideoSource;
+  mediaKind: "episode" | "cold-open" | "teaser";
+  runtimeLabel: string;
+  captionsAvailable: boolean;
+  videoFit: "cover" | "contain";
+  videoAspect?: number;
   locked?: boolean;
   vote?: { question: string; choices: readonly string[] };
 };
 
 export const STORIES: Story[] = [
+  {
+    "id": "opening-night",
+    "title": "Opening Night",
+    "episodeId": "opening-night-01",
+    "episode": 1,
+    "episodeCount": 24,
+    "episodeTitle": "The Empty House",
+    "synopsis": "June walks into an empty theater for one last performance and finds an identical woman waiting to take the microphone before she can.",
+    "description": "June Carrow is offered eight times her rate for an exclusive performance in a faded downtown theater. Her manager, Martin Voss, calls it her last live show and refuses to explain why. The house is empty when June reaches the stage, but someone is waiting in the central aisle: a completely human-looking duplicate with June's face, body, and voice. When the double moves, June's body follows before she can stop it. Trapped inside a label program built to replace difficult artists with compliant copies, June must learn what Martin signed away, why the double seems almost protective of her, and whether the woman wearing her face is a rival, a prisoner, or the only witness she can trust.",
+    "genres": "PSYCHOLOGICAL THRILLER · SCIENCE FICTION DRAMA",
+    "mediaKind": "cold-open",
+    "runtimeLabel": "30 sec",
+    "captionsAvailable": false,
+    "videoFit": "contain",
+    "videoAspect": 2.3301,
+    "vote": {
+      "question": "How should June answer the double's control?",
+      "choices": [
+        "Fight the pull",
+        "Follow the motion",
+        "Call out Martin"
+      ]
+    },
+    poster: require("../../assets/images/stories/opening-night.jpg"),
+    videoSource: require("../../assets/videos/opening-night-01.mp4"),
+  },
+  {
+    "id": "two-rings-at-the-funeral",
+    "title": "Two Rings at the Funeral",
+    "episodeId": "two-rings-at-the-funeral-01",
+    "episode": 1,
+    "episodeCount": 24,
+    "episodeTitle": "The Other Widow",
+    "synopsis": "A stranger stops Elias's burial by claiming to be his wife, but matching rings and simultaneous bank thefts turn accusation into a shared emergency.",
+    "description": "Paramedic Mara Vega expects grief, not another widow. Celeste Okafor arrives at Elias Vale's funeral with a legal marriage certificate, a baby on the way, and the same numbered ring on her hand. Before either woman can decide who was betrayed first, their bank accounts are emptied and Elias's private ringtone sounds from inside his sealed coffin. Elias's estranged brother Theo warns them to walk away, but Mara and Celeste form an uneasy alliance instead. Each clue reveals that their marriages were components of a larger identity-laundering scheme, while audience choices decide which evidence they chase, which secrets they trade, and whether Theo becomes an ally or the next suspect.",
+    "genres": "ROMANTIC SUSPENSE · REVENGE MYSTERY",
+    "mediaKind": "teaser",
+    "runtimeLabel": "10 sec teaser",
+    "captionsAvailable": false,
+    "videoFit": "cover",
+    "videoAspect": 0.5641,
+    "vote": {
+      "question": "Which lead should the widows follow first?",
+      "choices": [
+        "Open the coffin",
+        "Trace the transfer",
+        "Follow Theo"
+      ]
+    },
+    poster: require("../../assets/images/stories/two-rings-at-the-funeral.png"),
+    videoSource: require("../../assets/videos/two-rings-at-the-funeral-01.mp4"),
+  },
+  {
+    "id": "crown-of-rust",
+    "title": "Crown of Rust",
+    "episodeId": "crown-of-rust-01",
+    "episode": 1,
+    "episodeCount": 24,
+    "episodeTitle": "The Sword Knows Her",
+    "synopsis": "Mara steals one last dive to save her family's boat and finds a sword that speaks her hidden name before waking its armored guardian.",
+    "description": "Three centuries after the sea swallowed Vael, salvage diver Mara Vey finds an untouched sword in the ruins below her harbor town. The blade speaks her name and wakes Sir Oren, a knight still guarding a crown that vanished with his queen. Mara needs the salvage money to save her family's boat, but every relic she lifts brings the drowned city closer to the surface. Rival captain Rook Sable wants the crown as proof of his own royal claim, while the knight believes Mara is the last person bound to Vael's unfinished oath. Audience choices decide which relics rise, who learns Mara's lineage, and whether the old kingdom deserves another dawn.",
+    "genres": "FANTASY ADVENTURE · ROMANTIC MYSTERY",
+    "mediaKind": "teaser",
+    "runtimeLabel": "6 sec teaser",
+    "captionsAvailable": false,
+    "videoFit": "contain",
+    "videoAspect": 1.7778,
+    "vote": {
+      "question": "What should Mara do with the awakened knight?",
+      "choices": [
+        "Bring him ashore",
+        "Follow him deeper"
+      ]
+    },
+    poster: require("../../assets/images/stories/crown-of-rust.jpg"),
+    videoSource: require("../../assets/videos/crown-of-rust-01.mp4"),
+  },
+  {
+    "id": "midnight-ramen",
+    "title": "Midnight Ramen",
+    "episodeId": "midnight-ramen-01",
+    "episode": 1,
+    "episodeCount": 24,
+    "episodeTitle": "The Unopened Letter",
+    "synopsis": "After losing a patient on the night shift, Aiko brings his sealed letter to Kenji's counter and finds its recipient sitting two stools away.",
+    "description": "Chef Kenji Watanabe opens his tiny Tokyo counter at eleven and closes only after the last customer tells the truth keeping them awake. Aiko Mori, an exhausted paramedic, becomes a reluctant regular after finding a sealed letter in a patient's coat. Ren Ito, a bicycle courier with a musician's ear, recognizes the handwriting as that of Kenji's estranged daughter Emi. Each night brings a new bowl and a self-contained human dilemma, but the same red paper crane keeps appearing beside people Emi once helped. Audience choices decide which customer speaks first, which secret leaves the shop, and whether Kenji follows the trail or keeps serving from behind the counter.",
+    "genres": "HUMAN DRAMA · COMFORT MYSTERY",
+    "mediaKind": "teaser",
+    "runtimeLabel": "6 sec teaser",
+    "captionsAvailable": false,
+    "videoFit": "contain",
+    "videoAspect": 1.7778,
+    "vote": {
+      "question": "What should Aiko do with the sealed letter?",
+      "choices": [
+        "Open it together",
+        "Deliver it privately"
+      ]
+    },
+    poster: require("../../assets/images/stories/midnight-ramen.jpg"),
+    videoSource: require("../../assets/videos/midnight-ramen-01.mp4"),
+  },
+  {
+    "id": "neon-harvest",
+    "title": "Neon Harvest",
+    "episodeId": "neon-harvest-01",
+    "episode": 1,
+    "episodeCount": 24,
+    "episodeTitle": "The Rice Glows at Midnight",
+    "synopsis": "Iri's dying rooftop crop flares back to life during poison rain, drawing a corporate inspector and an armed courier to the same locked greenhouse.",
+    "description": "Forty stories above Nami City, Iri Sato grows the last rice strain licensed for human hands. Then her flooded rooftop starts glowing after midnight, and the grain survives poison rain that should have killed it. Food inspector Kade Renn arrives with an order to burn the crop, while syndicate courier Sela Mora offers a route into the hungry lower districts. Iri discovers the glow is a message hidden by her missing mother inside the seed genome: proof that the city's food monopoly engineered the blight it claims to control. Audience choices decide who receives each harvest, which district Iri risks feeding, and whether she trusts the inspector sent to erase her evidence.",
+    "genres": "SCIENCE-FICTION NOIR · CONSPIRACY THRILLER",
+    "mediaKind": "teaser",
+    "runtimeLabel": "6 sec teaser",
+    "captionsAvailable": false,
+    "videoFit": "contain",
+    "videoAspect": 1.7778,
+    "vote": {
+      "question": "Who should Iri trust with the first glowing seed?",
+      "choices": [
+        "Give it to Kade",
+        "Give it to Sela",
+        "Hide it herself"
+      ]
+    },
+    poster: require("../../assets/images/stories/neon-harvest.jpg"),
+    videoSource: require("../../assets/videos/neon-harvest-01.mp4"),
+  },
   {
     "id": "the-last-alibi",
     "title": "The Last Alibi",
@@ -29,6 +162,10 @@ export const STORIES: Story[] = [
     "synopsis": "Nora wakes beside her murdered mentor as the courthouse locks and her own signed confession prints downstairs.",
     "description": "Nora Vale wakes in a closed courthouse with blood on her sleeve and no memory of the previous hour. Her mentor is dead in chambers, the security archive has been cut, and someone has filed a sealed confession in Nora's name. Hunted by the detective who ended her career, Nora follows courtroom clues that turn every old client into a suspect. The audience decides which testimony she trusts and which dangerous truth becomes canon.",
     "genres": "MURDER MYSTERY · LEGAL THRILLER",
+    "mediaKind": "episode",
+    "runtimeLabel": "60–90 sec",
+    "captionsAvailable": false,
+    "videoFit": "cover",
     "vote": {
       "question": "Which clue should Nora pursue before the archive locks?",
       "choices": [
@@ -48,6 +185,10 @@ export const STORIES: Story[] = [
     "synopsis": "Amara puts on the missing bride's veil to delay a livestream, but Julian turns the stalling tactic into legal vows.",
     "description": "When a celebrity bride vanishes minutes before a globally streamed wedding, planner Amara Lin puts on the veil to stall the sponsors and save her mother's venue from bankruptcy. Groom Julian Reyes recognizes her immediately but completes the vows because his inheritance depends on marrying before sunset. Their improvised bargain should last one hour; instead, a leaked certificate, a trapped wedding party, and the missing bride's voice notes turn the charade into a public marriage. Audience choices decide whether Amara and Julian protect the lie, expose each other, or risk making the borrowed vows sincere.",
     "genres": "ROMANCE · COMEDY OF ERRORS",
+    "mediaKind": "episode",
+    "runtimeLabel": "60–90 sec",
+    "captionsAvailable": false,
+    "videoFit": "cover",
     "vote": {
       "question": "How should Amara face the returning livestream?",
       "choices": [
@@ -67,6 +208,10 @@ export const STORIES: Story[] = [
     "synopsis": "While documenting an illegal eviction, Leila rides the broken elevator above its final floor and finds the missing heir alive.",
     "description": "Leila Hart has thirty days to stop the Armitage family from evicting everyone in Bellweather House. Then she finds Adrian Armitage hiding in the supposedly empty penthouse, alive after five years and unable to claim his inheritance without a witness who can prove he lived there before his disappearance. Leila agrees to hide him in exchange for ownership protections, but every elevator opens on another family spy, forged deed, or inconvenient spark. The audience chooses which tenant secret becomes leverage and whether Leila trusts the heir upstairs.",
     "genres": "ROMANTIC SUSPENSE · CLASS DRAMA",
+    "mediaKind": "episode",
+    "runtimeLabel": "60–90 sec",
+    "captionsAvailable": false,
+    "videoFit": "cover",
     "vote": {
       "question": "What should Leila demand before hiding Adrian?",
       "choices": [
@@ -75,25 +220,5 @@ export const STORIES: Story[] = [
       ]
     },
     poster: require("../../assets/images/stories/the-heir-upstairs.jpg"),
-  },
-  {
-    "id": "two-rings-at-the-funeral",
-    "title": "Two Rings at the Funeral",
-    "episodeId": "two-rings-at-the-funeral-01",
-    "episode": 1,
-    "episodeCount": 24,
-    "episodeTitle": "The Other Widow",
-    "synopsis": "A stranger stops Elias's burial by claiming to be his wife, but matching rings and simultaneous bank thefts turn accusation into a shared emergency.",
-    "description": "Paramedic Mara Vega expects grief, not another widow. Celeste Okafor arrives at Elias Vale's funeral with a legal marriage certificate, a baby on the way, and the same numbered ring on her hand. Before either woman can decide who was betrayed first, their bank accounts are emptied and Elias's private ringtone sounds from inside his sealed coffin. Elias's estranged brother Theo warns them to walk away, but Mara and Celeste form an uneasy alliance instead. Each clue reveals that their marriages were components of a larger identity-laundering scheme, while audience choices decide which evidence they chase, which secrets they trade, and whether Theo becomes an ally or the next suspect.",
-    "genres": "ROMANTIC SUSPENSE · REVENGE MYSTERY",
-    "vote": {
-      "question": "Which lead should the widows follow first?",
-      "choices": [
-        "Open the coffin",
-        "Trace the transfer",
-        "Follow Theo"
-      ]
-    },
-    poster: require("../../assets/images/stories/two-rings-at-the-funeral.png"),
   }
 ];

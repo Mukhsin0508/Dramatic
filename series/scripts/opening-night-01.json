@@ -1,0 +1,348 @@
+{
+  "schemaVersion": 1,
+  "id": "opening-night-01-script",
+  "seriesId": "opening-night",
+  "episodeId": "opening-night-01",
+  "episodeNumber": 1,
+  "title": "The Empty House",
+  "language": "en",
+  "aspectRatio": "9:16",
+  "targetDurationSeconds": 60,
+  "logline": "June walks into an empty theater for one last performance and finds an identical woman waiting to take the microphone before she can.",
+  "continuity": {
+    "location": "Calder Theater: a cramped green dressing room with a bulb-framed vanity and CRT monitor, a cold utilitarian backstage corridor behind a yellow door, and a dark auditorium with red velvet seats, a central aisle, one chrome microphone, and three LED screens.",
+    "timeAndWeather": "Opening night after dark; no exterior weather is visible, and backstage light remains cold against the warm stage spotlight.",
+    "immutableProps": [
+      "The dressing-room CRT and all three stage LED screens show the same pre-approved moving performance footage without introducing another face.",
+      "The yellow dressing-room door opens onto the same cold corridor and remains the only visible route Martin uses to leave.",
+      "The auditorium seats stay completely empty, with no silhouettes or implied audience except June, Martin, and Echo.",
+      "The vintage chrome microphone remains centered in the stage spotlight and is never touched before the final shot.",
+      "Martin's black smartphone stays with him until he disappears backstage.",
+      "June and Echo keep exactly matching faces, bodies, heights, hairlines, and dark shoulder-length waves across every shot."
+    ],
+    "characterReferences": [
+      {
+        "characterId": "june-carrow",
+        "soulReferenceId": "soul-ref-june-carrow-human-v1",
+        "lockedAppearance": "Original fictional biological woman, age 27, light skin with visible natural texture, expressive dark eyes, softly angular face, and shoulder-length dark brown waves with imperfect flyaways; organic breathing and small asymmetries in posture, with no resemblance to a public figure.",
+        "lockedWardrobe": "Ivory sleeveless calf-length stage dress with a softly structured bodice and pale closed-toe pumps; no jewelry that changes between dressing room, corridor, and stage."
+      },
+      {
+        "characterId": "martin-voss",
+        "soulReferenceId": "soul-ref-martin-voss-v1",
+        "lockedAppearance": "Original fictional man, age 43, lean build, light olive skin, close-cut dark hair graying at the temples, narrow brown eyes, and a controlled professional smile that does not reach them; no resemblance to a public figure.",
+        "lockedWardrobe": "Fitted charcoal suit over a black open-collar shirt, dark shoes, and one plain black smartphone; jacket stays buttoned until he opens the yellow door."
+      },
+      {
+        "characterId": "echo-june",
+        "soulReferenceId": "soul-ref-june-carrow-double-v1",
+        "lockedAppearance": "Original fictional humanoid built as June Carrow's exact visual double: the same light skin, dark eyes, softly angular face, body, height, hairline, and shoulder-length dark brown waves. She appears completely human, with natural skin, eyes, lips, hands, and neck and no seams, machinery, transparent parts, or glow.",
+        "lockedWardrobe": "Elegant pearl-gray high-neck sleeveless dress falling below the knee with pale shoes; posture remains exact, balanced, and nearly motionless until she deliberately moves first."
+      }
+    ]
+  },
+  "shots": [
+    {
+      "id": "opening-night-01-shot-01",
+      "number": 1,
+      "startSeconds": 0,
+      "durationSeconds": 5,
+      "location": "green dressing room, vanity",
+      "framing": "wide",
+      "cameraDirection": "Begin with June already seated at the vanity and Martin one meter behind her on camera-right. Curve 84 degrees past hot mirror bulbs, a garment edge, and cluttered foreground objects to create strong parallax in the narrow 9:16 frame.",
+      "action": "The CRT plays a tinny clip of June performing. She lifts a dirty glass with two fingertips, tightens her upper lip, puts it down, and looks at Martin through the mirror.",
+      "dialogue": [
+        {
+          "speakerId": "june-carrow",
+          "text": "This is the dressing room?",
+          "delivery": "Professional irritation held just below open contempt"
+        }
+      ],
+      "audio": [
+        "Quiet tinny performance audio from the CRT only",
+        "Glass base touches the vanity with a dry click",
+        "Low electrical hum from the mirror bulbs"
+      ],
+      "continuityCues": [
+        "June's ivory dress and loose dark waves match the approved reference",
+        "Martin stands camera-right with the black phone in his right hand",
+        "Yellow corridor door stays closed behind Martin"
+      ],
+      "soulKeyframePrompt": "Vertical 9:16 photoreal live-action frame inside a cramped sour-green theater dressing room, original fictional biological singer June Carrow seated at a bulb-framed vanity in an ivory sleeveless midi dress, natural light skin and shoulder-length dark brown waves; original fictional manager Martin Voss one meter behind her camera-right in a fitted charcoal suit gripping a black smartphone; dirty water glass, makeup clutter, yellow door, and a CRT showing abstract moving concert light with no extra face, cinematic foreground parallax, no text, logo, or watermark.",
+      "dopMotionPrompt": "Make a smooth physical 84-degree curved move past glowing bulbs and clutter while June lifts the dirty glass with two fingertips, reacts, sets it down, and meets Martin's eyes in the mirror. Only June speaks; Martin keeps his mouth closed and avoids her gaze. Hard cut at the end."
+    },
+    {
+      "id": "opening-night-01-shot-02",
+      "number": 2,
+      "startSeconds": 5,
+      "durationSeconds": 5,
+      "location": "green dressing room, behind June",
+      "framing": "over-shoulder",
+      "cameraDirection": "Use a moving 29-degree over-shoulder close-up on Martin with June's hair and vanity bulbs soft in the foreground. Slide laterally as he pockets the phone and smooths his jacket.",
+      "action": "Martin produces a practiced smile and delivers the offer. On the word last, his smile weakens, his jaw tightens, and his eyes flick toward the yellow door.",
+      "dialogue": [
+        {
+          "speakerId": "martin-voss",
+          "text": "Eight times your rate. Exclusive. Last live performance.",
+          "delivery": "Warm professional reassurance that slips on the word last"
+        }
+      ],
+      "audio": [
+        "CRT audio remains faint and diegetic",
+        "Suit fabric pulls as Martin pockets the phone",
+        "Room hum narrows beneath the final phrase"
+      ],
+      "continuityCues": [
+        "Phone moves from Martin's right hand into his inside jacket pocket",
+        "June stays seated in soft foreground",
+        "Martin glances toward the still-closed yellow door"
+      ],
+      "soulKeyframePrompt": "Vertical 9:16 moving over-shoulder portrait of original fictional manager Martin Voss in the same green dressing room, lean man age 43 in a fitted charcoal suit, black phone halfway into his inside pocket, practiced mouth-only smile and guilty eyes aimed toward a yellow door; biological singer June Carrow's dark waves and warm vanity bulbs remain soft in foreground, photoreal skin and fabric, no text, logo, or watermark.",
+      "dopMotionPrompt": "Slide laterally about 29 degrees as Martin pockets the black smartphone, smooths his jacket, and speaks with exact English lip sync. On last, weaken the smile, tighten his jaw, and flick his eyes toward the door without moving his head. Hard cut."
+    },
+    {
+      "id": "opening-night-01-shot-03",
+      "number": 3,
+      "startSeconds": 10,
+      "durationSeconds": 4,
+      "location": "green dressing room, vanity mirror",
+      "framing": "extreme-close-up",
+      "cameraDirection": "Fill the vertical frame with June's eyes and the bridge of her nose at an 18-degree angle. Make a slow physical push as focus drifts for half a beat and returns on Martin's reflection.",
+      "action": "Irritation leaves June's face. Her breath stops, then suspicion settles into her eyes. A red stage-cue lamp clicks on behind her as Martin reaches for the yellow door.",
+      "dialogue": [
+        {
+          "speakerId": "june-carrow",
+          "text": "Last?",
+          "delivery": "Quiet and precise after one stopped breath"
+        }
+      ],
+      "audio": [
+        "June's inhale cuts off",
+        "Red cue lamp activates with an electrical click",
+        "Door latch turns after her question"
+      ],
+      "continuityCues": [
+        "Fear appears first in June's eyes",
+        "Martin's mouth remains closed during June's line",
+        "Cold light begins entering through the yellow door"
+      ],
+      "soulKeyframePrompt": "Vertical 9:16 extreme close-up at an 18-degree angle on original fictional biological singer June Carrow's dark eyes, natural skin texture and small imperfect flyaway hairs visible, suspicion replacing irritation; a red cue lamp glows out of focus and guilty manager Martin Voss reaches for a yellow door in the mirror behind her, photoreal thriller lighting, no text or watermark.",
+      "dopMotionPrompt": "Push slowly into June's eyes as her breath stops, focus drifts briefly, then sharpens with suspicion. Activate the red cue lamp with one crisp click while Martin opens the yellow door behind her. Preserve restrained facial acting and hard cut on the door movement."
+    },
+    {
+      "id": "opening-night-01-shot-04",
+      "number": 4,
+      "startSeconds": 14,
+      "durationSeconds": 6,
+      "location": "backstage corridor",
+      "framing": "medium",
+      "cameraDirection": "Accelerate into a tight rear tracking shot through the cold corridor. Let hanging costumes, black cables, and doorframes wipe rapidly across foreground while Martin stays just beyond June's shoulder.",
+      "action": "June follows Martin at a fast walk. He checks his phone without taking it fully from his pocket. She notices, slows for one step, then catches the stage light spilling around the final corner.",
+      "dialogue": [],
+      "audio": [
+        "Quick alternating footsteps on painted concrete",
+        "Distant stage ventilation grows louder",
+        "CRT music disappears as the yellow door closes"
+      ],
+      "continuityCues": [
+        "June leads with Martin half a step ahead only at corners",
+        "Martin's phone remains partly concealed inside his jacket",
+        "Corridor light stays cold blue-green"
+      ],
+      "soulKeyframePrompt": "Vertical 9:16 photoreal backstage corridor in a faded theater, original fictional biological singer June Carrow in an ivory sleeveless dress moving quickly behind original fictional manager Martin Voss in a charcoal suit; cold blue-green practical lights, hanging costumes, black cables, scuffed walls and hard foreground doorframe wipes, warm stage light leaking around the far corner, cinematic urgency, no text or watermark.",
+      "dopMotionPrompt": "Track quickly behind June through the corridor with foreground costumes and frames wiping past. Martin checks the concealed phone without removing it; June catches the gesture, loses one step, then accelerates toward the warm spill ahead. Keep gait natural and let the pace rise without a speed ramp."
+    },
+    {
+      "id": "opening-night-01-shot-05",
+      "number": 5,
+      "startSeconds": 20,
+      "durationSeconds": 6,
+      "location": "stage left entrance",
+      "framing": "medium",
+      "cameraDirection": "Lead June backward from the wing in a waist-up vertical frame. Pass the black edge of a curtain across lens, then settle as she steps into the amber spotlight and automatically puts on her stage smile.",
+      "action": "Martin releases the curtain and stays in darkness. June straightens, sets her shoulders, and enters as if a full house is waiting. Her smile arrives before she can see the seats.",
+      "dialogue": [],
+      "audio": [
+        "Curtain fabric drags softly across its track",
+        "June's footsteps change from concrete to hollow stage boards",
+        "A wide empty-room reverb replaces the tight corridor sound"
+      ],
+      "continuityCues": [
+        "June's smile is automatic rather than joyful",
+        "Martin remains visible only as a dark suited outline in the wing",
+        "Chrome microphone waits several steps ahead"
+      ],
+      "soulKeyframePrompt": "Vertical 9:16 live-action medium shot leading original fictional biological singer June Carrow out of a black stage wing, ivory sleeveless midi dress and pale pumps entering a single amber spotlight, shoulder-length dark waves settling from the fast walk, automatic professional smile forming before she sees the room; original fictional manager Martin Voss holds the curtain in deep shadow behind her, vintage chrome microphone ahead, photoreal, no text or watermark.",
+      "dopMotionPrompt": "Move backward ahead of June as a black curtain wipes the lens, then slow when she enters the spotlight. Let her shoulders set and her practiced stage smile appear automatically. Martin stops in the wing and releases the curtain without speaking."
+    },
+    {
+      "id": "opening-night-01-shot-06",
+      "number": 6,
+      "startSeconds": 26,
+      "durationSeconds": 8,
+      "location": "stage facing auditorium",
+      "framing": "wide",
+      "cameraDirection": "Cut radically wide from behind June and hold. Use the 9:16 frame to stack the microphone, central aisle, receding red seats, balcony darkness, and three LED screens. Do not push for the first four seconds.",
+      "action": "June reaches her mark. The theater is empty. Her stage smile stays in place one beat too long, then falls as her eyes search row after row. Martin quietly steps out of the wing behind her.",
+      "dialogue": [],
+      "audio": [
+        "Full auditorium room tone with no audience movement",
+        "One microphone cable settles against the stage",
+        "Martin's retreating shoe scrape arrives from far behind June"
+      ],
+      "continuityCues": [
+        "Every red velvet seat remains empty",
+        "Three LED screens show the same approved performance footage",
+        "June stands one meter behind the untouched microphone",
+        "Martin exits through stage left darkness"
+      ],
+      "soulKeyframePrompt": "Vertical 9:16 radical wide shot from behind original fictional biological singer June Carrow on the stage of a faded downtown theater, ivory dress under one amber spotlight, untouched vintage chrome microphone centered before her, long central aisle and row after row of completely empty red velvet seats rising into darkness, three LED screens showing abstract synchronized concert footage without extra faces, tiny dark manager silhouette leaving stage left, photoreal cinematic stillness, no text or watermark.",
+      "dopMotionPrompt": "Hold the empty auditorium completely still for four seconds. June's professional smile remains too long, then disappears as her eyes search the seats. After the held beat, begin an almost imperceptible push while Martin quietly retreats into stage-left darkness."
+    },
+    {
+      "id": "opening-night-01-shot-07",
+      "number": 7,
+      "startSeconds": 34,
+      "durationSeconds": 7,
+      "location": "stage and central aisle",
+      "framing": "over-shoulder",
+      "cameraDirection": "Frame over June's shoulder with the microphone soft in near foreground. Use a long lens down the central aisle and reveal Echo only when one LED screen changes brightness behind her.",
+      "action": "A woman is standing at the far end of the aisle. The changing screen light reaches her face: June's face. She has June's body, height, and hair, but wears pearl gray and holds herself with impossible precision.",
+      "dialogue": [],
+      "audio": [
+        "LED power relay clicks once",
+        "June's breathing turns shallow close to microphone",
+        "Echo's pale shoe makes one measured contact with the aisle carpet"
+      ],
+      "continuityCues": [
+        "Echo exactly matches June's face, body, height, and hair",
+        "Echo wears only the pearl-gray high-neck dress and pale shoes",
+        "Echo shows no visible mechanical features",
+        "Distance between June and Echo remains the full central aisle"
+      ],
+      "soulKeyframePrompt": "Vertical 9:16 long-lens over-shoulder shot from original fictional biological singer June Carrow onstage toward her exact humanoid double Echo at the far end of a central theater aisle, same natural light-skinned face, dark eyes, body, height, hairline and shoulder-length dark waves; June wears ivory in soft foreground, Echo wears a pearl-gray high-neck sleeveless dress and pale shoes with perfect posture, empty red seats between them, no machinery, seams, glow, text, logo, or watermark.",
+      "dopMotionPrompt": "Keep Echo hidden in auditorium darkness until the rear LED screen rises slightly in brightness. Reveal her exact matching face without a camera move. Echo takes one measured step and stops; June's breath becomes shallow while the long-distance frame remains patient."
+    },
+    {
+      "id": "opening-night-01-shot-08",
+      "number": 8,
+      "startSeconds": 41,
+      "durationSeconds": 7,
+      "location": "central aisle standoff",
+      "framing": "extreme-close-up",
+      "cameraDirection": "Hard cut between matching extreme close-ups at the same 18-degree angle: June's eye with a trembling lower lid, then Echo's eye held perfectly still. Return to June's tightening jaw without changing screen direction.",
+      "action": "Recognition becomes fear, then defensive anger in June. Echo watches with almost compassionate calm and blinks only after June does. Neither woman speaks. Martin is gone.",
+      "dialogue": [],
+      "audio": [
+        "June's breath catches close and imperfect",
+        "Echo's breathing remains measured at the far end of the room",
+        "A low stage transformer hum bridges every hard cut"
+      ],
+      "continuityCues": [
+        "June and Echo retain identical eye color, brow shape, and skin detail",
+        "June's lower eyelid trembles while Echo's stays still",
+        "No manager appears in the stage wing or auditorium"
+      ],
+      "soulKeyframePrompt": "Vertical 9:16 paired extreme eye close-up for a photoreal thriller: original fictional biological singer June Carrow and exact humanoid double Echo share the same dark eye color, brow, softly angular face and natural light skin texture; June's lower lid trembles and jaw tightens in defensive fear, Echo remains calm with minimal blinking and no visible artificial detail, radical matching composition, no text or watermark.",
+      "dopMotionPrompt": "Use hard cuts between matching 18-degree extreme close-ups without morphing faces. June's stopped breath, delayed focus, eyelid tremor, and tightening jaw show anger covering fear. Echo watches with measured breath and blinks a fraction after June."
+    },
+    {
+      "id": "opening-night-01-shot-09",
+      "number": 9,
+      "startSeconds": 48,
+      "durationSeconds": 6,
+      "location": "stage to central aisle",
+      "framing": "wide",
+      "cameraDirection": "Return to the long vertical aisle composition with June high in foreground onstage and Echo small but centered in the distance. Make a slow compression push that never closes the physical gap.",
+      "action": "June plants both feet and curls her right hand into a fist. Echo raises her own right hand first, opens it, and touches two fingers to her throat. Against June's effort, her fist opens and the same two fingers rise.",
+      "dialogue": [],
+      "audio": [
+        "June's nails release from her palm",
+        "A sub-bass pulse begins beneath the stage hum",
+        "No music and no voice"
+      ],
+      "continuityCues": [
+        "Echo begins every gesture before June",
+        "June's imitation is involuntary and visibly resisted",
+        "The central aisle remains empty between them",
+        "Microphone remains untouched beside June"
+      ],
+      "soulKeyframePrompt": "Vertical 9:16 long-distance duel in the same completely empty theater: original fictional biological singer June Carrow in ivory high in the near stage frame and her exact human-looking humanoid double Echo in pearl gray centered far down the aisle, identical faces, bodies, heights and dark waves; Echo calmly touches two fingers to her throat first while June's resisting hand is pulled into the same pose, chrome microphone beside June, photoreal, no machinery, text, or watermark.",
+      "dopMotionPrompt": "Push slowly without reducing the long physical distance. Echo raises her right hand, opens it, and touches two fingers to her throat with perfect timing. Half a beat later June's clenched fist is forced open and copies the gesture despite visible tension through her arm and fingers."
+    },
+    {
+      "id": "opening-night-01-shot-10",
+      "number": 10,
+      "startSeconds": 54,
+      "durationSeconds": 6,
+      "location": "stage microphone",
+      "framing": "close-up",
+      "cameraDirection": "Track sideways from June's involuntary hand at her throat to her face and the chrome microphone. Keep Echo as a tiny aligned figure deep in the central aisle, then push into June's eyes as her mouth begins to open.",
+      "action": "Echo lowers her hand and silently shapes the first breath of a song. June's hand falls in sync. Her body takes one unwilling step to the microphone, her lungs fill, and panic breaks through her eyes. Cut before sound leaves her mouth.",
+      "dialogue": [],
+      "audio": [
+        "June's shoe crosses onto the microphone mark",
+        "One involuntary inhale fills the close microphone",
+        "Absolute cut to silence before any sung note"
+      ],
+      "continuityCues": [
+        "Echo acts half a beat before June throughout the shot",
+        "June remains biological with imperfect shaking breath",
+        "June never touches the microphone",
+        "No singing begins before the final cut"
+      ],
+      "soulKeyframePrompt": "Vertical 9:16 photoreal close-up of original fictional biological singer June Carrow beside a vintage chrome stage microphone, ivory sleeveless dress, natural skin and dark shoulder-length waves, eyes in involuntary panic as her lips part before a note; exact humanoid double Echo remains a tiny pearl-gray figure aligned far down the empty central aisle, three LED screens dim behind her, amber spotlight and black negative space, no text, logo, or watermark.",
+      "dopMotionPrompt": "Track from June's hand at her throat to her face and the microphone while Echo lowers her hand first in deep background. Pull June one unwilling step forward, let her lungs fill with a shaking involuntary breath, and push into the panic in her eyes. Cut to black before any vocal sound or singing begins."
+    }
+  ],
+  "subtitles": [
+    {
+      "id": "opening-night-01-subtitle-01",
+      "startSeconds": 2.1,
+      "endSeconds": 4.4,
+      "speakerId": "june-carrow",
+      "text": "This is the dressing room?",
+      "position": "lower"
+    },
+    {
+      "id": "opening-night-01-subtitle-02",
+      "startSeconds": 6,
+      "endSeconds": 9.5,
+      "speakerId": "martin-voss",
+      "text": "Eight times your rate. Exclusive. Last live performance.",
+      "position": "lower"
+    },
+    {
+      "id": "opening-night-01-subtitle-03",
+      "startSeconds": 11.2,
+      "endSeconds": 12.4,
+      "speakerId": "june-carrow",
+      "text": "Last?",
+      "position": "lower"
+    }
+  ],
+  "endVote": {
+    "id": "opening-night-vote-01",
+    "question": "How should June answer the double's control?",
+    "options": [
+      {
+        "id": "fight-the-pull",
+        "label": "Fight the pull",
+        "consequence": "June may keep her voice, but resistance could trigger whatever Martin was afraid to name.",
+        "generationDirective": "Have June break the first command through pain and force Echo to reveal why the control system needs a live response."
+      },
+      {
+        "id": "follow-the-motion",
+        "label": "Follow the motion",
+        "consequence": "Playing along gives June time to study Echo while the stage records a successful transfer.",
+        "generationDirective": "Let June mimic Echo deliberately, hiding the moment she regains control and learning which stage cue drives the response."
+      },
+      {
+        "id": "call-out-martin",
+        "label": "Call out Martin",
+        "consequence": "Martin may stop the test, or the label may hear June accuse the only guilty ally she has.",
+        "generationDirective": "Make June use the microphone to call Martin by name before the song, forcing him back into view and exposing his divided loyalties."
+      }
+    ]
+  }
+}

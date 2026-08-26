@@ -2,8 +2,12 @@
 
 Dramatic is an open-source, audience-directed vertical drama platform. Viewers watch short episodes, vote on the next turn, and return to a story whose next installment is generated from the winning choice while a structured series bible protects continuity.
 
-This repository contains the Expo native application, the Vercel-ready web experience and API boundary, provider-neutral contracts, a swappable Higgsfield integration, and four data-driven launch series:
+This repository contains the Expo native application, the Vercel-ready web experience and API boundary, provider-neutral contracts, a swappable Higgsfield integration, and eight data-driven launch series:
 
+- **Opening Night** — a singer meets the flawless replacement already wearing her face.
+- **Crown of Rust** — a salvage diver wakes the last knight of a drowned kingdom.
+- **Midnight Ramen** — a sealed letter connects three sleepless strangers to a missing woman.
+- **Neon Harvest** — a rooftop farmer's impossible seed draws two dangerous visitors.
 - **The Last Alibi** — a locked-courthouse murder mystery.
 - **Borrowed Vows** — a fake-wedding romance with a very real license.
 - **The Heir Upstairs** — a hidden-heir romance inside a threatened apartment building.
@@ -82,7 +86,7 @@ Copy `.env.example` and set values per environment:
 | `HIGGSFIELD_API_BASE_URL` | server | Exact Higgsfield origin; use `https://dev-api.higgsfield.com` for development keys. |
 | `HIGGSFIELD_MAX_USD` | server | Maximum summed provider estimate allowed before pilot submission; defaults to `5`. |
 
-The server-only package binds the official `@higgsfield/client/v2` SDK behind Dramatic's provider-neutral generation interface. The checked-in pilot generator requests a 720p, 9:16 Soul v2 Standard keyframe, then maps the selected DoP Lite, Turbo, or Standard tier to its documented `prompt` plus `image_url` input. Future model additions remain caller-supplied so an OpenAPI-generated operation map can replace them without changing mobile or content contracts.
+The server-only package binds the official `@higgsfield/client/v2` SDK behind Dramatic's provider-neutral generation interface. The checked-in pilot generator requests a 720p, 9:16 Soul v2 Standard keyframe, then maps the selected DoP or Seedance Fast tier to its documented input. Future model additions remain caller-supplied so an OpenAPI-generated operation map can replace them without changing mobile or content contracts.
 
 ## Content workflow
 
@@ -100,11 +104,22 @@ Put the server-only Higgsfield values in the ignored root `.env.local` or `apps/
 pnpm generate:pilot -- --slug two-rings-at-the-funeral --episode 1
 ```
 
-Use `--poster-only` to stop after key art or `--reuse-poster` to animate an existing local poster. Clips default to `--clip-tier lite`; `turbo` and `standard` are also allowlisted. Each tier keeps a separate request, estimate, and ambiguity checkpoint (`clip`, `clip-turbo`, or `clip-standard`), while the latest successfully downloaded tier becomes the published clip. Run `pnpm sync:content` after adding an asset with a new extension.
+Use `--poster-only` to stop after key art or `--reuse-poster` to animate an existing local poster. Clips default to `--clip-tier lite`; `turbo`, `standard`, and `seedance-fast` are also allowlisted. Each tier keeps its own endpoint/input-bound request, estimate, ambiguity checkpoint, and durable variant file. A completed tier never replaces the active app clip automatically. DoP tiers use the first shot's five-second motion prompt; the ten-second `pilotMotionPrompt` is reserved for Seedance Fast.
+
+Generate a cost-capped ten-second vertical Seedance draft without changing the active app clip:
+
+```bash
+pnpm generate:pilot -- --slug two-rings-at-the-funeral --episode 1 \
+  --reuse-poster --clip-tier seedance-fast
+```
+
+Add `--publish-clip` to promote that tier when no different active clip exists. Replacing different published bytes requires both `--publish-clip --replace-published-clip`, so a late result from an older tier cannot silently win.
+
+Run `pnpm sync:content` after adding an asset with a new extension.
 
 Use a production credential from [Higgsfield Cloud](https://cloud.higgsfield.ai/api-keys). Credentials created in Higgsfield's development dashboard are not accepted by the production API.
 
-Generation POSTs do not support provider-side idempotency. Before dispatch, the tool writes a private intent under `.dramatic/generation` and takes a per-episode lock. If a process dies or the submission response is ambiguous, later runs refuse to submit that operation again. Recover a provider request using the original response values:
+Generation POSTs do not support provider-side idempotency. Before dispatch, the tool writes a private endpoint/input fingerprint under `.dramatic/generation` and takes a per-episode lock. Accepted handles and manual recovery must match that exact binding. If a process dies or the submission response is ambiguous, later runs refuse to submit that operation again. Recover a provider request using the original response values and the same script, poster bytes, and clip tier:
 
 ```bash
 pnpm generate:pilot -- --slug two-rings-at-the-funeral --episode 1 \
@@ -114,7 +129,7 @@ pnpm generate:pilot -- --slug two-rings-at-the-funeral --episode 1 \
   --cancel-url https://platform.higgsfield.ai/requests/00000000-0000-4000-8000-000000000000/cancel
 ```
 
-Only when the provider account confirms that no request was created, clear the guard with `--confirm-not-submitted poster` or `--confirm-not-submitted clip`. A stale `.lock` file is never removed automatically; inspect the recorded PID and remove it only after confirming that process is gone.
+Only when the provider account confirms that no request was created, clear the guard with `--confirm-not-submitted poster` or the selected clip operation (`clip`, `clip-turbo`, `clip-standard`, or `clip-seedance-fast`). A legacy poster handle can be upgraded only when its saved endpoint and exact provider-input estimate still match; other unbound legacy handles are retained for audit but refused for automatic resume. A stale `.lock` file is never removed automatically; inspect the recorded PID and remove it only after confirming that process is gone.
 
 ## Deployment
 
@@ -131,8 +146,10 @@ Run native commands from `apps/mobile` or use the root filter scripts. Configure
 ## Current boundaries
 
 - Mobile experience state is functional and persistent on-device; cross-device accounts, aggregate vote tallies, and server-driven publishing still require an application backend and database.
-- The official Higgsfield SDK boundary and cost-capped pilot generator are implemented. The checked-in **Two Rings at the Funeral** visual is a real Soul 2 development-API output; deployable generation still requires credentials and credits for the selected environment.
-- The player uses a generated MP4 when one is present and an explicit production-state fallback otherwise. The current pilot tool proves one keyframe-to-DoP clip; full multi-shot assembly, dialogue, and publishing remain worker responsibilities.
+- The official Higgsfield SDK boundary and cost-capped pilot generator are implemented. **Two Rings at the Funeral** includes a real Soul 2 poster and a real 10-second Seedance Fast development-API teaser generated through this repository.
+- Five stories currently have playable media: the 30-second **Opening Night** cold open, the new vertical **Two Rings at the Funeral** teaser, and three six-second Higgsfield teasers imported from the user's OpenBinge media. The remaining stories show an explicit coming-soon state.
+- Preview length, caption availability, and video fit are declared in content metadata. The app labels cold opens and teasers honestly; it does not present them as completed 60–90 second episodes or advertise captions that are not present.
+- The current generator proves one keyframe-to-video operation with cost checkpoints and durable downloads. Full multi-shot assembly, dialogue, subtitles, sound design, QC, and daily publishing remain worker responsibilities.
 - Wallet and paywall surfaces are honest previews until RevenueCat/Stripe products, entitlements, and webhooks are configured; they do not simulate a successful purchase.
 - Moderation, durable object storage/CDN, analytics, rate limiting, and production aggregate voting still need deployed providers.
 

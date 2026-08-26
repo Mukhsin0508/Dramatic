@@ -1,47 +1,58 @@
-import { createContext, ReactNode, useContext, useMemo, useState } from 'react';
-
-export type CaptionSize = 'Small' | 'Standard' | 'Large';
-export type PlaybackQuality = 'Automatic' | 'Data saver' | 'Highest available';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
 type Preferences = {
+  hydrated: boolean;
   autoplay: boolean;
-  captions: boolean;
-  captionSize: CaptionSize;
-  dataSaver: boolean;
-  episodeAlerts: boolean;
-  playbackQuality: PlaybackQuality;
   setAutoplay: (value: boolean) => void;
-  setCaptions: (value: boolean) => void;
-  setCaptionSize: (value: CaptionSize) => void;
-  setDataSaver: (value: boolean) => void;
-  setEpisodeAlerts: (value: boolean) => void;
-  setPlaybackQuality: (value: PlaybackQuality) => void;
 };
 
+type PersistedPreferences = {
+  version: 1;
+  autoplay: boolean;
+};
+
+const STORAGE_KEY = '@dramatic/preferences/v1';
 const PreferencesContext = createContext<Preferences | null>(null);
 
 export function PreferencesProvider({ children }: { children: ReactNode }) {
-  const [autoplay, setAutoplay] = useState(true);
-  const [captions, setCaptions] = useState(true);
-  const [captionSize, setCaptionSize] = useState<CaptionSize>('Standard');
-  const [dataSaver, setDataSaver] = useState(false);
-  const [episodeAlerts, setEpisodeAlerts] = useState(true);
-  const [playbackQuality, setPlaybackQuality] = useState<PlaybackQuality>('Automatic');
+  const [hydrated, setHydrated] = useState(false);
+  const [autoplay, setAutoplayState] = useState(true);
+  const persistenceQueue = useRef(Promise.resolve());
 
+  useEffect(() => {
+    let active = true;
+    void AsyncStorage.getItem(STORAGE_KEY)
+      .then(value => {
+        if (!active || !value) return;
+        const saved = JSON.parse(value) as Partial<PersistedPreferences>;
+        if (saved.version !== 1) return;
+        if (typeof saved.autoplay === 'boolean') setAutoplayState(saved.autoplay);
+      })
+      .catch(() => {
+        // A damaged preference should not keep the app from opening.
+      })
+      .finally(() => {
+        if (active) setHydrated(true);
+      });
+    return () => { active = false; };
+  }, []);
+
+  useEffect(() => {
+    if (!hydrated) return;
+    const value: PersistedPreferences = { version: 1, autoplay };
+    persistenceQueue.current = persistenceQueue.current
+      .catch(() => undefined)
+      .then(() => AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(value)))
+      .catch(() => undefined);
+  }, [autoplay, hydrated]);
+
+  const setAutoplay = useCallback((value: boolean) => setAutoplayState(value), []);
   const value = useMemo(() => ({
+    hydrated,
     autoplay,
-    captions,
-    captionSize,
-    dataSaver,
-    episodeAlerts,
-    playbackQuality,
     setAutoplay,
-    setCaptions,
-    setCaptionSize,
-    setDataSaver,
-    setEpisodeAlerts,
-    setPlaybackQuality,
-  }), [autoplay, captions, captionSize, dataSaver, episodeAlerts, playbackQuality]);
+  }), [autoplay, hydrated, setAutoplay]);
 
   return <PreferencesContext.Provider value={value}>{children}</PreferencesContext.Provider>;
 }

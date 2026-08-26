@@ -269,6 +269,29 @@
     url("/media/the-last-alibi-hero.jpg") center / cover;
 }
 
+.episodeFrame::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 7, 10, 0.24) 12%, rgba(8, 7, 10, 0.05) 43%, rgba(8, 7, 10, 0.93) 86%);
+  content: "";
+  pointer-events: none;
+}
+
+.heroVideo {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+}
+
+.episodeFrame > :not(.heroVideo) {
+  position: relative;
+  z-index: 2;
+}
+
 .frameTop {
   display: flex;
   align-items: center;
@@ -367,6 +390,21 @@
   display: block;
   margin-bottom: 9px;
   font-size: 12px;
+}
+
+.voteOptions {
+  display: grid;
+  gap: 6px;
+}
+
+.voteOptions span {
+  padding: 7px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 9px;
+  color: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 9px;
+  font-weight: 700;
 }
 
 .voteTrack {
@@ -702,17 +740,10 @@
   margin-top: 21px;
   padding-top: 17px;
   align-items: center;
-  justify-content: space-between;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   color: white;
   font-size: 12px;
   font-weight: 700;
-}
-
-.watchLabel b {
-  color: var(--brand);
-  font-size: 17px;
-  font-weight: 400;
 }
 
 .mediaNote {
@@ -1432,5 +1463,113 @@
 
   .storyCard:hover .storyImage {
     transform: none;
+  }
+}
+
+.walkthroughSection {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: min(1180px, calc(100% - 48px));
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px 0 150px;
+  grid-template-columns: minmax(300px, 0.72fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 92px;
+}
+
+.walkthroughStage {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.walkthroughGlow {
+  position: absolute;
+  width: 380px;
+  height: 480px;
+  border-radius: 50%;
+  background: rgba(255, 77, 115, 0.1);
+  filter: blur(85px);
+}
+
+.walkthroughPhone {
+  position: relative;
+  z-index: 2;
+  width: 302px;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 49px;
+  background: #141116;
+  box-shadow:
+    0 42px 100px rgba(0, 0, 0, 0.55),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.04);
+  transform: rotate(-2deg);
+}
+
+.walkthroughVideo {
+  display: block;
+  width: 100%;
+  border-radius: 41px;
+  aspect-ratio: 402 / 874;
+  background: #09080a;
+  object-fit: cover;
+}
+
+.walkthroughCopy h2 {
+  margin: 0 0 26px;
+  color: var(--ink);
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(3rem, 5vw, 5.2rem);
+  font-weight: 520;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.walkthroughCopy > p:not(.sectionKicker) {
+  max-width: 46ch;
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 15px;
+  line-height: 1.72;
+}
+
+.walkthroughList {
+  display: grid;
+  margin: 34px 0 0;
+  padding: 0;
+  gap: 14px;
+  list-style: none;
+}
+
+.walkthroughList li {
+  display: grid;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  gap: 3px;
+}
+
+.walkthroughList strong {
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.walkthroughList span {
+  color: var(--ink-muted);
+  font-size: 13px;
+}
+
+@media (max-width: 960px) {
+  .walkthroughSection {
+    padding: 10px 0 110px;
+    grid-template-columns: 1fr;
+    gap: 52px;
+  }
+
+  .walkthroughStage {
+    order: 2;
   }
 }

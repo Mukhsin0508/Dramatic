@@ -8,6 +8,7 @@ import { AppText, Header, LoadingBlock, Screen } from '@/components/primitives';
 import { colors, radius, space } from '@/constants/tokens';
 import { useExperience } from '@/context/experience';
 import { STORIES, Story } from '@/data/stories';
+import { mediaAvailabilityLabel, mediaEpisodeEyebrow, mediaLabel, mediaLabelTitle, mediaProgressKey } from '@/lib/story-media';
 
 type Collection = 'all' | 'saved' | 'history';
 
@@ -23,20 +24,20 @@ export default function LibraryScreen() {
     const normalizedQuery = query.trim().toLocaleLowerCase();
     return STORIES.filter(story => {
       if (collection === 'saved' && !savedIds.has(story.id)) return false;
-      if (collection === 'history' && !watchProgress[story.episodeId]) return false;
+      if (collection === 'history' && !watchProgress[mediaProgressKey(story)]) return false;
       if (genre !== 'All genres' && !story.genres.split(' · ').includes(genre)) return false;
       if (!normalizedQuery) return true;
       return [story.title, story.episodeTitle, story.synopsis, story.genres]
         .some(value => value.toLocaleLowerCase().includes(normalizedQuery));
     }).sort((first, second) => collection === 'history'
-      ? (watchProgress[second.episodeId]?.updatedAt ?? 0) - (watchProgress[first.episodeId]?.updatedAt ?? 0)
+      ? (watchProgress[mediaProgressKey(second)]?.updatedAt ?? 0) - (watchProgress[mediaProgressKey(first)]?.updatedAt ?? 0)
       : 0);
   }, [collection, genre, query, savedIds, watchProgress]);
 
   const continueStory = useMemo(() => STORIES
-    .filter(story => watchProgress[story.episodeId] && !watchProgress[story.episodeId].completed)
-    .sort((first, second) => watchProgress[second.episodeId].updatedAt - watchProgress[first.episodeId].updatedAt)[0], [watchProgress]);
-  const historyCount = STORIES.filter(story => watchProgress[story.episodeId]).length;
+    .filter(story => watchProgress[mediaProgressKey(story)] && !watchProgress[mediaProgressKey(story)].completed)
+    .sort((first, second) => watchProgress[mediaProgressKey(second)].updatedAt - watchProgress[mediaProgressKey(first)].updatedAt)[0], [watchProgress]);
+  const historyCount = STORIES.filter(story => watchProgress[mediaProgressKey(story)]).length;
 
   const isDefaultView = collection === 'all' && genre === 'All genres' && query.trim() === '';
   const clearFilters = () => { setCollection('all'); setGenre('All genres'); setQuery(''); };
@@ -66,8 +67,8 @@ export default function LibraryScreen() {
       </View>
 
       {isDefaultView && continueStory ? <>
-        <View style={styles.sectionTitle}><AppText variant="title2">Continue watching</AppText><AppText variant="caption" color={colors.textMuted}>Episode {continueStory.episode}</AppText></View>
-        <ContinueCard story={continueStory} progress={watchProgress[continueStory.episodeId]} />
+        <View style={styles.sectionTitle}><AppText variant="title2">Continue watching</AppText><AppText variant="caption" color={colors.textMuted}>{mediaLabelTitle(continueStory)}</AppText></View>
+        <ContinueCard story={continueStory} progress={watchProgress[mediaProgressKey(continueStory)]} />
       </> : null}
 
       <View accessibilityRole="tablist" accessibilityLabel="Library collections" style={styles.segment}>
@@ -92,7 +93,7 @@ export default function LibraryScreen() {
       </View>
 
       {results.length ? <View style={styles.grid}>
-        {results.map(story => <PosterCard key={story.id} story={story} saved={savedIds.has(story.id)} progress={watchProgress[story.episodeId]} />)}
+        {results.map(story => <PosterCard key={story.id} story={story} saved={savedIds.has(story.id)} progress={watchProgress[mediaProgressKey(story)]} />)}
       </View> : <EmptyResults onClear={clearFilters} />}
       </>}
     </Screen>
@@ -101,14 +102,15 @@ export default function LibraryScreen() {
 
 function ContinueCard({ story, progress }: { story: Story; progress: { positionSeconds: number; durationSeconds: number } }) {
   const watched = progress.durationSeconds > 0 ? Math.min(progress.positionSeconds / progress.durationSeconds, 1) : 0;
+  const watchedPercent = Math.round(watched * 100);
   return (
-    <Pressable accessibilityRole="button" accessibilityLabel={`Continue ${story.title}, episode ${story.episode}`} onPress={() => router.push({ pathname: '/(tabs)/watch', params: { story: story.id } })} style={({ pressed }) => [styles.continueCard, pressed && styles.pressed]}>
+    <Pressable accessibilityRole="button" accessibilityLabel={`Continue ${story.title}, ${mediaLabelTitle(story)}`} onPress={() => router.push({ pathname: '/(tabs)/watch', params: { story: story.id } })} style={({ pressed }) => [styles.continueCard, pressed && styles.pressed]}>
       <Image source={story.poster} style={styles.continueImage} contentFit="cover" />
       <View style={styles.continueCopy}>
-        <AppText variant="caption" color={colors.brand} style={styles.upper}>Episode {story.episode} of {story.episodeCount}</AppText>
+        <AppText variant="caption" color={colors.brand} style={styles.upper}>{mediaEpisodeEyebrow(story)}</AppText>
         <AppText variant="title2" numberOfLines={1}>{story.title}</AppText>
         <AppText variant="caption" color={colors.textSecondary} numberOfLines={1}>{story.episodeTitle}</AppText>
-        <View accessibilityRole="progressbar" accessibilityLabel={`${Math.round(watched * 100)} percent watched`} style={styles.progressTrack}><View style={[styles.progress, { width: `${watched * 100}%` }]} /></View>
+        <View accessibilityRole="progressbar" accessibilityLabel={`${watchedPercent} percent of ${mediaLabel(story)} watched`} accessibilityValue={{ min: 0, max: 100, now: watchedPercent }} style={styles.progressTrack}><View style={[styles.progress, { width: `${watched * 100}%` }]} /></View>
       </View>
       <View style={styles.play}><SymbolView name="play.fill" size={18} tintColor={colors.textInverse} /></View>
     </Pressable>
@@ -125,12 +127,15 @@ function GenreChip({ label, selected, onPress }: { label: string; selected: bool
 
 function PosterCard({ story, saved, progress }: { story: Story; saved: boolean; progress?: { positionSeconds: number; durationSeconds: number; completed: boolean } }) {
   const watched = progress && progress.durationSeconds > 0 ? Math.min(progress.positionSeconds / progress.durationSeconds, 1) : 0;
+  const mediaStatus = !story.videoSource
+    ? mediaAvailabilityLabel(story)
+    : `${mediaLabelTitle(story)} · ${progress?.completed ? 'Watched' : watched > 0 ? `${Math.round(watched * 100)}% watched` : 'Not started'}`;
   return (
-    <Pressable accessibilityRole="button" accessibilityLabel={`${story.title}, ${story.episodeCount} episodes${saved ? ', saved' : ''}`} onPress={() => router.push({ pathname: '/story/[id]', params: { id: story.id } })} style={({ pressed }) => [styles.posterCard, pressed && styles.pressed]}>
+    <Pressable accessibilityRole="button" accessibilityLabel={`${story.title}, ${mediaAvailabilityLabel(story)}, ${story.episodeCount} episodes planned${saved ? ', saved' : ''}`} onPress={() => router.push({ pathname: '/story/[id]', params: { id: story.id } })} style={({ pressed }) => [styles.posterCard, pressed && styles.pressed]}>
       <Image source={story.poster} style={styles.posterImage} contentFit="cover" />
       {saved ? <View accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={styles.savedBadge}><SymbolView name="bookmark.fill" size={13} tintColor={colors.text} /></View> : null}
       <AppText variant="label" numberOfLines={1} style={styles.posterTitle}>{story.title}</AppText>
-      <AppText variant="caption" color={colors.textMuted}>Episode {story.episode} · {progress?.completed ? 'Watched' : watched > 0 ? `${Math.round(watched * 100)}% watched` : 'Not started'}</AppText>
+      <AppText variant="caption" color={colors.textMuted}>{mediaStatus}</AppText>
     </Pressable>
   );
 }

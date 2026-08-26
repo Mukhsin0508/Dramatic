@@ -114,6 +114,7 @@ export default async function Home() {
         <div className={styles.navItems}>
           <a href="#stories">Stories</a>
           <a href="#how">How it works</a>
+          <a href="#walkthrough">Inside the app</a>
           <a
             className={styles.navLink}
             href={githubUrl}
@@ -163,31 +164,39 @@ export default async function Home() {
           <div className={styles.glow} />
           <div className={styles.phone}>
             <div className={styles.episodeFrame}>
+              <video
+                className={styles.heroVideo}
+                autoPlay
+                muted
+                loop
+                playsInline
+                poster="/media/two-rings-at-the-funeral.png"
+                aria-label="Two Rings at the Funeral generated video teaser"
+              >
+                <source src="/media/two-rings-at-the-funeral-01.mp4" type="video/mp4" />
+              </video>
               <div className={styles.frameTop}>
-                <span className={styles.livePill}>LIVE STORY</span>
+                <span className={styles.livePill}>REAL API OUTPUT</span>
                 <span className={styles.soundButton} aria-hidden="true">
-                  ◖))
+                  9:16
                 </span>
               </div>
               <div className={styles.caption}>
-                “Then explain why your name is on the deed.”
+                10-second generated scene
               </div>
               <div className={styles.storyMeta}>
-                <span>THE LAST ALIBI</span>
-                <strong>Episode 14 · The signature</strong>
+                <span>TWO RINGS AT THE FUNERAL</span>
+                <strong>Teaser · The Other Widow</strong>
               </div>
               <div className={styles.voteCard}>
                 <div>
                   <span>Your call</span>
-                  <small>18,240 people are choosing</small>
+                  <small>Voting is open</small>
                 </div>
-                <strong>Tell him the truth</strong>
-                <div className={styles.voteTrack}>
-                  <span />
-                </div>
-                <div className={styles.voteSplit}>
-                  <span>62%</span>
-                  <span>38%</span>
+                <strong>Which lead should the widows follow first?</strong>
+                <div className={styles.voteOptions}>
+                  <span>Open the coffin</span>
+                  <span>Trace the transfer</span>
                 </div>
               </div>
             </div>
@@ -195,8 +204,8 @@ export default async function Home() {
           <div className={styles.writingNote}>
             <span className={styles.penIcon}>✦</span>
             <div>
-              <strong>Episode 15 is being written</strong>
-              <span>8,412 chose the betrayal</span>
+              <strong>Generated and ready to play</strong>
+              <span>$0.21 estimate · 10 sec · vertical</span>
             </div>
           </div>
         </div>
@@ -237,13 +246,61 @@ export default async function Home() {
         </div>
       </section>
 
+      <section
+        className={styles.walkthroughSection}
+        id="walkthrough"
+        aria-label="Recorded walkthrough of the Dramatic mobile app"
+      >
+        <div className={styles.walkthroughStage}>
+          <div className={styles.walkthroughGlow} />
+          <div className={styles.walkthroughPhone}>
+            <video
+              className={styles.walkthroughVideo}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster="/media/app-walkthrough-poster.jpg"
+              aria-label="Screen recording of the Dramatic iOS app playing generated episodes and casting a story vote"
+            >
+              <source src="/media/app-walkthrough.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+        <div className={styles.walkthroughCopy}>
+          <p className={styles.sectionKicker}>Straight from the simulator</p>
+          <h2>The real app, playing real scenes.</h2>
+          <p>
+            One uncut screen recording of the current build. The watch feed
+            autoplays each generated cold open, landscape scenes float on an
+            ambient blur while portrait teasers go full-bleed, and every story
+            ends on a choice.
+          </p>
+          <ul className={styles.walkthroughList}>
+            <li>
+              <strong>A feed that plays itself</strong>
+              <span>Swipe between stories; the visible episode starts on its own</span>
+            </li>
+            <li>
+              <strong>Cinematic letterbox</strong>
+              <span>Widescreen scenes sit on a blurred echo of their own key art</span>
+            </li>
+            <li>
+              <strong>Your call, saved</strong>
+              <span>Votes persist on device and point at tomorrow&apos;s episode</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <section className={styles.storiesSection} id="stories">
         <div className={styles.storiesHeading}>
           <div>
             <p className={styles.sectionKicker}>Tonight’s unfinished stories</p>
             <h2>Pick your next bad decision.</h2>
           </div>
-          <p>Four worlds. New cliffhangers daily. None of them know how they end yet.</p>
+          <p>Eight worlds. Five playable previews. None of them know how they end yet.</p>
         </div>
         <div className={styles.storyGrid}>
           {stories.map((story, index) => (
@@ -268,15 +325,15 @@ export default async function Home() {
                 <h3>{story.title}</h3>
                 <p>{story.hook}</p>
                 <span className={styles.watchLabel}>
-                  Series preview <b aria-hidden="true">9:16</b>
+                  {story.mediaLabel} · {story.runtimeLabel}
                 </span>
               </div>
             </article>
           ))}
         </div>
         <p className={styles.mediaNote}>
-          Original launch artwork generated for this project. Final episodes will be
-          reviewed before release.
+          Five playable media previews are checked in. Cold opens and teasers are
+          labeled by their real runtime; full episodes still require human review.
         </p>
       </section>
 
@@ -285,10 +342,10 @@ export default async function Home() {
           <p className={styles.sectionKicker}>The nightly engine</p>
           <h2>The next episode doesn’t exist yet.</h2>
           <p>
-            When voting closes, Dramatic turns the winning choice into a script,
-            shot plan, character-consistent scenes, voice, captions, and a finished
-            vertical episode. One provider boundary keeps the generation models
-            swappable as the stack evolves.
+            The production plan carries a winning choice from script to shot list,
+            character-consistent scenes, voice, captions, and final review. The
+            checked-in generator already handles cost checks, submission, polling,
+            durable downloads, and sanitized receipts through one swappable boundary.
           </p>
           <div className={styles.techPills} aria-label="Technology choices">
             <span>Expo + React Native</span>
@@ -297,37 +354,37 @@ export default async function Home() {
           </div>
         </div>
 
-        <div className={styles.pipelineCard} aria-label="Example episode generation progress">
+        <div className={styles.pipelineCard} aria-label="Completed Higgsfield generation receipt">
           <div className={styles.pipelineHeader}>
             <div>
-              <span>THE LAST ALIBI · EP 15</span>
-              <strong>The betrayal</strong>
+              <span>TWO RINGS AT THE FUNERAL · TEASER 01</span>
+              <strong>The Other Widow</strong>
             </div>
             <span className={styles.renderingBadge}>
-              <i /> Rendering
+              <i /> Complete
             </span>
           </div>
           <div className={styles.pipelinePreview}>
             <Image
-              src="/media/the-last-alibi.png"
-              alt="The Last Alibi generation preview"
+              src="/media/two-rings-at-the-funeral.png"
+              alt="Two Rings at the Funeral generated keyframe"
               fill
               sizes="(max-width: 900px) 88vw, 520px"
               className={styles.pipelineImage}
             />
-            <div className={styles.frameCounter}>SHOT 09 / 14</div>
-            <div className={styles.subtitlePreview}>I signed it before I knew who you were.</div>
+            <div className={styles.frameCounter}>10 SEC · 9:16</div>
+            <div className={styles.subtitlePreview}>One coffin. Two wives. No body.</div>
           </div>
           <ol className={styles.pipelineSteps}>
-            <li className={styles.done}><span>✓</span><div><strong>Vote locked</strong><small>8,412 chose the betrayal</small></div></li>
-            <li className={styles.done}><span>✓</span><div><strong>Script + shot list</strong><small>14 shots · 87 seconds</small></div></li>
-            <li className={styles.active}><span>09</span><div><strong>Scenes rendering</strong><small>Character references attached</small></div></li>
-            <li><span>04</span><div><strong>Voice, captions + QC</strong><small>Queued for review</small></div></li>
+            <li className={styles.done}><span>✓</span><div><strong>Cost checked</strong><small>Estimated before submission</small></div></li>
+            <li className={styles.done}><span>✓</span><div><strong>Prompt + reference locked</strong><small>Three timed thriller blocks</small></div></li>
+            <li className={styles.done}><span>✓</span><div><strong>Video generated</strong><small>720p vertical MP4 downloaded</small></div></li>
+            <li className={styles.done}><span>✓</span><div><strong>Integrity logged</strong><small>SHA-256 + sanitized public receipt</small></div></li>
           </ol>
           <div className={styles.pipelineFooter}>
-            <span><small>Preview cost</small><strong>$18.42</strong></span>
-            <span><small>Elapsed</small><strong>07:36</strong></span>
-            <span><small>Ready by</small><strong>8:00 AM</strong></span>
+            <span><small>Est. cost</small><strong>$0.21</strong></span>
+            <span><small>Generation</small><strong>01:24</strong></span>
+            <span><small>Output</small><strong>8.4 MB</strong></span>
           </div>
         </div>
       </section>

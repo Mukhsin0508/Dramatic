@@ -57,6 +57,7 @@ export const ProductionScriptSchema = z.object({
   aspectRatio: z.literal("9:16"),
   targetDurationSeconds: z.number().min(60).max(90),
   logline: z.string().min(20).max(300),
+  pilotMotionPrompt: z.string().min(80).max(8_000).optional(),
   continuity: z.object({
     location: z.string().min(20).max(500),
     timeAndWeather: z.string().min(10).max(300),

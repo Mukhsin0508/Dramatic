@@ -10,6 +10,7 @@ import { colors, radius, space } from '@/constants/tokens';
 import { useExperience } from '@/context/experience';
 import { STORIES } from '@/data/stories';
 import { haptics } from '@/lib/haptics';
+import { mediaLabel, mediaProgressKey } from '@/lib/story-media';
 
 export default function StoryDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -30,18 +31,24 @@ export default function StoryDetailScreen() {
   }
 
   const saved = experience.savedIds.has(story.id);
-  const progress = experience.watchProgress[story.episodeId];
+  const progress = experience.watchProgress[mediaProgressKey(story)];
+  const isColdOpen = story.mediaKind === 'cold-open';
+  const isTeaser = story.mediaKind === 'teaser';
+  const isPreview = isColdOpen || isTeaser;
+  const playableLabel = mediaLabel(story);
   const watchLabel = !story.videoSource
     ? `Open episode ${story.episode}`
     : progress?.completed
-      ? `Watch episode ${story.episode} again`
+      ? `Watch ${playableLabel} again`
       : progress?.positionSeconds
-        ? `Resume episode ${story.episode}`
-        : `Watch episode ${story.episode}`;
+        ? `Resume ${playableLabel}`
+        : `Watch ${playableLabel}`;
   const openEpisode = () => router.replace({ pathname: '/(tabs)/watch', params: { story: story.id } });
   const shareStory = () => {
     void Share.share({
-      message: `${story.title} on Dramatic — help choose what happens next. https://github.com/Mukhsin0508/Dramatic`,
+      message: story.videoSource
+        ? `${story.title} on Dramatic — watch the ${playableLabel} and help choose what happens next. https://github.com/Mukhsin0508/Dramatic`
+        : `${story.title} on Dramatic — explore the story and help choose what happens next. https://github.com/Mukhsin0508/Dramatic`,
     });
   };
   const toggleSaved = () => {
@@ -74,7 +81,7 @@ export default function StoryDetailScreen() {
         <View style={styles.content}>
           <AppText variant="caption" color={colors.brand} style={styles.upper}>{story.genres}</AppText>
           <AppText variant="display">{story.title}</AppText>
-          <AppText color={colors.textSecondary}>{story.episodeCount} episodes · A new episode every day</AppText>
+          <AppText color={colors.textSecondary}>{story.episodeCount} episodes planned · Audience-directed story</AppText>
 
           <View style={styles.actions}>
             <View style={styles.grow}>
@@ -95,29 +102,29 @@ export default function StoryDetailScreen() {
           <AppText color={colors.textSecondary}>{story.description}</AppText>
 
           <View style={styles.meta}>
-            <Meta label="Format" value="60–90 sec" />
+            <Meta label="Format" value={story.runtimeLabel} />
             <Meta label="Language" value="English" />
-            <Meta label="Captions" value="Available" />
+            <Meta label="Captions" value={story.captionsAvailable ? 'Available' : story.videoSource ? 'Not yet' : 'On release'} />
           </View>
 
           <View style={styles.notice}>
             <SymbolView name="checkmark.seal.fill" size={19} tintColor={colors.accent} />
             <AppText variant="caption" color={colors.textSecondary} style={styles.grow}>
-              Created with generative tools and reviewed before release.
+              Made with generative tools, then reviewed before release.
             </AppText>
           </View>
 
-          <AppText variant="title2">Latest episode</AppText>
+          <AppText variant="title2">{isPreview ? 'Now playing' : 'Latest episode'}</AppText>
           <Pressable
             accessibilityRole="button"
-            accessibilityLabel={`${story.locked ? 'Open unlock options for' : 'Open'} episode ${story.episode}, ${story.episodeTitle}`}
+            accessibilityLabel={`${story.locked ? 'Open unlock options for' : 'Open'} ${playableLabel}, ${story.episodeTitle}`}
             onPress={openEpisode}
             style={({ pressed }) => [styles.episode, pressed && styles.pressed]}
           >
             <View style={styles.epNumber}><AppText variant="label">{story.episode}</AppText></View>
             <View style={styles.grow}>
               <AppText variant="label">{story.episodeTitle}</AppText>
-              <AppText variant="caption" color={colors.textMuted}>{story.locked ? 'View unlock options' : !story.videoSource ? 'Video in production · choices open' : progress?.completed ? 'Watch again' : progress?.positionSeconds ? 'Continue watching' : 'Watch now'}</AppText>
+              <AppText variant="caption" color={colors.textMuted}>{story.locked ? 'View unlock options' : !story.videoSource ? 'Coming soon · voting open' : isPreview ? progress?.completed ? `Play the ${playableLabel} again` : progress?.positionSeconds ? `Continue the ${playableLabel}` : story.runtimeLabel : progress?.completed ? 'Watch again' : progress?.positionSeconds ? 'Continue watching' : 'Watch now'}</AppText>
             </View>
             <SymbolView name={story.locked ? 'lock.fill' : 'play.circle.fill'} size={story.locked ? 16 : 25} tintColor={story.locked ? colors.textMuted : colors.text} />
           </Pressable>

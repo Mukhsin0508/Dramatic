@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "id": "midnight-ramen",
+  "slug": "midnight-ramen",
+  "title": "Midnight Ramen",
+  "tagline": "Open from 11pm until the last story ends.",
+  "logline": "At a nine-seat ramen counter for people who cannot sleep, a quiet chef discovers that three strangers' unfinished stories all lead to the daughter who vanished from his life.",
+  "synopsis": "Chef Kenji Watanabe opens his tiny Tokyo counter at eleven and closes only after the last customer tells the truth keeping them awake. Aiko Mori, an exhausted paramedic, becomes a reluctant regular after finding a sealed letter in a patient's coat. Ren Ito, a bicycle courier with a musician's ear, recognizes the handwriting as that of Kenji's estranged daughter Emi. Each night brings a new bowl and a self-contained human dilemma, but the same red paper crane keeps appearing beside people Emi once helped. Audience choices decide which customer speaks first, which secret leaves the shop, and whether Kenji follows the trail or keeps serving from behind the counter.",
+  "genres": ["human drama", "comfort mystery", "ensemble anthology"],
+  "maturityRating": "teen",
+  "language": "en",
+  "format": {
+    "aspectRatio": "9:16",
+    "targetEpisodeSeconds": 70,
+    "plannedEpisodes": 24
+  },
+  "world": {
+    "setting": "A nine-seat ramen shop in a narrow Tokyo back alley, with a rain-streaked window, one red lantern, an open kitchen, and blue night streets beyond the sliding door.",
+    "period": "present day",
+    "rules": [
+      "Kenji never asks why a customer is awake until they have tasted the broth and chosen to speak.",
+      "Each episode resolves one guest's immediate choice while leaving one small clue connected to Emi's disappearance.",
+      "Nothing said across the counter may leave the shop unless the speaker permits it or another life is in immediate danger.",
+      "Audience votes choose the next act of kindness, not whether a vulnerable customer deserves one."
+    ]
+  },
+  "visualStyle": {
+    "palette": ["#071423", "#24445A", "#8F2D24", "#D68A2C", "#F3DFC0"],
+    "camera": "Patient close-ups follow hands folding letters, chopsticks pausing, and steam crossing tired faces. The narrow counter creates intimate vertical two-shots, with rare street wides reserved for choices that leave the shop.",
+    "lighting": "Warm lantern and stove light wrap the counter in amber while rain and passing signs cast cool blue across the window. The kitchen stays brightest when someone finally tells the truth.",
+    "wardrobe": "Kenji wears a faded navy chef coat and white towel; Aiko arrives in practical emergency-service layers; Ren's courier jacket carries reflective strips and a battered guitar pick at the zipper."
+  },
+  "characters": [
+    {
+      "id": "kenji-watanabe",
+      "name": "Kenji Watanabe",
+      "role": "ramen chef and keeper of the counter",
+      "age": 62,
+      "pronouns": "he/him",
+      "objective": "Give sleepless people one honest place to sit while learning whether his daughter still wants to be found.",
+      "flaw": "He confuses patience with permission to avoid the apology only he can make.",
+      "secret": "Kenji rejected Emi's plan to turn the shop into a night refuge and let her leave believing he cared more about tradition than her.",
+      "visualCues": [
+        "faded navy chef coat with one repaired cuff",
+        "white towel folded precisely at his waist",
+        "round reading glasses used only after closing",
+        "small pause before seasoning a bowl for someone he recognizes"
+      ]
+    },
+    {
+      "id": "aiko-mori",
+      "name": "Aiko Mori",
+      "role": "night-shift paramedic and reluctant messenger",
+      "age": 29,
+      "pronouns": "she/her",
+      "objective": "Deliver the letter found after a failed rescue and stop carrying every patient's unfinished life home with her.",
+      "flaw": "She takes responsibility for outcomes she could never control and refuses rest as if exhaustion were proof of care.",
+      "secret": "Aiko heard the patient name Emi as the ambulance doors closed but omitted it from her report to protect the letter.",
+      "visualCues": [
+        "dark green paramedic jacket over a gray uniform",
+        "sealed cream envelope in a clear evidence sleeve",
+        "rain-dark bob tucked behind one ear",
+        "hands wrapped around hot tea before she can eat"
+      ]
+    },
+    {
+      "id": "ren-ito",
+      "name": "Ren Ito",
+      "role": "bicycle courier and former street musician",
+      "age": 24,
+      "pronouns": "they/them",
+      "objective": "Repay the stranger who kept them alive through one dangerous winter and perform the song they never finished together.",
+      "flaw": "They turn every serious promise into a joke until no one can tell when they are asking for help.",
+      "secret": "Ren saw Emi six weeks ago and agreed not to tell Kenji until she completed one final delivery route.",
+      "visualCues": [
+        "silver courier jacket with blue reflective tape",
+        "red guitar pick fixed to the zipper",
+        "inked route notes across the back of one hand",
+        "easy grin that disappears when Emi is mentioned"
+      ]
+    },
+    {
+      "id": "emi-watanabe",
+      "name": "Emi Watanabe",
+      "role": "Kenji's estranged daughter and unseen night helper",
+      "age": 34,
+      "pronouns": "she/her",
+      "objective": "Build a quiet network for people stranded at night without asking her father to bless the work he once rejected.",
+      "flaw": "She leaves clues instead of having the painful conversations that would let people choose whether to join her.",
+      "secret": "Emi has been paying the shop's overdue lease through anonymous late-night deliveries and plans to transfer it to Kenji's staff.",
+      "visualCues": [
+        "mustard raincoat seen in reflections and old photographs",
+        "red paper crane folded from delivery receipts",
+        "crescent scar beside her right thumb",
+        "voice preserved in short messages over train-station noise"
+      ]
+    }
+  ],
+  "seasonArc": {
+    "premise": "Each guest arrives with one immediate problem that can be met across a bowl, while Aiko and Ren slowly reveal the network Emi built through Tokyo's sleepless hours. Kenji must decide whether to wait for his daughter or continue the work she began without him.",
+    "stakes": "If Kenji exposes Emi's network carelessly, people who rely on its privacy lose their safest route home. If he remains behind the counter, the shop is sold before Emi can return and their last shared place disappears.",
+    "endingTargets": [
+      "Kenji turns the counter into a refuge by choice rather than treating it as a substitute for apologizing to Emi.",
+      "Aiko releases herself from one impossible rescue and accepts care from the regulars she has served in emergencies.",
+      "Ren performs the unfinished song only after telling Kenji the full truth about Emi's last route.",
+      "The final vote decides whether Kenji waits at the shop, follows Emi's route, or leaves the last bowl for her to serve."
+    ]
+  },
+  "episodes": [
+    {
+      "id": "midnight-ramen-01",
+      "number": 1,
+      "title": "The Unopened Letter",
+      "logline": "After losing a patient on the night shift, Aiko brings his sealed letter to Kenji's counter and finds its recipient sitting two stools away.",
+      "storyBeats": [
+        "Aiko enters soaked after midnight and orders the plain broth her patient requested before losing consciousness.",
+        "Kenji recognizes the red paper crane tucked inside the evidence sleeve but says nothing until she eats.",
+        "Ren arrives with a delivery and identifies the handwriting as Emi's without admitting when they last saw her.",
+        "A silent customer at seat nine gives Aiko the exact name written on the sealed envelope."
+      ],
+      "cliffhanger": "The customer says the letter was meant to be opened only if Emi Watanabe was dead.",
+      "generationPrompt": "Create a quiet rain-soaked arrival at a nine-seat ramen counter. Hold on broth, tired hands, the sealed letter, and a red paper crane. Let recognition move through Kenji and Ren without exposition, then reveal the intended recipient at seat nine with one unsettling condition.",
+      "vote": {
+        "id": "midnight-ramen-vote-01",
+        "question": "What should Aiko do with the sealed letter?",
+        "options": [
+          {
+            "id": "open-letter-counter",
+            "label": "Open it together",
+            "consequence": "The truth reaches everyone at once, but the patient loses the privacy he tried to preserve.",
+            "generationDirective": "Open with Aiko breaking the seal at the counter while Kenji asks each witness to choose whether to stay."
+          },
+          {
+            "id": "deliver-letter-private",
+            "label": "Deliver it privately",
+            "consequence": "Aiko honors the message but must follow a stranger into the rain without Kenji's protection.",
+            "generationDirective": "Send Aiko and the customer into the alley with the unopened letter while Kenji and Ren follow at a respectful distance."
+          }
+        ]
+      }
+    },
+    {
+      "id": "midnight-ramen-02",
+      "number": 2,
+      "title": "Seat Nine",
+      "logline": "The chosen delivery reveals a key to Emi's locker, while the stranger at seat nine asks Kenji to feed a son who believes she abandoned him.",
+      "storyBeats": [
+        "The winning path reveals that the letter contains a station-locker key and a list of seven first names.",
+        "The seat-nine customer admits Emi helped her leave an unsafe home and kept her location secret from everyone, including her son.",
+        "Kenji prepares the son's childhood bowl while Aiko questions whether preserving the secret still protects him.",
+        "Ren finds their own name last on the letter's list and quietly pockets the locker key."
+      ],
+      "cliffhanger": "A delivery alert shows someone using Emi's account from a station platform less than ten minutes away.",
+      "generationPrompt": "Honor the prior choice while converging on a station key and seven handwritten names. Keep the customer's family confession intimate across the counter, show Ren concealing the key, and end on a live delivery alert reflected in the rain-black window.",
+      "vote": {
+        "id": "midnight-ramen-vote-02",
+        "question": "Who should follow Emi's live delivery alert?",
+        "options": [
+          {
+            "id": "kenji-follows-alert",
+            "label": "Kenji leaves the shop",
+            "consequence": "He may finally reach Emi, but seat nine loses the one promise that the counter always stays open.",
+            "generationDirective": "Have Kenji hand Aiko his apron and leave the shop for the first time during service to follow the alert."
+          },
+          {
+            "id": "ren-follows-alert",
+            "label": "Ren takes the route",
+            "consequence": "Ren can move quickly, but following the alert forces them to reveal how recently they saw Emi.",
+            "generationDirective": "Send Ren into the blue night on their bicycle while Aiko makes them tell Kenji the truth over an open call."
+          }
+        ]
+      }
+    },
+    {
+      "id": "midnight-ramen-03",
+      "number": 3,
+      "title": "Last Train Broth",
+      "logline": "The chase ends at an empty platform with Emi's phone, and a stranded teenager arrives carrying the same recipe Kenji refused to let his daughter serve.",
+      "storyBeats": [
+        "The selected follower reaches the platform and finds Emi's phone taped beneath a bench, playing train noise on a loop.",
+        "Back at the counter, a stranded teenager orders from a handwritten recipe card marked with Emi's red crane.",
+        "Kenji recognizes the broth as the free night meal he rejected years earlier and cooks it without changing a word.",
+        "Aiko traces the phone's final real call to the shop's landlord on the night the lease was secretly paid."
+      ],
+      "cliffhanger": "The landlord enters before closing and says Emi bought the shop, but named someone else as its new owner.",
+      "generationPrompt": "Crosscut an empty blue station platform with the warm ramen counter. Use Emi's looping phone, a handwritten recipe, and Kenji cooking in silence to connect the spaces, then bring the landlord through the sliding door with news that changes who owns the shop.",
+      "vote": {
+        "id": "midnight-ramen-vote-03",
+        "question": "Who should read Emi's ownership papers first?",
+        "options": [
+          {
+            "id": "kenji-reads-papers",
+            "label": "Kenji reads them",
+            "consequence": "He faces Emi's decision directly but may treat the shop as a family matter before hearing the regulars.",
+            "generationDirective": "Keep the papers with Kenji and make him read Emi's conditions aloud to every person seated at the counter."
+          },
+          {
+            "id": "aiko-reads-papers",
+            "label": "Aiko reads them",
+            "consequence": "Aiko can protect the people named in the document, but she becomes responsible for a refuge she barely understands.",
+            "generationDirective": "Give the papers to Aiko and reveal that Emi appointed a night-shift worker, not a relative, to protect the shop."
+          }
+        ]
+      }
+    }
+  ],
+  "tags": ["late-night refuge", "food and memory", "found family", "quiet mystery", "audience choice"]
+}

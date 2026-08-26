@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "id": "neon-harvest",
+  "slug": "neon-harvest",
+  "title": "Neon Harvest",
+  "tagline": "The city eats. Someone has to feed it.",
+  "logline": "When the last legal rice paddy begins glowing above a starving megacity, its guarded farmer must choose who gets the seeds before a food syndicate turns tomorrow's harvest into a weapon.",
+  "synopsis": "Forty stories above Nami City, Iri Sato grows the last rice strain licensed for human hands. Then her flooded rooftop starts glowing after midnight, and the grain survives poison rain that should have killed it. Food inspector Kade Renn arrives with an order to burn the crop, while syndicate courier Sela Mora offers a route into the hungry lower districts. Iri discovers the glow is a message hidden by her missing mother inside the seed genome: proof that the city's food monopoly engineered the blight it claims to control. Audience choices decide who receives each harvest, which district Iri risks feeding, and whether she trusts the inspector sent to erase her evidence.",
+  "genres": ["science-fiction noir", "conspiracy thriller", "slow-burn romance"],
+  "maturityRating": "teen",
+  "language": "en",
+  "format": {
+    "aspectRatio": "9:16",
+    "targetEpisodeSeconds": 75,
+    "plannedEpisodes": 24
+  },
+  "world": {
+    "setting": "Nami City is a rain-soaked vertical megacity where rooftop farms feed licensed towers, freight lifts cross neon districts, and street level has been sealed from public maps for a generation.",
+    "period": "near future",
+    "rules": [
+      "Every edible seed carries a corporate license marker, and possession of unregistered grain is treated as food sabotage.",
+      "The glowing rice cleans one toxin from its water but stores that toxin in the grain unless harvested at the correct hour.",
+      "Street level remains physically accessible through old agricultural lifts even though official systems deny that anyone lives there.",
+      "Audience choices change who receives food and evidence, while scarcity and the biological rules remain honest across every branch."
+    ]
+  },
+  "visualStyle": {
+    "palette": ["#071A22", "#126E73", "#D11B78", "#E1B84B", "#B9F5E5"],
+    "camera": "Long vertical moves travel from luminous water at Iri's boots to the towers above her, while noir close-ups use reflections in visors, puddles, and elevator glass. Chases stay narrow and tactile through crop rows and service shafts.",
+    "lighting": "Constant drizzle catches teal and magenta signage. The rice emits a soft mint glow after midnight, while corporate interiors use hard white grow lights that drain warmth from skin.",
+    "wardrobe": "Iri layers a woven rain cape over practical farm gear; Kade wears a severe charcoal inspection coat with a white collar light; Sela's courier jacket is patched with unauthorized district colors."
+  },
+  "characters": [
+    {
+      "id": "iri-sato",
+      "name": "Iri Sato",
+      "role": "rooftop rice farmer and seed keeper",
+      "age": 28,
+      "pronouns": "she/her",
+      "objective": "Keep the final independent paddy alive long enough to place viable seed beyond the food monopoly's reach.",
+      "flaw": "She trusts plants more readily than people and withholds the very knowledge allies need to protect the crop.",
+      "secret": "Iri has preserved one illegal jar of pre-license seed from her mother and lied about its existence during every inspection.",
+      "visualCues": [
+        "woven black rain hat with a copper repair stitch",
+        "teal farm coat belted above waterproof waders",
+        "soil permanently dark beneath her fingernails",
+        "glass seed vial hanging close to her pulse"
+      ]
+    },
+    {
+      "id": "kade-renn",
+      "name": "Kade Renn",
+      "role": "food inspector and reluctant corporate witness",
+      "age": 33,
+      "pronouns": "he/him",
+      "objective": "Prove the blight was engineered without letting the corporation erase the farmers whose records can convict it.",
+      "flaw": "He hides compassion behind procedure until the people he means to protect reasonably mistake him for the threat.",
+      "secret": "Kade signed the quarantine order that made Iri's mother disappear, then spent six years tracing the falsified evidence behind it.",
+      "visualCues": [
+        "charcoal inspection coat with luminous white collar line",
+        "transparent evidence gloves folded in one pocket",
+        "old burn scar across his right palm",
+        "measured stillness that breaks around contaminated water"
+      ]
+    },
+    {
+      "id": "sela-mora",
+      "name": "Sela Mora",
+      "role": "lower-district courier and food smuggler",
+      "age": 26,
+      "pronouns": "she/her",
+      "objective": "Move enough viable grain below the licensed towers to make her district impossible to starve into obedience.",
+      "flaw": "She treats every alliance as a delivery with an expiration time and leaves before anyone can ask her to stay.",
+      "secret": "Sela works for the syndicate that has been bidding on Iri's crop, but she has redirected half its deliveries to families for years.",
+      "visualCues": [
+        "magenta courier shell patched with district emblems",
+        "compact respirator hanging beneath her chin",
+        "three freight tokens braided into her hair",
+        "quick smile used to cover careful exits"
+      ]
+    },
+    {
+      "id": "anik-vale",
+      "name": "Anik Vale",
+      "role": "founder of Helix Grain and architect of the monopoly",
+      "age": 49,
+      "pronouns": "they/them",
+      "objective": "Acquire the glowing strain before its embedded records expose how Helix created the city's recurring crop failures.",
+      "flaw": "They believe feeding millions excuses any smaller cruelty required to keep the system predictable.",
+      "secret": "Anik kept Iri's mother alive at street level because only she knows how to harvest the altered grain without retaining its toxin.",
+      "visualCues": [
+        "bone-white suit beneath a clear rain mantle",
+        "gold seed capsule worn as a lapel pin",
+        "one synthetic iris that contracts around neon light",
+        "hands always clean even inside working farms"
+      ]
+    }
+  ],
+  "seasonArc": {
+    "premise": "Iri moves seed and evidence down through Nami City's hidden agricultural routes while Kade dismantles the licensing case from above and Sela tests whether either of them will feed people before proving who is guilty.",
+    "stakes": "If Helix takes the glowing strain, it can patent the only crop resistant to its engineered blight. If Iri distributes it before learning the safe harvest window, the grain carries concentrated poison into the districts she wants to save.",
+    "endingTargets": [
+      "Iri releases a viable seed commons with harvesting knowledge that no corporation or syndicate controls alone.",
+      "Kade testifies to his role in the quarantine and earns trust through consequence rather than a private apology.",
+      "Sela chooses a community she will remain accountable to after the final delivery.",
+      "The final vote determines whether street level is reopened, protected as an autonomous farm district, or kept hidden while the food network spreads."
+    ]
+  },
+  "episodes": [
+    {
+      "id": "neon-harvest-01",
+      "number": 1,
+      "title": "The Rice Glows at Midnight",
+      "logline": "Iri's dying rooftop crop flares back to life during poison rain, drawing a corporate inspector and an armed courier to the same locked greenhouse.",
+      "storyBeats": [
+        "Iri prepares to burn the blighted paddy before inspectors can condemn the entire tower.",
+        "At midnight the water turns mint green and every dead stalk lifts beneath the rain.",
+        "Kade arrives with a destruction order but secretly scans a genetic message pulsing through the crop.",
+        "Sela crashes through the greenhouse glass and claims children below the mapped city are already starving."
+      ],
+      "cliffhanger": "A harvest drone identifies Iri's glowing seed as stolen property registered to her missing mother.",
+      "generationPrompt": "Create a rain-heavy rooftop paddy above a vertical neon city. Begin with Iri preparing a controlled burn, transform the black water with restrained mint light, bring Kade and Sela through opposite entrances, and end on a drone projecting her missing mother's ownership record.",
+      "vote": {
+        "id": "neon-harvest-vote-01",
+        "question": "Who should Iri trust with the first glowing seed?",
+        "options": [
+          {
+            "id": "give-seed-kade",
+            "label": "Give it to Kade",
+            "consequence": "His lab can decode the strain, but corporate custody makes the seed easy to erase.",
+            "generationDirective": "Open with Iri placing one sealed seed in Kade's evidence tube while Sela follows his inspection route."
+          },
+          {
+            "id": "give-seed-sela",
+            "label": "Give it to Sela",
+            "consequence": "The seed reaches hungry districts quickly, before anyone knows whether its stored toxin is safe.",
+            "generationDirective": "Send Sela into the freight shafts with one seed while Iri and Kade race to identify its safe harvest window."
+          },
+          {
+            "id": "hide-seed-alone",
+            "label": "Hide it herself",
+            "consequence": "Iri keeps control but leaves both possible allies free to make deals without her.",
+            "generationDirective": "Have Iri conceal the seed in an old irrigation valve and force Kade and Sela into a temporary alliance to find it."
+          }
+        ]
+      }
+    },
+    {
+      "id": "neon-harvest-02",
+      "number": 2,
+      "title": "Below the Map",
+      "logline": "The chosen seed route exposes a hidden freight lift, while Iri discovers the crop's glow is counting down to a poisonous harvest.",
+      "storyBeats": [
+        "The winning path reveals a maintenance code embedded in the seed's changing light pattern.",
+        "Kade proves the rice cleans its water by storing the poison inside each grain until a brief dawn window.",
+        "Sela opens an agricultural lift that official maps mark as a solid foundation beneath the city.",
+        "Helix locks down every rooftop farm and announces that Iri deliberately contaminated the food supply."
+      ],
+      "cliffhanger": "The lift doors open on street level, where hundreds of people stand in fields grown from Iri's mother's seed.",
+      "generationPrompt": "Honor the selected seed custodian, then converge on a coded glow and a sealed freight lift. Make the toxin discovery legible through grain and water inserts, contrast the sterile Helix alert with the rusted descent, and reveal a vast hidden farm community at street level.",
+      "vote": {
+        "id": "neon-harvest-vote-02",
+        "question": "What should Iri bring to the hidden farmers first?",
+        "options": [
+          {
+            "id": "bring-safe-harvest-rule",
+            "label": "The harvest warning",
+            "consequence": "Iri can prevent poisoning, but she arrives without proof that Helix engineered the danger.",
+            "generationDirective": "Begin with Iri stopping a street-level harvest moments before the toxin locks into the grain."
+          },
+          {
+            "id": "bring-genetic-evidence",
+            "label": "The Helix evidence",
+            "consequence": "The farmers gain leverage against Helix while one field continues toward an unsafe harvest.",
+            "generationDirective": "Have Kade project the genetic record to the hidden farmers as Sela notices a nearby field changing color."
+          }
+        ]
+      }
+    },
+    {
+      "id": "neon-harvest-03",
+      "number": 3,
+      "title": "Her Mother's Field",
+      "logline": "Iri's first choice below the city saves either a harvest or its evidence, and both paths lead to the woman Helix declared dead six years ago.",
+      "storyBeats": [
+        "The selected priority changes whether the hidden district trusts Iri as a farmer or values Kade as a witness.",
+        "Sela admits her syndicate controls the only freight route large enough to move the crop before Helix raids the district.",
+        "Iri finds her childhood irrigation pattern cut into the largest field and follows it into a sealed seed archive.",
+        "Anik Vale arrives by private lift and offers Iri legal ownership of every rooftop farm in exchange for silence."
+      ],
+      "cliffhanger": "Behind Anik, Iri's mother steps out of the archive wearing a Helix quarantine collar.",
+      "generationPrompt": "Continue in the hidden street-level farms, preserving the consequence of the prior vote. Use irrigation rows as a personal trail into a seed archive, frame Anik's offer under hard white light, and end on Iri recognizing her living mother behind a corporate quarantine collar.",
+      "vote": {
+        "id": "neon-harvest-vote-03",
+        "question": "How should Iri answer Anik's offer?",
+        "options": [
+          {
+            "id": "accept-to-free-mother",
+            "label": "Accept for her mother",
+            "consequence": "Iri gains immediate access to her mother but places the hidden farms under a contract designed by Helix.",
+            "generationDirective": "Have Iri sign a provisional transfer, then discover the agreement grants Helix inspection rights below the city."
+          },
+          {
+            "id": "reject-and-expose",
+            "label": "Reject and expose Anik",
+            "consequence": "Iri keeps the evidence public while Anik retains control of the collar around her mother's neck.",
+            "generationDirective": "Let Iri broadcast Anik's offer through Sela's courier network as Kade attempts to disable the quarantine collar."
+          }
+        ]
+      }
+    }
+  ],
+  "tags": ["rooftop farm", "food conspiracy", "vertical city", "forbidden seed", "audience choice"]
+}

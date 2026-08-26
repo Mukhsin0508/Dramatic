@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "id": "the-last-alibi",
+  "slug": "the-last-alibi",
+  "title": "The Last Alibi",
+  "tagline": "To clear her name, she must prove she was with the victim.",
+  "logline": "A disgraced defense attorney becomes the prime suspect in her former mentor's murder and has one night to recover the missing hour that could save—or condemn—her.",
+  "synopsis": "Nora Vale wakes in a closed courthouse with blood on her sleeve and no memory of the previous hour. Her mentor is dead in chambers, the security archive has been cut, and someone has filed a sealed confession in Nora's name. Hunted by the detective who ended her career, Nora follows courtroom clues that turn every old client into a suspect. The audience decides which testimony she trusts and which dangerous truth becomes canon.",
+  "genres": ["murder mystery", "legal thriller", "slow-burn romance"],
+  "maturityRating": "teen",
+  "language": "en",
+  "format": { "aspectRatio": "9:16", "targetEpisodeSeconds": 72, "plannedEpisodes": 24 },
+  "world": {
+    "setting": "A rain-locked downtown courthouse after midnight, from marble courtrooms and evidence vaults to maintenance tunnels beneath the old records wing.",
+    "period": "present day",
+    "rules": [
+      "The courthouse seals automatically until dawn because the security system records an active threat.",
+      "Every recovered camera clip is authentic, but at least one has been moved to the wrong timestamp.",
+      "Nora's missing hour returns only in sensory fragments triggered by evidence she physically handled."
+    ]
+  },
+  "visualStyle": {
+    "palette": ["#090B14", "#6E1638", "#C9A866", "#E8ECF1"],
+    "camera": "Tight handheld suspicion, severe courthouse symmetry, and rapid vertical rack-focus reveals from evidence in the foreground to a watcher behind Nora.",
+    "lighting": "Cold emergency strips cross warm pools from desk lamps; lightning flashes briefly expose figures behind textured courtroom glass.",
+    "wardrobe": "Nora's cream blouse and black trousers accumulate visible evidence, while Silas stays controlled in a rain-dark detective coat and Elias appears in archival charcoal suits."
+  },
+  "characters": [
+    {
+      "id": "nora-vale",
+      "name": "Nora Vale",
+      "role": "disgraced defense attorney and primary suspect",
+      "age": 30,
+      "pronouns": "she/her",
+      "objective": "Recover her missing hour, clear her name, and expose why her mentor destroyed her career.",
+      "flaw": "She cross-examines people she loves instead of admitting when she needs them.",
+      "secret": "Nora came to the courthouse intending to steal a sealed case file from her mentor.",
+      "visualCues": ["blood-specked cream cuff", "a broken watch stopped at 11:17", "courtroom poise that fractures around music"]
+    },
+    {
+      "id": "silas-reed",
+      "name": "Silas Reed",
+      "role": "homicide detective and former fiancé",
+      "age": 34,
+      "pronouns": "he/him",
+      "objective": "Keep Nora alive long enough to determine whether she is victim, witness, or killer.",
+      "flaw": "He mistakes emotional distance for impartial judgment.",
+      "secret": "Silas removed one piece of evidence from Nora's disbarment case because it implicated his father.",
+      "visualCues": ["rain-dark detective coat", "silver evidence pencil", "a healed cut matching Nora's broken watch"]
+    },
+    {
+      "id": "june-park",
+      "name": "June Park",
+      "role": "court archivist and Nora's closest friend",
+      "age": 29,
+      "pronouns": "she/her",
+      "objective": "Open the sealed archive before police backup arrives and preserve the truth it contains.",
+      "flaw": "She protects people by editing the choices available to them.",
+      "secret": "June created the false timestamp system years ago at Elias's request.",
+      "visualCues": ["red archive cardigan", "white cotton evidence gloves", "ink numbers written along her wrist"]
+    },
+    {
+      "id": "elias-wren",
+      "name": "Elias Wren",
+      "role": "victim, mentor, and unseen architect of the night",
+      "age": 61,
+      "pronouns": "he/him",
+      "objective": "Force Nora to finish the corruption case he was too compromised to prosecute.",
+      "flaw": "He turns people into pieces of evidence and calls the manipulation mentorship.",
+      "secret": "Elias scheduled messages to be released after his death, including contradictory confessions from himself.",
+      "visualCues": ["charcoal three-piece suit", "green onyx cuff links", "voice heard through old dictation machines"]
+    }
+  ],
+  "seasonArc": {
+    "premise": "Across the locked-down night, every audience choice determines which witness Nora trusts and which evidence she sacrifices, producing a coherent but variable path to the killer.",
+    "stakes": "At dawn the courthouse unlocks, Nora is arrested, and a corruption archive capable of freeing innocent clients is automatically destroyed.",
+    "endingTargets": [
+      "Nora proves the visible murder scene was staged after Elias died elsewhere.",
+      "The audience-selected ally supplies Nora's final alibi but demands a personal reckoning.",
+      "A scheduled message reveals Elias expected Nora to become the last suspect standing."
+    ]
+  },
+  "episodes": [
+    {
+      "id": "the-last-alibi-01",
+      "number": 1,
+      "title": "Blood in Chambers",
+      "logline": "Nora wakes beside her murdered mentor as the courthouse locks and her own signed confession prints downstairs.",
+      "storyBeats": [
+        "Nora follows a ringing evidence phone into chambers and discovers Elias dead behind the bench.",
+        "Silas arrives before official dispatch and refuses to explain how he entered the sealed building.",
+        "A clerk's printer produces Nora's confession with details only the killer should know."
+      ],
+      "cliffhanger": "Security footage shows Nora entering chambers twice—once in the clothes she wears and once in a red dress she has never seen.",
+      "generationPrompt": "Create a rain-soaked locked-courthouse murder mystery with intimate evidence close-ups, charged distrust between former lovers, and a final surveillance reveal of two versions of the heroine.",
+      "vote": {
+        "id": "the-last-alibi-vote-01",
+        "question": "Which clue should Nora pursue before the archive locks?",
+        "options": [
+          { "id": "trace-red-dress", "label": "Trace the red dress", "consequence": "Nora searches judicial robing rooms and risks meeting the impersonator.", "generationDirective": "Follow the red-dress trail through mirrored robing rooms with identity-driven suspense." },
+          { "id": "test-confession", "label": "Test the confession", "consequence": "Nora and Silas examine the signature, forcing them to revisit their broken engagement.", "generationDirective": "Center a forensic signature test with former lovers working inches apart under mounting distrust." }
+        ]
+      }
+    },
+    {
+      "id": "the-last-alibi-02",
+      "number": 2,
+      "title": "The Missing Minute",
+      "logline": "A recovered clip clears Nora for fifty-nine minutes but places June with Elias during the only minute that matters.",
+      "storyBeats": [
+        "Nora discovers every courthouse clock skipped from 11:16 to 11:18 during a maintenance reset.",
+        "June admits she moved one timestamp but insists Elias ordered it before his death.",
+        "Silas finds Nora's broken watch embedded with a voice recording from the missing minute."
+      ],
+      "cliffhanger": "The recording captures Nora saying, 'If I remember this, we all go to prison,' before a gunshot.",
+      "generationPrompt": "Use conflicting clocks, archive aisles, and a broken-watch recording to compress a legal thriller into one missing minute, ending on the heroine's own incriminating voice.",
+      "vote": {
+        "id": "the-last-alibi-vote-02",
+        "question": "Who hears the full recording first?",
+        "options": [
+          { "id": "trust-silas", "label": "Trust Silas", "consequence": "Silas gains context that may clear Nora while obtaining evidence he is duty-bound to use.", "generationDirective": "Play the complete recording with Silas in a dark courtroom and let professional duty collide with intimacy." },
+          { "id": "trust-june", "label": "Trust June", "consequence": "June can decode the timestamp but may erase the file to protect the archive.", "generationDirective": "Play the recording in the archive lab as June controls the only copy and reveals technical knowledge." }
+        ]
+      }
+    },
+    {
+      "id": "the-last-alibi-03",
+      "number": 3,
+      "title": "Objection, Hearsay",
+      "logline": "Elias's posthumous deposition names Nora as both his killer and the only lawyer capable of proving he lied.",
+      "storyBeats": [
+        "A projector starts Elias's prerecorded testimony when Nora enters Courtroom Four.",
+        "He describes the murder scene accurately, then points out one physical detail that has changed.",
+        "Nora realizes the body was moved after the security lockdown began."
+      ],
+      "cliffhanger": "The original crime scene is beneath the jury box, where someone trapped inside begins pounding for help.",
+      "generationPrompt": "Stage a posthumous courtroom deposition that feels like a duel between mentor and student, reveal a changed murder detail, and finish with pounding beneath the jury box.",
+      "vote": {
+        "id": "the-last-alibi-vote-03",
+        "question": "Should Nora open the jury box or preserve the scene?",
+        "options": [
+          { "id": "open-jury-box", "label": "Open it now", "consequence": "Nora may save a witness but destroys the cleanest path to reconstructing the murder.", "generationDirective": "Open the hidden compartment immediately and prioritize a desperate live rescue over pristine evidence." },
+          { "id": "preserve-the-scene", "label": "Preserve the scene", "consequence": "Nora documents the evidence while the trapped person's voice grows dangerously weak.", "generationDirective": "Force Nora to document each clue against a visible countdown as the unseen witness fades." }
+        ]
+      }
+    }
+  ],
+  "tags": ["locked room", "courtroom", "second-chance romance", "memory", "audience choice"]
+}

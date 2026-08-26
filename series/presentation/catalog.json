@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "series": {
+    "the-last-alibi": {
+      "featuredRank": 1,
+      "currentEpisode": 14,
+      "episodeTitle": "The Signature",
+      "episodeLogline": "Nora finds her name on the deed—and a memory that says she never signed it.",
+      "hook": "The signature was hers. The memory wasn’t.",
+      "activeVoters": 18240,
+      "likes": "18.2K",
+      "comments": "642",
+      "progress": 0.42,
+      "vote": {
+        "question": "What should Nora do with the deed?",
+        "choices": ["Show Silas now", "Follow the signature"]
+      }
+    },
+    "borrowed-vows": {
+      "featuredRank": 2,
+      "currentEpisode": 8,
+      "episodeTitle": "Dinner for Three",
+      "episodeLogline": "The missing bride comes home just as Amara and Julian start believing their own vows.",
+      "hook": "The bride vanished. Her marriage did not.",
+      "activeVoters": 11700,
+      "likes": "9.8K",
+      "comments": "311",
+      "progress": 0.16
+    },
+    "the-heir-upstairs": {
+      "featuredRank": 3,
+      "currentEpisode": 21,
+      "episodeTitle": "The Key Above",
+      "episodeLogline": "Leila’s new key opens Adrian’s oldest lie—and the room his family sealed years ago.",
+      "hook": "Her new key opened his oldest lie.",
+      "activeVoters": 24600,
+      "likes": "24.1K",
+      "comments": "1.2K",
+      "progress": 0.66,
+      "locked": true
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "provider": "higgsfield",
+  "sdk": "@higgsfield/client@0.2.1",
+  "seriesId": "two-rings-at-the-funeral",
+  "episodeNumber": 1,
+  "sourceScript": "series/scripts/two-rings-at-the-funeral-01.json",
+  "generatedAt": "2026-08-26T03:02:37.394Z",
+  "estimates": {
+    "poster": {
+      "credits": "0.150",
+      "usd": "0.010",
+      "observedAt": "2026-08-26T03:01:09.059Z"
+    }
+  },
+  "artifacts": [
+    {
+      "kind": "poster",
+      "endpoint": "higgsfield-ai/soul/v2/standard",
+      "path": "apps/mobile/assets/images/stories/two-rings-at-the-funeral.png",
+      "webPath": "apps/web/public/media/two-rings-at-the-funeral.png",
+      "bytes": 2049436,
+      "sha256": "c56b13d5aff062a5fa854f10937d7e47f965609ed1cdbe9f2937574cee0315ff",
+      "contentType": "image/png"
+    }
+  ]
+}

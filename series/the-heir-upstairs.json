@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "id": "the-heir-upstairs",
+  "slug": "the-heir-upstairs",
+  "title": "The Heir Upstairs",
+  "tagline": "Her worst tenant owns the building. She owns his only way in.",
+  "logline": "A tenants-rights organizer discovers that the secretive man in the penthouse is the missing heir to her condemned building—and he needs her help to survive the family moving in below.",
+  "synopsis": "Leila Hart has thirty days to stop the Armitage family from evicting everyone in Bellweather House. Then she finds Adrian Armitage hiding in the supposedly empty penthouse, alive after five years and unable to claim his inheritance without a witness who can prove he lived there before his disappearance. Leila agrees to hide him in exchange for ownership protections, but every elevator opens on another family spy, forged deed, or inconvenient spark. The audience chooses which tenant secret becomes leverage and whether Leila trusts the heir upstairs.",
+  "genres": ["romantic suspense", "class drama", "inheritance mystery"],
+  "maturityRating": "teen",
+  "language": "en",
+  "format": { "aspectRatio": "9:16", "targetEpisodeSeconds": 74, "plannedEpisodes": 24 },
+  "world": {
+    "setting": "Bellweather House, a once-grand vertical apartment building with an ornate cage elevator, lived-in tenant floors, hidden dumbwaiters, and a glass penthouse above the clouds.",
+    "period": "present day",
+    "rules": [
+      "The inheritance requires proof that Adrian occupied the penthouse continuously before his disappearance.",
+      "The building's residents trade favors through an informal ledger, so no secret belongs to only one person.",
+      "The Armitage board can begin evictions at midnight unless a controlling heir serves a valid injunction."
+    ]
+  },
+  "visualStyle": {
+    "palette": ["#10131A", "#2F6B62", "#D8A657", "#F1E7D3"],
+    "camera": "Vertical elevator reveals, intimate doorway frames, and sweeping drops through the central stairwell whenever power shifts between penthouse and tenants.",
+    "lighting": "Warm mismatched tenant lamps contrast with the penthouse's cool architectural glass; elevator bulbs flicker during secrets and stabilize during honest choices.",
+    "wardrobe": "Leila wears practical green layers and work boots; Adrian's old luxury wardrobe fits imperfectly after years away; Vivian uses severe monochrome tailoring."
+  },
+  "characters": [
+    {
+      "id": "leila-hart",
+      "name": "Leila Hart",
+      "role": "tenant organizer and reluctant witness",
+      "age": 27,
+      "pronouns": "she/her",
+      "objective": "Win permanent protections for every Bellweather tenant without selling their stories as leverage.",
+      "flaw": "She assumes privilege cancels sincerity and makes allies prove themselves past the point of trust.",
+      "secret": "Leila forged one maintenance receipt to stop an earlier eviction and it could invalidate the tenant case.",
+      "visualCues": ["green work jacket covered in repair pins", "tenant ledger tucked into her waistband", "gold elevator key on a red string"]
+    },
+    {
+      "id": "adrian-armitage",
+      "name": "Adrian Armitage",
+      "role": "missing heir hiding in the penthouse",
+      "age": 31,
+      "pronouns": "he/him",
+      "objective": "Claim enough control to expose the family trust and then give the building to its residents.",
+      "flaw": "He stages disappearances instead of enduring conflict where other people can choose beside him.",
+      "secret": "Adrian returned months ago and secretly repaired apartments at night under a fake maintenance name.",
+      "visualCues": ["expensive shirt with hand-sewn repairs", "architectural sketches on his cuffs", "paint beneath a family signet ring"]
+    },
+    {
+      "id": "vivian-armitage",
+      "name": "Vivian Armitage",
+      "role": "acting heir and Adrian's older sister",
+      "age": 36,
+      "pronouns": "she/her",
+      "objective": "Complete the redevelopment deal before Adrian can overturn five years of her leadership.",
+      "flaw": "She believes responsibility entitles her to decide whose losses are acceptable.",
+      "secret": "Vivian has kept Adrian legally alive in the trust because she never believed the reports of his death.",
+      "visualCues": ["black architectural tailoring", "pearl-handled building master key", "immaculate gloves in dusty apartments"]
+    },
+    {
+      "id": "omar-bell",
+      "name": "Omar Bell",
+      "role": "superintendent and keeper of the tenant ledger",
+      "age": 63,
+      "pronouns": "he/him",
+      "objective": "Keep the building standing long enough for residents to own it together.",
+      "flaw": "He preserves community myths even when the truth would let younger people make informed choices.",
+      "secret": "Omar signed Adrian into the penthouse ledger after the disappearance, making himself the key witness to possible fraud.",
+      "visualCues": ["navy coveralls with brass buttons", "heavy ring of labeled keys", "a folded chessboard in the boiler room"]
+    }
+  ],
+  "seasonArc": {
+    "premise": "Leila moves between tenant floors and the hidden penthouse, turning audience-selected community knowledge into legal leverage while her alliance with Adrian becomes harder to separate from desire.",
+    "stakes": "Failure displaces forty-two residents, destroys the evidence of Adrian's return, and rewards a redevelopment trust built on forged vacancy reports.",
+    "endingTargets": [
+      "Leila proves the building was never legally vacant and forces a resident ownership vote.",
+      "Adrian publicly rejects sole inheritance but must answer for asking Omar to falsify the ledger.",
+      "A deed hidden in the elevator roof reveals Bellweather House was promised to someone in Leila's family."
+    ]
+  },
+  "episodes": [
+    {
+      "id": "the-heir-upstairs-01",
+      "number": 1,
+      "title": "Penthouse Occupied",
+      "logline": "While documenting an illegal eviction, Leila rides the broken elevator above its final floor and finds the missing heir alive.",
+      "storyBeats": [
+        "Leila films contractors changing locks while tenants block the lobby with furniture.",
+        "Her elevator key activates an unmarked penthouse level that should have no power.",
+        "Adrian pulls her inside before Vivian's security team sees either of them."
+      ],
+      "cliffhanger": "Adrian offers Leila the building deed, but it bears her late father's signature as witness.",
+      "generationPrompt": "Create a tense tenant eviction in a grand old lobby, a mysterious elevator ascent beyond the top floor, and a magnetic first encounter with a missing heir holding a deed tied to the heroine's father.",
+      "vote": {
+        "id": "the-heir-upstairs-vote-01",
+        "question": "What should Leila demand before hiding Adrian?",
+        "options": [
+          { "id": "sign-tenant-injunction", "label": "Sign the injunction", "consequence": "Adrian protects the tenants immediately but creates a legal signal that he is alive.", "generationDirective": "Open with Adrian signing emergency tenant papers while security traces the signature through the building." },
+          { "id": "explain-fathers-signature", "label": "Explain the signature", "consequence": "Leila delays protection to learn why her father was involved in the inheritance.", "generationDirective": "Open with an intimate penthouse interrogation centered on the old deed and Leila's family connection." }
+        ]
+      }
+    },
+    {
+      "id": "the-heir-upstairs-02",
+      "number": 2,
+      "title": "Going Down",
+      "logline": "Leila smuggles Adrian through a tenant meeting, but the elevator stalls with Vivian between floors.",
+      "storyBeats": [
+        "Adrian disguises himself as the night repairman whose anonymous work Leila has praised for months.",
+        "Omar warns that proving Adrian's occupancy may expose the falsified tenant ledger.",
+        "Vivian enters the cage elevator before Leila can escape, and the power fails."
+      ],
+      "cliffhanger": "In darkness, Vivian addresses the disguised Adrian by name and asks why Leila thinks he can save her.",
+      "generationPrompt": "Mix warm tenant-community energy with disguise romance, then trap the heroine, missing heir, and his formidable sister in a flickering antique cage elevator for a name reveal.",
+      "vote": {
+        "id": "the-heir-upstairs-vote-02",
+        "question": "Who should Leila pretend Adrian is?",
+        "options": [
+          { "id": "pretend-boyfriend", "label": "Her boyfriend", "consequence": "The lie explains their closeness but makes every tenant a witness to the relationship.", "generationDirective": "Play the cover story as forced-proximity romance with the tenants enthusiastically validating the fake relationship." },
+          { "id": "pretend-inspector", "label": "A city inspector", "consequence": "The lie gives Adrian access to records but invites Vivian to test his technical knowledge.", "generationDirective": "Play the cover story as a rapid technical bluff through unsafe floors while Vivian asks trap questions." }
+        ]
+      }
+    },
+    {
+      "id": "the-heir-upstairs-03",
+      "number": 3,
+      "title": "The Rent Ledger",
+      "logline": "A single false entry can prove Adrian lived upstairs, but using it would make Omar guilty of inheritance fraud.",
+      "storyBeats": [
+        "Omar reveals the handwritten ledger contains years of unofficial rent and repair exchanges.",
+        "Adrian admits he asked Omar to record him as present after he fled the city.",
+        "Leila finds a second, genuine entry written in her father's distinctive green ink."
+      ],
+      "cliffhanger": "The genuine entry lists Leila—not Adrian—as the penthouse tenant and beneficiary.",
+      "generationPrompt": "Center a community ledger as emotionally charged evidence, reveal the heir's past request for fraud, and end on a green-ink entry naming the tenant organizer as penthouse beneficiary.",
+      "vote": {
+        "id": "the-heir-upstairs-vote-03",
+        "question": "How should Leila use the genuine ledger entry?",
+        "options": [
+          { "id": "claim-penthouse", "label": "Claim the penthouse", "consequence": "Leila gains standing to stop evictions but appears to profit personally from the tenant fight.", "generationDirective": "Have Leila publicly claim the penthouse before the tenants, emphasizing the moral risk of unexpected power." },
+          { "id": "give-entry-to-adrian", "label": "Give it to Adrian", "consequence": "Adrian can challenge the trust while Leila surrenders her strongest independent leverage.", "generationDirective": "Stage a private handoff of the ledger entry as an act of trust that Adrian may accept or refuse." }
+        ]
+      }
+    }
+  ],
+  "tags": ["hidden heir", "apartment building", "class conflict", "forced proximity", "audience choice"]
+}

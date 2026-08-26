@@ -40,6 +40,9 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+.expo/
+.turbo/
+.vercel/
 
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
@@ -77,6 +80,24 @@ web_modules/
 # Next.js build output
 .next
 out
+
+# Native build and local signing output
+apps/mobile/android/
+apps/mobile/ios/
+*.jks
+*.keystore
+*.mobileprovision
+*.aab
+*.apk
+*.ipa
+
+# EAS local builds
+eas-build-local-nodejs/
+
+# Local tooling
+.DS_Store
+.dramatic/
+apps/mobile/artifacts/
 
 # Nuxt.js build / generate output
 .nuxt

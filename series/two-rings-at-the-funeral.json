@@ -1,0 +1,399 @@
+{
+  "schemaVersion": 1,
+  "id": "two-rings-at-the-funeral",
+  "slug": "two-rings-at-the-funeral",
+  "title": "Two Rings at the Funeral",
+  "tagline": "He left two wives, one empty coffin, and a debt someone will kill to collect.",
+  "logline": "At her husband's funeral, a paramedic meets a pregnant stranger wearing an identical wedding ring; when both their savings vanish and a phone rings inside the coffin, the apparent rivals become the only people who can expose the life he invented.",
+  "synopsis": "Paramedic Mara Vega expects grief, not another widow. Celeste Okafor arrives at Elias Vale's funeral with a legal marriage certificate, a baby on the way, and the same numbered ring on her hand. Before either woman can decide who was betrayed first, their bank accounts are emptied and Elias's private ringtone sounds from inside his sealed coffin. Elias's estranged brother Theo warns them to walk away, but Mara and Celeste form an uneasy alliance instead. Each clue reveals that their marriages were components of a larger identity-laundering scheme, while audience choices decide which evidence they chase, which secrets they trade, and whether Theo becomes an ally or the next suspect.",
+  "genres": [
+    "romantic suspense",
+    "revenge mystery",
+    "family drama"
+  ],
+  "maturityRating": "teen",
+  "language": "en",
+  "format": {
+    "aspectRatio": "9:16",
+    "targetEpisodeSeconds": 72,
+    "plannedEpisodes": 24
+  },
+  "world": {
+    "setting": "Present-day Harbor City: a rain-dark funeral chapel, ambulance depot, forensic accounting office, waterfront storage archive, ferry terminal, and the glass headquarters of an identity-security startup.",
+    "period": "present day",
+    "rules": [
+      "Every identity clue must include one independently verifiable fact and one detail that can be manipulated.",
+      "Mara and Celeste gain ground only by sharing information that also makes them vulnerable to each other.",
+      "Audience choices change who controls the next clue, the trust between allies, and the personal cost of the investigation.",
+      "The mystery remains grounded in human deception, financial fraud, and image manipulation rather than supernatural explanations."
+    ]
+  },
+  "visualStyle": {
+    "palette": [
+      "#111827",
+      "#334155",
+      "#D8DEE9",
+      "#F4F0E8",
+      "#B4233A"
+    ],
+    "camera": "Intimate vertical close-ups hold on small lies: matched rings, delayed eye contact, phone alerts, and hands blocking exits. Controlled push-ins give way to sharp handheld movement when evidence changes ownership.",
+    "lighting": "Rain-muted daylight and cool chapel practicals create silver reflections, while phone screens and emergency lights introduce brief crimson accents whenever Elias reaches into the present.",
+    "wardrobe": "Mara keeps a charcoal paramedic watch and practical black coat; Celeste wears an ivory raincoat over precise dark tailoring; Theo's formal suit is slightly rain-damaged, with a repaired cuff he repeatedly hides."
+  },
+  "characters": [
+    {
+      "id": "mara-vega",
+      "name": "Mara Vega",
+      "role": "paramedic, first widow, and reluctant investigator",
+      "age": 31,
+      "pronouns": "she/her",
+      "objective": "Recover the stolen savings meant for her mother's care and learn whether any part of her marriage was real.",
+      "flaw": "She treats danger like an emergency call and rushes in before allies can choose to follow.",
+      "secret": "Six months ago she found a second passport bearing Elias's face and hid it after he claimed it belonged to a protected witness.",
+      "visualCues": [
+        "charcoal wool coat over a dark green blouse",
+        "weathered paramedic watch on her left wrist",
+        "numbered silver wedding band",
+        "controlled posture that breaks into decisive movement"
+      ]
+    },
+    {
+      "id": "celeste-okafor",
+      "name": "Celeste Okafor",
+      "role": "forensic accountant, second widow, and expectant mother",
+      "age": 29,
+      "pronouns": "she/her",
+      "objective": "Protect her unborn child, prove the marriages were part of a financial crime, and keep the evidence out of the company that employed her.",
+      "flaw": "She withholds decisive facts until she can control how everyone else is allowed to use them.",
+      "secret": "Celeste suspected Elias was moving client money and placed a dormant tracker inside his wedding band before his disappearance.",
+      "visualCues": [
+        "ivory raincoat over navy tailoring",
+        "structured document folio held close to her body",
+        "numbered silver wedding band matching Mara's",
+        "one protective hand at her abdomen when she is frightened"
+      ]
+    },
+    {
+      "id": "theo-vale",
+      "name": "Theo Vale",
+      "role": "Elias's estranged brother and investigative journalist",
+      "age": 34,
+      "pronouns": "he/him",
+      "objective": "Expose the scheme that ruined their father without letting Elias's accomplice silence either widow.",
+      "flaw": "He delivers protection as an order and makes every warning sound like a threat.",
+      "secret": "An anonymous caller made Theo identify an empty coffin and promised that opening it at the funeral would kill one of the women.",
+      "visualCues": [
+        "rain-marked black suit without a tie",
+        "repaired right cuff kept beneath his palm",
+        "old press credential inside his jacket",
+        "watchful stillness before sudden intervention"
+      ]
+    },
+    {
+      "id": "elias-vale",
+      "name": "Elias Vale",
+      "role": "presumed-dead husband and identity-security founder",
+      "age": 36,
+      "pronouns": "he/him",
+      "objective": "Erase the liabilities attached to his identities and recover the encrypted key divided between the two marriages.",
+      "flaw": "He treats intimacy as a system to test and people as safeguards he can activate later.",
+      "secret": "Elias designed the escape, but someone inside his company took control of it and may now be keeping him alive for access.",
+      "visualCues": [
+        "warm smile preserved in the funeral portrait",
+        "fine scar crossing the left eyebrow",
+        "silver wedding band with a hidden tracker cavity",
+        "voice first heard through compressed phone recordings"
+      ]
+    }
+  ],
+  "seasonArc": {
+    "premise": "Two women positioned to hate each other discover that their marriages encoded separate halves of a financial escape. Their alliance turns a private betrayal into a public hunt through Harbor City's identity economy, while Theo's attraction to Mara is complicated by evidence that repeatedly places him beside the crime.",
+    "stakes": "If the women cannot recover the encryption key before Elias's accomplice, they lose their savings, Celeste's safety, and the evidence needed to stop thousands of stolen identities from being sold.",
+    "endingTargets": [
+      "Mara and Celeste expose the identity-laundering network together rather than accepting a settlement that requires one to betray the other.",
+      "The stolen funds are returned through evidence earned by the audience-selected investigation path.",
+      "Theo must publicly choose between protecting the Vale name and giving Mara the proof that destroys it.",
+      "The final vote determines whether Elias faces prosecution, helps dismantle the network, or disappears after surrendering the key."
+    ]
+  },
+  "episodes": [
+    {
+      "id": "two-rings-at-the-funeral-01",
+      "number": 1,
+      "title": "The Other Widow",
+      "logline": "A stranger stops Elias's burial by claiming to be his wife, but matching rings and simultaneous bank thefts turn accusation into a shared emergency.",
+      "storyBeats": [
+        "Celeste interrupts the funeral and presents a marriage certificate bearing Elias's legal name.",
+        "Mara and Celeste discover their numbered silver wedding bands are identical.",
+        "Both women receive alerts that their joint accounts were emptied seconds earlier.",
+        "Elias's private ringtone begins sounding from inside the sealed coffin."
+      ],
+      "cliffhanger": "Theo stops Mara from opening the coffin and warns that doing so will get one of the women killed.",
+      "generationPrompt": "Create a rain-muted funeral confrontation in a modern chapel. Keep Mara's grief controlled, make Celeste's entrance urgent rather than villainous, emphasize matching ring inserts and simultaneous bank alerts, then end on a muffled ringtone inside the coffin and Theo physically blocking the latch.",
+      "vote": {
+        "id": "two-rings-at-the-funeral-vote-01",
+        "question": "Which lead should the widows follow first?",
+        "options": [
+          {
+            "id": "open-the-coffin",
+            "label": "Open the coffin",
+            "consequence": "They confront the most immediate truth but trigger the danger Theo was sent to prevent.",
+            "generationDirective": "Open the coffin in front of the remaining mourners and make the physical evidence inside the first lead."
+          },
+          {
+            "id": "trace-the-transfer",
+            "label": "Trace the transfer",
+            "consequence": "Celeste may catch the moving money while giving someone time to remove the coffin.",
+            "generationDirective": "Let Celeste seize control of the investigation by tracing the live transfer as Mara guards the coffin."
+          },
+          {
+            "id": "follow-theo",
+            "label": "Follow Theo",
+            "consequence": "Mara risks losing the evidence in the chapel to learn who frightened Theo into silence.",
+            "generationDirective": "Have Mara follow Theo into the rain and witness his covert meeting before returning to the coffin."
+          }
+        ]
+      }
+    },
+    {
+      "id": "two-rings-at-the-funeral-02",
+      "number": 2,
+      "title": "An Empty Goodbye",
+      "logline": "The first chosen lead confirms that Elias planned the funeral, while a message hidden beneath the coffin lid orders the widows to separate.",
+      "storyBeats": [
+        "The winning investigation path yields a phone taped beneath the coffin lid and confirms the casket contains no body.",
+        "A scheduled video from Elias tells Mara and Celeste that only one of them possesses what his pursuer needs.",
+        "Theo admits he knew the coffin was empty but refuses to identify the caller who threatened the women.",
+        "The chapel doors lock remotely as the phone begins deleting itself."
+      ],
+      "cliffhanger": "The final undeleted frame shows Elias boarding a Harbor City ferry twelve minutes after his reported death.",
+      "generationPrompt": "Continue within the same rain-dark chapel, honoring the winning path while converging on an empty coffin and a phone taped beneath its lid. Use a compressed video message, remote door locks, and a final ferry surveillance frame to prove Elias survived the official time of death.",
+      "vote": {
+        "id": "two-rings-at-the-funeral-vote-02",
+        "question": "Who should control Elias's phone?",
+        "options": [
+          {
+            "id": "mara-keeps-phone",
+            "label": "Mara keeps it",
+            "consequence": "Her emergency instincts protect the device, but Celeste loses control of the financial evidence.",
+            "generationDirective": "Put the damaged phone in Mara's custody and force Celeste to decide whether to reveal her private tracker."
+          },
+          {
+            "id": "celeste-copies-phone",
+            "label": "Celeste copies it",
+            "consequence": "Her forensic tools may preserve the data while exposing the evidence to her compromised employer.",
+            "generationDirective": "Let Celeste connect the phone to her forensic kit and discover that her office is already watching the transfer."
+          }
+        ]
+      }
+    },
+    {
+      "id": "two-rings-at-the-funeral-03",
+      "number": 3,
+      "title": "Two Legal Names",
+      "logline": "Both marriages prove legally valid under different records, and Mara's hidden passport reveals that Elias prepared a third identity before either wedding.",
+      "storyBeats": [
+        "Celeste verifies that neither marriage certificate is forged, even though the records should be legally incompatible.",
+        "The chosen phone custodian recovers a fragment pointing to the identity platform Elias founded.",
+        "Mara finally reveals the second passport she concealed six months earlier.",
+        "A morgue alert reports that a body using the passport's name has just been admitted."
+      ],
+      "cliffhanger": "The dead man's fingerprints return a match for Theo, not Elias.",
+      "generationPrompt": "Stage a tense evidence exchange between a compact forensic office and a hospital morgue. Make certificates, passport details, and fingerprint results legible in vertical inserts, then hold on Theo as the system identifies him as the dead man.",
+      "vote": {
+        "id": "two-rings-at-the-funeral-vote-03",
+        "question": "Who confronts Theo about the fingerprint match?",
+        "options": [
+          {
+            "id": "mara-confronts-theo",
+            "label": "Mara confronts him",
+            "consequence": "Theo may answer her directness, but the confrontation puts their fragile attraction under suspicion.",
+            "generationDirective": "Give Mara a private, physically tense confrontation with Theo beside the morgue elevator."
+          },
+          {
+            "id": "celeste-tests-theo",
+            "label": "Celeste tests him",
+            "consequence": "Celeste can catch a financial lie, but she must reveal knowledge she promised Mara to protect.",
+            "generationDirective": "Have Celeste bait Theo with one false account detail and judge which part he corrects."
+          }
+        ]
+      }
+    },
+    {
+      "id": "two-rings-at-the-funeral-04",
+      "number": 4,
+      "title": "The Brother's Body",
+      "logline": "Theo proves his identity by exposing a flaw in Elias's biometric system, then saves Mara from an attacker carrying credentials from her ambulance depot.",
+      "storyBeats": [
+        "The chosen confrontation reveals that Elias once copied Theo's biometric profile to frame their father for fraud.",
+        "Theo demonstrates that the morgue match came through Elias's compromised identity platform rather than the coroner.",
+        "Mara receives an emergency page designed to separate her from Celeste and follows it to the ambulance bay.",
+        "Theo interrupts a masked attack and recovers a cloned access badge bearing Mara's photo."
+      ],
+      "cliffhanger": "Security video shows someone with Mara's face using the badge in three places at once.",
+      "generationPrompt": "Combine close forensic explanation with a fast ambulance-bay ambush. Preserve grounded technology through cloned credentials and manipulated camera records, keep Theo protective but suspicious, and end on a three-panel security display showing impossible copies of Mara.",
+      "vote": {
+        "id": "two-rings-at-the-funeral-vote-04",
+        "question": "How should Mara answer the false footage?",
+        "options": [
+          {
+            "id": "go-public",
+            "label": "Release it publicly",
+            "consequence": "Public scrutiny may protect Mara while warning the person controlling the footage.",
+            "generationDirective": "Have Mara release the contradictory footage through Theo's newsroom and face immediate public suspicion."
+          },
+          {
+            "id": "set-a-trap",
+            "label": "Set a trap",
+            "consequence": "The copy may return for a planted credential, leaving Mara exposed in private.",
+            "generationDirective": "Have Mara and Celeste plant a cloned badge that leads the intruder toward a controlled ambulance call."
+          }
+        ]
+      }
+    },
+    {
+      "id": "two-rings-at-the-funeral-05",
+      "number": 5,
+      "title": "The Woman Wearing Mara",
+      "logline": "A public challenge or private trap draws out a convincing double, whose stolen file reveals that the widows' marriages authorized the same transfer.",
+      "storyBeats": [
+        "The winning tactic forces the person using Mara's identity to abandon a credential cache.",
+        "Celeste traces the cache to dormant clients of Elias's company, each represented by a manufactured spouse.",
+        "Mara discovers her wedding signature was reused as one half of a corporate encryption key.",
+        "Celeste's signature completed the transfer at the exact moment of the funeral."
+      ],
+      "cliffhanger": "The destination account is registered to Celeste's unborn child.",
+      "generationPrompt": "Create a grounded pursuit involving a face-concealing double, cloned work credentials, and a forensic reveal. Keep screens readable and reactions intimate, then reveal that the stolen account legally belongs to Celeste's unborn child without implying her complicity is proven.",
+      "vote": {
+        "id": "two-rings-at-the-funeral-vote-05",
+        "question": "Should Celeste tell Mara about the ring tracker?",
+        "options": [
+          {
+            "id": "reveal-tracker",
+            "label": "Reveal the tracker",
+            "consequence": "The tracker offers a live lead but proves Celeste investigated Elias before his death.",
+            "generationDirective": "Let Celeste confess that she tracked Elias and show Mara the live signal moving toward the waterfront."
+          },
+          {
+            "id": "follow-tracker-alone",
+            "label": "Follow it alone",
+            "consequence": "Celeste keeps her leverage but walks into the next location without Mara or Theo.",
+            "generationDirective": "Send Celeste alone after the tracker while Mara discovers the hidden tracking app by accident."
+          }
+        ]
+      }
+    },
+    {
+      "id": "two-rings-at-the-funeral-06",
+      "number": 6,
+      "title": "The Ring Still Moving",
+      "logline": "Celeste's hidden tracker leads to the waterfront archive, where Theo reveals the threat that forced him to guard Elias's empty coffin.",
+      "storyBeats": [
+        "The tracker path reflects whether Celeste trusted Mara or entered the waterfront archive alone.",
+        "Inside, the women find a wall of dormant identity files but no sign of Elias.",
+        "Theo produces the anonymous message that ordered him to keep the coffin closed during the funeral.",
+        "The tracker abruptly jumps from the archive to Celeste's apartment."
+      ],
+      "cliffhanger": "Celeste's home camera shows Elias standing over her unfinished crib in real time.",
+      "generationPrompt": "Use a narrow waterfront records archive for claustrophobic investigation, then reveal Theo's coercive message with clear phone inserts. End by contrasting the cold archive with a warm nursery camera feed showing Elias beside an unfinished crib.",
+      "vote": {
+        "id": "two-rings-at-the-funeral-vote-06",
+        "question": "Who goes to Celeste's apartment?",
+        "options": [
+          {
+            "id": "widows-go-together",
+            "label": "The widows go together",
+            "consequence": "They preserve their alliance but leave Theo alone with the identity archive.",
+            "generationDirective": "Send Mara and Celeste into the apartment together while Theo remains behind with evidence he can alter."
+          },
+          {
+            "id": "mara-and-theo-go",
+            "label": "Mara goes with Theo",
+            "consequence": "Theo offers protection, but Celeste must trust him near her home while she guards the archive.",
+            "generationDirective": "Pair Mara and Theo for the apartment search while Celeste uncovers a separate clue in the archive."
+          }
+        ]
+      }
+    },
+    {
+      "id": "two-rings-at-the-funeral-07",
+      "number": 7,
+      "title": "Before We Met Him",
+      "logline": "The apartment intruder vanishes, leaving surveillance photos proving Elias selected both women years before either believed they met him.",
+      "storyBeats": [
+        "The chosen pair reaches an undisturbed apartment, but the live camera has been replaced with a precise recorded loop.",
+        "A nursery drawer contains photos of Mara on ambulance calls and Celeste at university from before their relationships began.",
+        "The archive team finds a recruitment score ranking each woman's access, habits, and likelihood of protecting Elias.",
+        "A photo dated twelve years earlier shows Theo watching Mara from across a hospital corridor."
+      ],
+      "cliffhanger": "Theo says the photo was taken the night Mara saved his life, years before Elias introduced them.",
+      "generationPrompt": "Build an eerie but grounded apartment search around a looped nursery camera and physical surveillance photographs. Use reaction close-ups to turn the women from victims into angry collaborators, then end on Theo appearing in a twelve-year-old hospital image with Mara.",
+      "vote": {
+        "id": "two-rings-at-the-funeral-vote-07",
+        "question": "Does Mara believe Theo's history with her?",
+        "options": [
+          {
+            "id": "hear-theo-out",
+            "label": "Hear Theo out",
+            "consequence": "His memory may explain why Elias chose Mara, but intimacy gives him another chance to redirect her.",
+            "generationDirective": "Let Theo tell Mara what happened at the hospital and reveal the debt he believes he owes her."
+          },
+          {
+            "id": "verify-the-photo",
+            "label": "Verify the photo",
+            "consequence": "Mara protects herself, but the delay gives the live caller time to contact Celeste first.",
+            "generationDirective": "Have Mara reject Theo's story until Celeste verifies the old hospital record and receives a live call alone."
+          }
+        ]
+      }
+    },
+    {
+      "id": "two-rings-at-the-funeral-08",
+      "number": 8,
+      "title": "The Man with Elias's Face",
+      "logline": "A live caller wearing Elias's face turns the widows against each other, but one missing detail proves the first major answer is another constructed identity.",
+      "storyBeats": [
+        "The winning trust path determines whether Mara hears Theo's hospital story before the call arrives.",
+        "A live video caller who looks and sounds like Elias warns Mara that Celeste was paid to marry him.",
+        "The caller displays a real transfer contract bearing Celeste's signature and demands Mara's ring in exchange for the stolen savings.",
+        "Celeste studies the face and notices the caller lacks Elias's scar and habitual left-eye twitch."
+      ],
+      "cliffhanger": "Celeste tells Mara that the man on the live call is not Elias, just as the caller addresses her by the private name of her unborn child.",
+      "generationPrompt": "Stage a live video confrontation that feels emotionally immediate while preserving slight visual compression around the caller. Let documentary evidence implicate Celeste, then use her forensic attention to identify a missing scar and eye movement before the caller reveals knowledge no impostor should possess.",
+      "vote": {
+        "id": "two-rings-at-the-funeral-vote-08",
+        "question": "How should the widows answer the impostor?",
+        "options": [
+          {
+            "id": "trade-maras-ring",
+            "label": "Offer Mara's ring",
+            "consequence": "They may locate the caller, but surrender half of the key protecting the stolen identities.",
+            "generationDirective": "Have Mara agree to a controlled ring exchange while Celeste embeds a trace in the verification call."
+          },
+          {
+            "id": "challenge-the-name",
+            "label": "Challenge the private name",
+            "consequence": "They force the caller to explain the impossible knowledge but reveal how deeply the clue frightened Celeste.",
+            "generationDirective": "Have Celeste confront the caller about the private baby name and recognize a phrase used by someone inside her office."
+          },
+          {
+            "id": "cut-the-call",
+            "label": "Cut the call",
+            "consequence": "They deny the caller control while losing the only live connection to Elias's network.",
+            "generationDirective": "Let Mara end the call and use its final network packet to choose a physical location before it disappears."
+          }
+        ]
+      }
+    }
+  ],
+  "tags": [
+    "betrayal",
+    "two widows",
+    "female alliance",
+    "presumed dead",
+    "financial conspiracy",
+    "dangerous brother",
+    "slow-burn romance",
+    "audience choice"
+  ]
+}

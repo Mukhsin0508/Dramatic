@@ -1,0 +1,29 @@
+{
+  "name": "dramatic",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Audience-directed short dramas, generated one cliffhanger at a time.",
+  "license": "MIT",
+  "packageManager": "pnpm@11.24.0",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "turbo run clean",
+    "dev": "turbo run dev --parallel",
+    "dev:mobile": "pnpm --filter @dramatic/mobile start",
+    "dev:web": "pnpm --filter @dramatic/web dev",
+    "generate:pilot": "pnpm --filter @dramatic/higgsfield build && node --env-file-if-exists=.env.local --env-file-if-exists=apps/web/.env.local scripts/generate-pilot-media.mjs",
+    "check:content": "pnpm --filter @dramatic/contracts test && node scripts/sync-series-catalog.mjs --check",
+    "lint": "turbo run lint",
+    "sync:content": "node scripts/sync-series-catalog.mjs",
+    "test": "node --test scripts/generate-pilot-media.test.mjs && turbo run test",
+    "test:generation": "node --test scripts/generate-pilot-media.test.mjs",
+    "typecheck": "turbo run typecheck"
+  },
+  "devDependencies": {
+    "turbo": "2.10.11",
+    "typescript": "5.9.2"
+  }
+}

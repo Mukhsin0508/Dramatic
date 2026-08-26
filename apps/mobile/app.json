@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "Dramatic",
+    "slug": "dramatic",
+    "version": "1.0.0",
+    "description": "Audience-directed short drama. Watch the cliffhanger and choose what happens next.",
+    "orientation": "portrait",
+    "icon": "./assets/images/brand-icon.png",
+    "scheme": "dramatic",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "icon": "./assets/images/brand-icon.png",
+      "bundleIdentifier": "com.mukhsin0508.dramatic",
+      "supportsTablet": false
+    },
+    "android": {
+      "package": "com.mukhsin0508.dramatic",
+      "adaptiveIcon": {
+        "backgroundColor": "#08070A",
+        "foregroundImage": "./assets/images/brand-icon.png"
+      },
+      "predictiveBackGestureEnabled": true
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/brand-icon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#08070A",
+          "image": "./assets/images/brand-icon.png",
+          "imageWidth": 180
+        }
+      ],
+      "expo-video"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}

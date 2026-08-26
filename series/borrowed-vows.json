@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "id": "borrowed-vows",
+  "slug": "borrowed-vows",
+  "title": "Borrowed Vows",
+  "tagline": "The wedding was fake. The promise was not.",
+  "logline": "A meticulous wedding planner impersonates a runaway bride to protect her family business and discovers the groom has his own reason for needing the ceremony to look real.",
+  "synopsis": "When a celebrity bride vanishes minutes before a globally streamed wedding, planner Amara Lin puts on the veil to stall the sponsors and save her mother's venue from bankruptcy. Groom Julian Reyes recognizes her immediately but completes the vows because his inheritance depends on marrying before sunset. Their improvised bargain should last one hour; instead, a leaked certificate, a trapped wedding party, and the missing bride's voice notes turn the charade into a public marriage. Audience choices decide whether Amara and Julian protect the lie, expose each other, or risk making the borrowed vows sincere.",
+  "genres": ["romance", "comedy of errors", "family drama"],
+  "maturityRating": "teen",
+  "language": "en",
+  "format": { "aspectRatio": "9:16", "targetEpisodeSeconds": 68, "plannedEpisodes": 24 },
+  "world": {
+    "setting": "A cliffside glass conservatory wedding venue during one lavish event, including floral back rooms, a candlelit ballroom, service kitchens, and stormy gardens.",
+    "period": "present day",
+    "rules": [
+      "The sponsor livestream resumes at unpredictable intervals, forcing private conflict to become convincing public romance.",
+      "Julian's trust releases only if the legal marriage survives until midnight without either spouse publicly disputing it.",
+      "Every choice that protects the wedding costs Amara something concrete from her family's venue business."
+    ]
+  },
+  "visualStyle": {
+    "palette": ["#FFF4EA", "#C94F70", "#5B294F", "#203A43"],
+    "camera": "Romantic close-ups interrupted by comic whip-pans, foreground flowers framing secrets, and smooth vertical reveals from joined hands to conflicted faces.",
+    "lighting": "Peach sunset gives way to candlelight and storm-blue glass reflections as the fake celebration becomes emotionally honest.",
+    "wardrobe": "Amara's borrowed couture gradually loses ceremonial layers; Julian's formal ivory jacket becomes rain-marked, while the wedding staff wear practical plum uniforms."
+  },
+  "characters": [
+    {
+      "id": "amara-lin",
+      "name": "Amara Lin",
+      "role": "wedding planner and substitute bride",
+      "age": 28,
+      "pronouns": "she/her",
+      "objective": "Keep the venue solvent, protect her staff, and find the missing bride before midnight.",
+      "flaw": "She solves everyone else's emergencies to avoid stating what she wants for herself.",
+      "secret": "Amara anonymously wrote the vows the missing bride was supposed to read to Julian.",
+      "visualCues": ["tool belt hidden beneath couture", "tiny ink checklist on her palm", "one loose curl after every crisis"]
+    },
+    {
+      "id": "julian-reyes",
+      "name": "Julian Reyes",
+      "role": "groom, chef, and reluctant heir",
+      "age": 32,
+      "pronouns": "he/him",
+      "objective": "Secure his inheritance to convert the family estate into a community culinary school.",
+      "flaw": "He uses charm to control the room and withholds plans until nobody can object.",
+      "secret": "Julian knew the original bride planned to leave and arrived prepared to marry nobody.",
+      "visualCues": ["ivory dinner jacket with rolled cuffs", "chef's burn across his thumb", "a smile that disappears around family lawyers"]
+    },
+    {
+      "id": "mei-lin",
+      "name": "Mei Lin",
+      "role": "venue owner and Amara's mother",
+      "age": 55,
+      "pronouns": "she/her",
+      "objective": "Protect Amara from carrying the venue's debt even if that means selling it tonight.",
+      "flaw": "She disguises sacrifice as a decision already made for everyone else.",
+      "secret": "Mei signed a sale option with Julian's family that activates if the wedding fails.",
+      "visualCues": ["plum silk jacket over practical shoes", "antique venue keys", "perfect flowers adjusted during tense silences"]
+    },
+    {
+      "id": "sloane-park",
+      "name": "Sloane Park",
+      "role": "missing bride and unseen instigator",
+      "age": 27,
+      "pronouns": "she/her",
+      "objective": "Expose the sponsor contract and force Julian to choose a life without family control.",
+      "flaw": "She creates elaborate tests instead of asking whether people will stand beside her.",
+      "secret": "Sloane selected Amara's dress size and left the marriage license where she would find it.",
+      "visualCues": ["heard through playful voice notes", "a blue silk ribbon left with clues", "paparazzi images with her face turned away"]
+    }
+  ],
+  "seasonArc": {
+    "premise": "A one-hour impersonation stretches toward midnight. Audience votes determine which lie the couple tells next, which family debt is revealed, and whether staged intimacy becomes mutual choice.",
+    "stakes": "If the marriage collapses publicly, Amara loses the venue, Julian loses the culinary school, and Sloane's evidence disappears beneath sponsor litigation.",
+    "endingTargets": [
+      "Amara and Julian expose the sponsor scheme during the final livestream.",
+      "The venue survives through a solution shaped by the audience-selected family alliance.",
+      "At midnight Julian asks Amara to repeat the vows under their real names, with no inheritance attached."
+    ]
+  },
+  "episodes": [
+    {
+      "id": "borrowed-vows-01",
+      "number": 1,
+      "title": "Bride for Five Minutes",
+      "logline": "Amara puts on the missing bride's veil to delay a livestream, but Julian turns the stalling tactic into legal vows.",
+      "storyBeats": [
+        "Sloane disappears, leaving only a voice note that says the wedding must continue.",
+        "Amara walks down the aisle under a face-covering veil while her staff searches the grounds.",
+        "Julian whispers Amara's real name and says yes before she can stop the officiant."
+      ],
+      "cliffhanger": "The officiant reveals the license uses Amara's legal name, making the marriage real.",
+      "generationPrompt": "Create a glamorous cliffside wedding emergency with comic backstage speed, a veiled substitute bride, charged recognition from the groom, and a legal-name reveal on the marriage certificate.",
+      "vote": {
+        "id": "borrowed-vows-vote-01",
+        "question": "How should Amara face the returning livestream?",
+        "options": [
+          { "id": "kiss-for-cameras", "label": "Kiss for the cameras", "consequence": "The marriage looks convincing, but the clip becomes impossible to retract.", "generationDirective": "Resume the livestream on a deliberate public kiss that surprises both Amara and Julian emotionally." },
+          { "id": "fake-a-faint", "label": "Fake a faint", "consequence": "Amara buys private time but creates a health scandal that traps them at the venue.", "generationDirective": "Turn the livestream into a comic fainting rescue with Julian carrying Amara away while they argue quietly." }
+        ]
+      }
+    },
+    {
+      "id": "borrowed-vows-02",
+      "number": 2,
+      "title": "Terms and Conditions",
+      "logline": "Julian offers an annulment after midnight, then reveals that ending the marriage sooner transfers Amara's venue to his family.",
+      "storyBeats": [
+        "The couple drafts rules on the back of a banquet menu while posing for photographs.",
+        "Mei confesses that the failed-wedding clause will trigger an immediate sale.",
+        "Sloane's second voice note directs them to a locked gift marked for the real newlyweds."
+      ],
+      "cliffhanger": "Inside the gift is a positive pregnancy test and a card addressed to Julian.",
+      "generationPrompt": "Balance fast romantic banter over a handwritten marriage contract with a serious family-debt reveal, then land on a provocative wedding-gift cliffhanger without confirming ownership.",
+      "vote": {
+        "id": "borrowed-vows-vote-02",
+        "question": "Who should open Sloane's private voice message?",
+        "options": [
+          { "id": "listen-together", "label": "Listen together", "consequence": "Amara and Julian share the shock but surrender the chance to hide from each other.", "generationDirective": "Have them listen shoulder to shoulder in the floral cooler, reacting honestly before they can perform." },
+          { "id": "amara-listens-alone", "label": "Amara listens alone", "consequence": "Amara controls the information but repeats the secrecy that caused the crisis.", "generationDirective": "Let Amara hear Sloane's message alone among wilting flowers while Julian searches outside." }
+        ]
+      }
+    },
+    {
+      "id": "borrowed-vows-03",
+      "number": 3,
+      "title": "First Dance, Second Lie",
+      "logline": "A mandatory first dance forces the fake couple into the ballroom while Sloane appears outside the locked glass doors.",
+      "storyBeats": [
+        "The sponsor threatens to seize the venue unless Amara and Julian complete the broadcast schedule.",
+        "Julian admits he recognized Amara because he has followed her anonymous vow-writing account for years.",
+        "During their dance, Amara sees Sloane in the storm signaling toward the service gate."
+      ],
+      "cliffhanger": "The ballroom doors lock, the music cuts, and Sloane raises a sign reading: DO NOT TRUST THE GROOM.",
+      "generationPrompt": "Create an intimate candlelit first dance with whispered confession, surround it with watching sponsors, and reveal the missing bride outside storm-lashed glass holding a warning about the groom.",
+      "vote": {
+        "id": "borrowed-vows-vote-03",
+        "question": "Does Amara follow Sloane or stay with Julian?",
+        "options": [
+          { "id": "follow-sloane", "label": "Follow Sloane", "consequence": "Amara may learn why the bride ran, but Julian must maintain the marriage story alone.", "generationDirective": "Send Amara into the storm after Sloane while Julian improvises a solo romantic story for cameras." },
+          { "id": "stay-with-julian", "label": "Stay with Julian", "consequence": "Amara chooses the fragile partnership and lets her only direct lead disappear.", "generationDirective": "Keep Amara beside Julian against the locked glass, making her choice of trust public and emotionally costly." }
+        ]
+      }
+    }
+  ],
+  "tags": ["fake marriage", "wedding", "forced proximity", "family business", "audience choice"]
+}

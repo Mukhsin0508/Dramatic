@@ -1,0 +1,447 @@
+{
+  "schemaVersion": 1,
+  "id": "two-rings-at-the-funeral-01-script",
+  "seriesId": "two-rings-at-the-funeral",
+  "episodeId": "two-rings-at-the-funeral-01",
+  "episodeNumber": 1,
+  "title": "The Other Widow",
+  "language": "en",
+  "aspectRatio": "9:16",
+  "targetDurationSeconds": 72,
+  "logline": "A stranger stops Elias's burial by claiming to be his wife, but matching rings and simultaneous bank thefts turn accusation into a shared emergency.",
+  "continuity": {
+    "location": "A restrained modern funeral chapel with pale stone walls, narrow rain-streaked windows, dark wooden pews, and a closed matte-black coffin on a low platform.",
+    "timeAndWeather": "Late afternoon during steady rain; cool silver daylight remains consistent through every chapel window.",
+    "immutableProps": [
+      "Both numbered silver wedding bands are visually identical, with a narrow beveled edge and the engraving EV-214 inside.",
+      "The coffin remains matte black with brushed-silver handles and a closed lid until the final frame.",
+      "Elias's funeral portrait shows the same original fictional man with dark wavy hair, a warm controlled smile, and a fine scar through his left eyebrow.",
+      "Mara's phone has a clear case and dark green lock screen; Celeste's phone has a navy case and pale ledger interface.",
+      "Rain direction and intensity remain steady outside the chapel windows."
+    ],
+    "characterReferences": [
+      {
+        "characterId": "mara-vega",
+        "soulReferenceId": "soul-ref-mara-vega-v1",
+        "lockedAppearance": "Original fictional Latina woman, age 31, medium olive skin, expressive dark brown eyes, oval face, and shoulder-length nearly black waves tucked behind one ear; no resemblance to any real performer or public figure.",
+        "lockedWardrobe": "Charcoal wool coat over a dark green blouse, simple black trousers, weathered paramedic watch on left wrist, silver band on left ring finger."
+      },
+      {
+        "characterId": "celeste-okafor",
+        "soulReferenceId": "soul-ref-celeste-okafor-v1",
+        "lockedAppearance": "Original fictional Black woman, age 29, deep brown skin, almond-shaped dark eyes, defined cheekbones, and neat shoulder-length twists; visibly pregnant, with no resemblance to any real performer or public figure.",
+        "lockedWardrobe": "Ivory raincoat over precise navy tailoring, structured black document folio, silver band on left ring finger, rain droplets on shoulders after entrance."
+      },
+      {
+        "characterId": "theo-vale",
+        "soulReferenceId": "soul-ref-theo-vale-v1",
+        "lockedAppearance": "Original fictional East Asian man, age 34, lean build, angular face, dark observant eyes, and short black hair damp from rain; no resemblance to any real performer or public figure.",
+        "lockedWardrobe": "Rain-marked black suit over an open-collar white shirt, no tie, repaired right cuff partly concealed beneath his palm, old press credential inside jacket."
+      },
+      {
+        "characterId": "elias-vale",
+        "soulReferenceId": "soul-ref-elias-vale-v1",
+        "lockedAppearance": "Original fictional man, age 36, light brown skin, dark wavy hair, warm controlled smile, and a fine scar crossing his left eyebrow; no resemblance to any real performer or public figure.",
+        "lockedWardrobe": "Visible only in a formal funeral portrait, wearing a midnight navy suit, white shirt, and no wedding band in frame."
+      }
+    ]
+  },
+  "shots": [
+    {
+      "id": "two-rings-01-shot-01",
+      "number": 1,
+      "startSeconds": 0,
+      "durationSeconds": 6,
+      "location": "funeral chapel, coffin platform",
+      "framing": "extreme-close-up",
+      "cameraDirection": "Compose for 9:16 with the silver ring and Mara's fingertips in the lower center, the coffin edge forming a strong vertical line; make a six-centimeter slow push toward the engraving.",
+      "action": "Mara presses her wedding band against the cold coffin lid, steadies one shaking breath, and withdraws her hand before anyone can see it tremble.",
+      "dialogue": [],
+      "audio": [
+        "Soft rain against narrow chapel windows",
+        "A distant prayer ending under a held room tone",
+        "Mara's controlled inhale close to microphone"
+      ],
+      "continuityCues": [
+        "Band engraving EV-214 faces camera",
+        "Paramedic watch remains on Mara's left wrist",
+        "Coffin lid stays fully closed"
+      ],
+      "soulKeyframePrompt": "9:16 cinematic extreme close-up in a modern rain-dark funeral chapel, original fictional Mara Vega's medium-olive hand wearing a narrow beveled silver wedding band marked EV-214 resting against a matte-black coffin, charcoal coat cuff and weathered paramedic watch visible, cool silver window light, restrained grief, photoreal dramatic realism, shallow depth of field, no text or watermark.",
+      "dopMotionPrompt": "Very slow controlled push toward the ring engraving while Mara's fingertips tighten once and release; keep the coffin perfectly still, preserve shallow focus, and let soft rain reflections move across the silver band."
+    },
+    {
+      "id": "two-rings-01-shot-02",
+      "number": 2,
+      "startSeconds": 6,
+      "durationSeconds": 6,
+      "location": "funeral chapel, central aisle",
+      "framing": "wide",
+      "cameraDirection": "Frame the chapel doors as a tall 9:16 portal behind the coffin; whip-pan only after the doors open, then settle with Celeste centered full-height and Mara in soft foreground profile.",
+      "action": "The chapel doors open hard against the hush. Celeste steps in from the rain, one hand gripping a document folio and the other protecting her abdomen.",
+      "dialogue": [
+        {
+          "speakerId": "celeste-okafor",
+          "text": "Stop. You're burying my husband.",
+          "delivery": "Breathless from running, firm enough to cut through the room"
+        }
+      ],
+      "audio": [
+        "Doors strike their stops",
+        "Rain swells for one beat and falls behind the closing doors",
+        "Low strings stop beneath Celeste's first word"
+      ],
+      "continuityCues": [
+        "Celeste's ivory coat shoulders remain wet",
+        "Document folio stays in Celeste's right hand",
+        "Mara remains beside the coffin"
+      ],
+      "soulKeyframePrompt": "Vertical 9:16 wide shot inside the same modern funeral chapel, original fictional Celeste Okafor centered in open doors against steady rain, visibly pregnant, deep brown skin, shoulder-length twists, ivory raincoat over navy tailoring, black folio in right hand, protective left hand at abdomen; original fictional Mara Vega blurred beside the matte-black coffin in foreground, cool silver light, urgent grounded melodrama, no text or watermark.",
+      "dopMotionPrompt": "Doors open sharply, make one quick pan from Mara and the coffin to Celeste, then lock the camera as Celeste takes one urgent step and delivers the line; coat hem and rain droplets move naturally."
+    },
+    {
+      "id": "two-rings-01-shot-03",
+      "number": 3,
+      "startSeconds": 12,
+      "durationSeconds": 7,
+      "location": "funeral chapel, coffin platform",
+      "framing": "close-up",
+      "cameraDirection": "Hold Mara in a chest-up 9:16 close-up with the coffin portrait stacked above her shoulder; use a restrained push-in rather than a reaction whip.",
+      "action": "Mara turns from the coffin. Grief clears from her face and is replaced by the focused stillness she uses at an emergency scene.",
+      "dialogue": [
+        {
+          "speakerId": "mara-vega",
+          "text": "Your husband?",
+          "delivery": "Quiet, incredulous, and controlled"
+        }
+      ],
+      "audio": [
+        "Room tone narrows under a low pulse",
+        "A pew creaks offscreen",
+        "Rain remains soft and constant"
+      ],
+      "continuityCues": [
+        "Elias portrait retains left-eyebrow scar",
+        "Mara's left hand remains below frame after touching the coffin",
+        "Charcoal coat collar remains open over dark green blouse"
+      ],
+      "soulKeyframePrompt": "9:16 cinematic close-up of original fictional Mara Vega beside the same matte-black coffin, medium olive skin, dark brown eyes, shoulder-length black waves tucked behind one ear, charcoal coat over dark green blouse, controlled shock replacing grief; Elias Vale's consistent funeral portrait with fine left-eyebrow scar sits softly above her shoulder, cool chapel light, realistic skin texture, no text or watermark.",
+      "dopMotionPrompt": "Mara turns her face toward camera-left, holds one disbelieving beat, then makes a subtle forward lean as she speaks; use a slow eight-centimeter push-in and keep the portrait softly present behind her."
+    },
+    {
+      "id": "two-rings-01-shot-04",
+      "number": 4,
+      "startSeconds": 19,
+      "durationSeconds": 8,
+      "location": "funeral chapel, front aisle",
+      "framing": "over-shoulder",
+      "cameraDirection": "Shoot vertically over Mara's shoulder toward Celeste; let the marriage certificate rise from lower frame until Elias's name aligns visually with his portrait in the distant background.",
+      "action": "Celeste approaches but stops outside arm's reach. She opens the folio to a certified marriage record, then looks from Mara to Elias's portrait to make certain she has the right funeral.",
+      "dialogue": [
+        {
+          "speakerId": "celeste-okafor",
+          "text": "Elias Vale. Married three years.",
+          "delivery": "Precise, with fear beginning beneath the facts"
+        },
+        {
+          "speakerId": "mara-vega",
+          "text": "I married Elias six years ago.",
+          "delivery": "Immediate and flat, as if reporting a vital sign"
+        }
+      ],
+      "audio": [
+        "Document sleeve opens with a crisp plastic sound",
+        "A low pulse grows by one note",
+        "Dialogue remains dry and intimate"
+      ],
+      "continuityCues": [
+        "Celeste folio stays in her right hand",
+        "Certificate is readable only for names and marriage date",
+        "The women remain more than one arm's length apart"
+      ],
+      "soulKeyframePrompt": "Vertical 9:16 over-shoulder composition from original fictional Mara Vega toward original fictional Celeste Okafor in the same chapel, Celeste in wet ivory raincoat and navy tailoring holding a certified marriage record marked with the fictional name Elias Vale, pregnancy visible but understated, matching funeral portrait distant behind her, cool gray daylight, tense evidence-led drama, no logos, no watermark.",
+      "dopMotionPrompt": "Celeste steps once, stops at a respectful distance, opens the folio, and raises the certificate into the central vertical plane; rack focus from the document to her frightened eyes, then hold for Mara's offscreen reply."
+    },
+    {
+      "id": "two-rings-01-shot-05",
+      "number": 5,
+      "startSeconds": 27,
+      "durationSeconds": 7,
+      "location": "funeral chapel, between front pew and coffin",
+      "framing": "insert",
+      "cameraDirection": "Center both left hands in a clean 9:16 insert, entering from opposite sides; tilt just enough to reveal the same EV-214 engraving inside each band without crossing screen direction.",
+      "action": "Celeste pulls off her band and exposes its engraving. Mara removes hers. The rings meet above the certificate and match down to a small nick beside the serial number.",
+      "dialogue": [
+        {
+          "speakerId": "celeste-okafor",
+          "text": "He gave us the same ring.",
+          "delivery": "Low and shaken, the accusation redirected toward Elias"
+        }
+      ],
+      "audio": [
+        "Two rings touch with a small metallic click",
+        "Low pulse stops after the match",
+        "Rain fills the silence"
+      ],
+      "continuityCues": [
+        "Both bands use engraving EV-214",
+        "Small nick appears beside the same numeral on each ring",
+        "Mara's watch and Celeste's ivory cuff distinguish their hands"
+      ],
+      "soulKeyframePrompt": "9:16 macro insert of two original fictional women's hands holding visually identical narrow beveled silver wedding bands above a marriage certificate, both inner engravings clearly marked EV-214 with the same tiny nick, Mara's weathered paramedic watch and charcoal cuff on one side, Celeste's ivory raincoat cuff on the other, cold chapel reflections, photoreal jewelry continuity, no brand, no watermark.",
+      "dopMotionPrompt": "Both hands enter slowly from opposite sides, rotate the matching ring engravings toward camera, and let the bands touch once with a tiny natural rebound; use a precise macro focus pull across both serial numbers."
+    },
+    {
+      "id": "two-rings-01-shot-06",
+      "number": 6,
+      "startSeconds": 34,
+      "durationSeconds": 8,
+      "location": "funeral chapel, coffin platform",
+      "framing": "medium",
+      "cameraDirection": "Use the narrow 9:16 frame to stack Theo in the foreground between both women, with the coffin behind all three; slide laterally as he enters rather than cutting screen direction.",
+      "action": "Theo steps between the widows and closes Celeste's folio without touching her. His glance checks the chapel doors, windows, and coffin before settling on Mara.",
+      "dialogue": [
+        {
+          "speakerId": "theo-vale",
+          "text": "Neither of you knew who you married.",
+          "delivery": "A warning delivered like an unwanted fact"
+        }
+      ],
+      "audio": [
+        "Theo's wet shoes stop against stone",
+        "A restrained bass note enters",
+        "Rain remains continuous"
+      ],
+      "continuityCues": [
+        "Theo's repaired right cuff stays partly hidden",
+        "Celeste keeps hold of the folio after Theo closes it",
+        "Coffin remains closed behind the group"
+      ],
+      "soulKeyframePrompt": "Vertical 9:16 medium three-person composition in the same funeral chapel: original fictional Theo Vale, lean East Asian man age 34 in a rain-marked black suit and open white collar, steps between original fictional Mara Vega in charcoal and original fictional Celeste Okafor in ivory; matte-black coffin behind them, Theo's repaired right cuff partly concealed, cool silver light, guarded realistic tension, no text or watermark.",
+      "dopMotionPrompt": "Slide camera laterally as Theo steps into the narrow space, closes the folio with one controlled hand motion, scans exits with his eyes, then settles on Mara for the line; keep all movement restrained and physically plausible."
+    },
+    {
+      "id": "two-rings-01-shot-07",
+      "number": 7,
+      "startSeconds": 42,
+      "durationSeconds": 8,
+      "location": "funeral chapel, coffin platform",
+      "framing": "close-up",
+      "cameraDirection": "Begin on Mara's face in vertical close-up, tilt quickly to the clear-cased phone vibrating in her hand, and finish with the zero balance centered below her reflected eyes.",
+      "action": "Mara's phone vibrates twice. The bank alert shows a completed joint-account transfer and a zero balance stamped with the current time.",
+      "dialogue": [
+        {
+          "speakerId": "mara-vega",
+          "text": "Someone just emptied our account.",
+          "delivery": "Stunned for one word, then switching into emergency focus"
+        }
+      ],
+      "audio": [
+        "Two sharp phone vibrations",
+        "The bass note gains a ticking texture",
+        "Mara's thumb taps glass once"
+      ],
+      "continuityCues": [
+        "Mara phone uses clear case and dark green lock screen",
+        "Transfer timestamp matches the present funeral time",
+        "Balance reads zero without showing a real bank brand"
+      ],
+      "soulKeyframePrompt": "9:16 close-up insert blended with reaction: original fictional Mara Vega holds a clear-cased phone beneath her face in the same chapel, fictional generic banking alert shows a completed joint transfer and $0.00 balance without a real company logo, her dark eyes reflected faintly in the screen, charcoal coat and paramedic watch consistent, cool light with one crimson alert accent, no watermark.",
+      "dopMotionPrompt": "Phone vibrates twice in Mara's hand; tilt briskly from her tightening expression to the generic zero-balance alert, then make a tiny rack focus so her reflected eyes and the number share the frame."
+    },
+    {
+      "id": "two-rings-01-shot-08",
+      "number": 8,
+      "startSeconds": 50,
+      "durationSeconds": 6,
+      "location": "funeral chapel, front aisle",
+      "framing": "close-up",
+      "cameraDirection": "Match the prior phone composition on Celeste's side of the vertical frame, then rise to her face as suspicion becomes shared fear.",
+      "action": "Celeste checks her navy-cased phone. The same transfer time appears beside another zero balance. She turns the screen toward Mara instead of hiding it.",
+      "dialogue": [
+        {
+          "speakerId": "celeste-okafor",
+          "text": "Mine too.",
+          "delivery": "Barely above a whisper, stripped of rivalry"
+        }
+      ],
+      "audio": [
+        "One muted notification tone",
+        "Ticking texture stops",
+        "Celeste exhales through her nose"
+      ],
+      "continuityCues": [
+        "Celeste phone uses navy case and pale ledger interface",
+        "Her matching band is back on her left ring finger",
+        "Ivory coat remains rain-marked at shoulders"
+      ],
+      "soulKeyframePrompt": "Vertical 9:16 close-up of original fictional Celeste Okafor in the same chapel, deep brown skin, shoulder-length twists, wet ivory raincoat, visibly pregnant, holding a navy-cased phone with a fictional generic zero-balance ledger alert; she turns the evidence toward Mara with fear replacing rivalry, cool silver light and subtle crimson alert accent, no logos or watermark.",
+      "dopMotionPrompt": "Start tight on the matching transfer alert, rise smoothly to Celeste's face as she whispers, then let her rotate the screen toward Mara; keep her other hand protectively near her abdomen without melodramatic movement."
+    },
+    {
+      "id": "two-rings-01-shot-09",
+      "number": 9,
+      "startSeconds": 56,
+      "durationSeconds": 8,
+      "location": "funeral chapel, coffin platform",
+      "framing": "medium",
+      "cameraDirection": "Place the coffin vertically through the center of frame with Mara and Celeste on opposite sides; push toward the lid as both women recognize the muffled ringtone and Theo remains still behind them.",
+      "action": "A private three-note ringtone sounds from inside the coffin. Mara turns toward it first, Celeste follows, and the two women step forward at the same time.",
+      "dialogue": [
+        {
+          "speakerId": "mara-vega",
+          "text": "That's Elias's phone.",
+          "delivery": "Quiet recognition followed by immediate certainty"
+        }
+      ],
+      "audio": [
+        "Muffled three-note ringtone from inside the coffin",
+        "Rain drops out beneath the first ring and returns softly",
+        "One low heartbeat after Mara speaks"
+      ],
+      "continuityCues": [
+        "Ringtone source remains inside the closed coffin",
+        "Mara and Celeste advance in sync from opposite sides",
+        "Theo stays one step behind them"
+      ],
+      "soulKeyframePrompt": "9:16 medium suspense composition in the same funeral chapel, matte-black coffin centered as a strong vertical shape, original fictional Mara Vega in charcoal on one side and original fictional Celeste Okafor in ivory on the other both turning toward a sound inside it, original fictional Theo Vale watching behind them, cool rain light, intimate realistic alarm, consistent faces and wardrobe, no text or watermark.",
+      "dopMotionPrompt": "A muffled ringtone starts; Mara turns first, Celeste half a beat later, and both take one synchronized step toward the coffin while the camera slowly pushes to the closed lid; Theo alone remains still."
+    },
+    {
+      "id": "two-rings-01-shot-10",
+      "number": 10,
+      "startSeconds": 64,
+      "durationSeconds": 8,
+      "location": "funeral chapel, coffin latch",
+      "framing": "extreme-close-up",
+      "cameraDirection": "Track Mara's hand downward in 9:16 to the brushed-silver latch, let Theo's hand stop her wrist from above, then tilt into his close-up without showing the coffin open.",
+      "action": "Mara reaches the latch. Theo catches her wrist without twisting it. She looks up ready to fight him, but the fear in his face is more convincing than the force of his grip.",
+      "dialogue": [
+        {
+          "speakerId": "theo-vale",
+          "text": "Open that coffin and one of you dies.",
+          "delivery": "Low, urgent, and genuinely afraid"
+        }
+      ],
+      "audio": [
+        "Ringtone cuts off mid-phrase",
+        "Skin and coat fabric shift as Theo catches Mara's wrist",
+        "Single bass impact on the final word followed by silence"
+      ],
+      "continuityCues": [
+        "Theo catches Mara above her left paramedic watch",
+        "Coffin latch never opens",
+        "Theo's repaired right cuff becomes fully visible",
+        "Cut immediately after the word dies"
+      ],
+      "soulKeyframePrompt": "Vertical 9:16 suspense close-up in the same chapel: original fictional Mara Vega's left hand reaches for the brushed-silver latch of the closed matte-black coffin while original fictional Theo Vale catches her wrist just above the weathered paramedic watch; tilt destination is Theo's frightened dark eyes, repaired right cuff now visible, cool silver light, nonviolent restraint, photoreal grounded drama, no text or watermark.",
+      "dopMotionPrompt": "Track Mara's hand toward the latch, stop sharply as Theo catches her wrist without twisting, then tilt into Theo's frightened close-up during the warning; cut instantly after his final word and never open the coffin."
+    }
+  ],
+  "subtitles": [
+    {
+      "id": "two-rings-01-subtitle-01",
+      "startSeconds": 8.1,
+      "endSeconds": 11.2,
+      "speakerId": "celeste-okafor",
+      "text": "Stop. You're burying my husband.",
+      "position": "lower"
+    },
+    {
+      "id": "two-rings-01-subtitle-02",
+      "startSeconds": 14,
+      "endSeconds": 16.1,
+      "speakerId": "mara-vega",
+      "text": "Your husband?",
+      "position": "lower"
+    },
+    {
+      "id": "two-rings-01-subtitle-03",
+      "startSeconds": 20.3,
+      "endSeconds": 22.8,
+      "speakerId": "celeste-okafor",
+      "text": "Elias Vale. Married three years.",
+      "position": "lower"
+    },
+    {
+      "id": "two-rings-01-subtitle-04",
+      "startSeconds": 23.3,
+      "endSeconds": 26.1,
+      "speakerId": "mara-vega",
+      "text": "I married Elias six years ago.",
+      "position": "lower"
+    },
+    {
+      "id": "two-rings-01-subtitle-05",
+      "startSeconds": 29.1,
+      "endSeconds": 32,
+      "speakerId": "celeste-okafor",
+      "text": "He gave us the same ring.",
+      "position": "lower"
+    },
+    {
+      "id": "two-rings-01-subtitle-06",
+      "startSeconds": 36.2,
+      "endSeconds": 39.4,
+      "speakerId": "theo-vale",
+      "text": "Neither of you knew who you married.",
+      "position": "lower"
+    },
+    {
+      "id": "two-rings-01-subtitle-07",
+      "startSeconds": 44.5,
+      "endSeconds": 47.8,
+      "speakerId": "mara-vega",
+      "text": "Someone just emptied our account.",
+      "position": "lower"
+    },
+    {
+      "id": "two-rings-01-subtitle-08",
+      "startSeconds": 52.1,
+      "endSeconds": 53.4,
+      "speakerId": "celeste-okafor",
+      "text": "Mine too.",
+      "position": "lower"
+    },
+    {
+      "id": "two-rings-01-subtitle-09",
+      "startSeconds": 60.1,
+      "endSeconds": 62.5,
+      "speakerId": "mara-vega",
+      "text": "That's Elias's phone.",
+      "position": "lower"
+    },
+    {
+      "id": "two-rings-01-subtitle-10",
+      "startSeconds": 67.1,
+      "endSeconds": 71.4,
+      "speakerId": "theo-vale",
+      "text": "Open that coffin and one of you dies.",
+      "position": "lower"
+    }
+  ],
+  "endVote": {
+    "id": "two-rings-at-the-funeral-vote-01",
+    "question": "Which lead should the widows follow first?",
+    "options": [
+      {
+        "id": "open-the-coffin",
+        "label": "Open the coffin",
+        "consequence": "They confront the most immediate truth but trigger the danger Theo was sent to prevent.",
+        "generationDirective": "Open the coffin in front of the remaining mourners and make the physical evidence inside the first lead."
+      },
+      {
+        "id": "trace-the-transfer",
+        "label": "Trace the transfer",
+        "consequence": "Celeste may catch the moving money while giving someone time to remove the coffin.",
+        "generationDirective": "Let Celeste seize control of the investigation by tracing the live transfer as Mara guards the coffin."
+      },
+      {
+        "id": "follow-theo",
+        "label": "Follow Theo",
+        "consequence": "Mara risks losing the evidence in the chapel to learn who frightened Theo into silence.",
+        "generationDirective": "Have Mara follow Theo into the rain and witness his covert meeting before returning to the coffin."
+      }
+    ]
+  }
+}

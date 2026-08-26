@@ -1,0 +1,33 @@
+{
+  "name": "@dramatic/web",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "dev": "node ../../scripts/sync-series-catalog.mjs --target web && next dev",
+    "prebuild": "pnpm --filter @dramatic/higgsfield build",
+    "build": "node ../../scripts/sync-series-catalog.mjs --target web && next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@dramatic/higgsfield": "workspace:*",
+    "next": "16.3.2",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "server-only": "0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.2",
+    "typescript": "^5"
+  },
+  "packageManager": "pnpm@11.24.0"
+}

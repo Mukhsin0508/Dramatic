@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { NavGitHubLink, RepoCardStats } from "@/components/repo-stats";
 import { LANDING_STORIES as stories } from "@/data/stories.generated";
 import styles from "./page.module.css";
 
@@ -73,13 +74,6 @@ function resolveGitHubRepository(value?: string) {
   }
 }
 
-function formatCount(value: number) {
-  return new Intl.NumberFormat("en", {
-    notation: value >= 1_000 ? "compact" : "standard",
-    maximumFractionDigits: 1,
-  }).format(value);
-}
-
 function ArrowIcon() {
   return <span aria-hidden="true">↗</span>;
 }
@@ -112,16 +106,12 @@ export default async function Home() {
           <a href="#live">Live demo</a>
           <a href="#stories">Stories</a>
           <a href="#how">How it works</a>
-          <a
-            className={styles.navLink}
+          <NavGitHubLink
             href={githubUrl}
-            target="_blank"
-            rel="noreferrer"
-            aria-label={repo.stars === null ? "View Dramatic on GitHub" : `View Dramatic on GitHub, ${repo.stars} stars`}
-          >
-            {repo.stars === null ? null : <><span aria-hidden="true">★</span> {formatCount(repo.stars)}</>}
-            <span className={styles.navRepoLabel}>GitHub</span> <ArrowIcon />
-          </a>
+            apiUrl={githubRepository.apiUrl}
+            initialStars={repo.stars}
+            initialForks={repo.forks}
+          />
         </div>
       </nav>
 
@@ -439,10 +429,11 @@ export default async function Home() {
               <span>React Native · TypeScript · MIT</span>
             </div>
           </div>
-          <div className={styles.repoStats}>
-            <span><b>★</b><strong>{repo.stars === null ? "—" : formatCount(repo.stars)}</strong><small>{repo.stars === null ? "unavailable" : "stars"}</small></span>
-            <span><b>⑂</b><strong>{repo.forks === null ? "—" : formatCount(repo.forks)}</strong><small>{repo.forks === null ? "unavailable" : "forks"}</small></span>
-          </div>
+          <RepoCardStats
+            apiUrl={githubRepository.apiUrl}
+            initialStars={repo.stars}
+            initialForks={repo.forks}
+          />
           <a href={githubUrl} target="_blank" rel="noreferrer">
             View the repository <ArrowIcon />
           </a>

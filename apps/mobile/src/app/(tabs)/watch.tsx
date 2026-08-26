@@ -50,6 +50,7 @@ export default function WatchScreen() {
   const [paywallOpen, setPaywallOpen] = useState(false);
   const [optionsOpen, setOptionsOpen] = useState(false);
   const feedRef = useRef<FlatList<Story>>(null);
+  const rootRef = useRef<View>(null);
   const storyHeight = pageHeight || Math.max(480, windowHeight - 80);
   const activeStory = STORIES[activeIndex] ?? STORIES[0];
 
@@ -76,8 +77,73 @@ export default function WatchScreen() {
     if (story.locked) setPaywallOpen(true);
   };
 
+  const activeIndexRef = useRef(activeIndex);
+  useEffect(() => {
+    activeIndexRef.current = activeIndex;
+  }, [activeIndex]);
+
+  // On the web, the browser's mandatory scroll-snap swallows small wheel
+  // deltas, leaving the feed stuck on one page. Page the feed explicitly on
+  // wheel and arrow keys instead, one story per gesture. The root View's ref
+  // is the DOM element under react-native-web.
+  useEffect(() => {
+    if (Platform.OS !== 'web' || !storyHeight) return;
+    const node = rootRef.current as unknown as HTMLElement | null;
+    let scroller: HTMLElement | null = null;
+    const findScroller = () => {
+      if (scroller && scroller.isConnected) return scroller;
+      scroller = node
+        ? (Array.from(node.querySelectorAll('div')).find(
+            candidate => candidate.scrollHeight > candidate.clientHeight + storyHeight / 2,
+          ) as HTMLElement | undefined) ?? null
+        : null;
+      return scroller;
+    };
+    let lockedUntil = 0;
+    const goTo = (direction: 1 | -1) => {
+      const now = Date.now();
+      if (now < lockedUntil) return;
+      const next = Math.max(0, Math.min(STORIES.length - 1, activeIndexRef.current + direction));
+      if (next === activeIndexRef.current) return;
+      lockedUntil = now + 650;
+      const element = findScroller();
+      if (element) {
+        // Jump instantly: the mandatory scroll-snap re-snaps to the nearest
+        // page on every React re-render, so a smooth animation from the old
+        // page would be cancelled back to it. After an instant jump the
+        // nearest snap point IS the new page. scrollTo() is ignored by RNW's
+        // scroll container; direct scrollTop assignment works.
+        element.style.scrollBehavior = 'auto';
+        element.scrollTop = next * storyHeight;
+      } else {
+        feedRef.current?.scrollToOffset({ offset: next * storyHeight, animated: true });
+      }
+      changeEpisode(next);
+    };
+    const onWheel = (event: WheelEvent) => {
+      if (Math.abs(event.deltaY) < 8) return;
+      event.preventDefault();
+      goTo(event.deltaY > 0 ? 1 : -1);
+    };
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'ArrowDown' || event.key === 'PageDown') { event.preventDefault(); goTo(1); }
+      if (event.key === 'ArrowUp' || event.key === 'PageUp') { event.preventDefault(); goTo(-1); }
+    };
+    if (node && typeof node.addEventListener === 'function') {
+      node.addEventListener('wheel', onWheel, { passive: false });
+    }
+    window.addEventListener('keydown', onKeyDown);
+    return () => {
+      if (node && typeof node.removeEventListener === 'function') {
+        node.removeEventListener('wheel', onWheel);
+      }
+      window.removeEventListener('keydown', onKeyDown);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [storyHeight]);
+
   return (
-    <View style={styles.root} onLayout={event => setPageHeight(event.nativeEvent.layout.height)}>
+    <View ref={rootRef} style={styles.root} onLayout={event => setPageHeight(event.nativeEvent.layout.height)}>
       <FlatList
         ref={feedRef}
         data={STORIES}

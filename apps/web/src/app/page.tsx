@@ -2,8 +2,6 @@ import Image from "next/image";
 import { LANDING_STORIES as stories } from "@/data/stories.generated";
 import styles from "./page.module.css";
 
-export const revalidate = 3600;
-
 const githubRepository = resolveGitHubRepository(
   process.env.NEXT_PUBLIC_GITHUB_REPOSITORY_URL,
 );
@@ -41,7 +39,6 @@ async function getRepoStats() {
           Accept: "application/vnd.github+json",
           "User-Agent": "dramatic-landing-page",
         },
-        next: { revalidate: 3600 },
       },
     );
 

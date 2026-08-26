@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { AccessibilityInfo, Pressable, StyleSheet, View } from 'react-native';
-import { SymbolView } from 'expo-symbols';
+import { SymbolView } from '@/components/symbol-view';
 
 import { BottomSheet, AppText, PrimaryButton } from '@/components/primitives';
 import { colors, radius, space } from '@/constants/tokens';

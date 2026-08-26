@@ -162,3 +162,7 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Web export of the Expo app, staged for the landing page live demo
+apps/web/public/app/
+apps/mobile/dist-web/

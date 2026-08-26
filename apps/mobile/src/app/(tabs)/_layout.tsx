@@ -1,5 +1,5 @@
 import { Tabs } from 'expo-router';
-import { SymbolView, SymbolViewProps } from 'expo-symbols';
+import { SymbolView, SymbolViewProps } from '@/components/symbol-view';
 import { ColorValue } from 'react-native';
 
 import { colors } from '@/constants/tokens';

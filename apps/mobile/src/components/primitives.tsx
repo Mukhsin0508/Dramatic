@@ -12,7 +12,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { SymbolView, SymbolViewProps } from 'expo-symbols';
+import { SymbolView, SymbolViewProps } from '@/components/symbol-view';
 
 import { colors, radius, space, typography } from '@/constants/tokens';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';

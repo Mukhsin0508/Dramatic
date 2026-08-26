@@ -2,13 +2,14 @@ import { useEventListener } from 'expo';
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
-import { SymbolView } from 'expo-symbols';
+import { SymbolView } from '@/components/symbol-view';
 import { VideoView, useVideoPlayer, type VideoPlayerStatus } from 'expo-video';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import {
   AccessibilityInfo,
   ActivityIndicator,
   FlatList,
+  Platform,
   Pressable,
   Share,
   StyleSheet,
@@ -172,6 +173,8 @@ function StoryPage({ story, height, active, hydrated, liked, saved, locked, redu
   const player = useVideoPlayer(null, instance => {
     instance.loop = false;
     instance.timeUpdateEventInterval = 0.5;
+    // Browsers block autoplay with sound; the embedded web demo starts muted.
+    if (Platform.OS === 'web') instance.muted = true;
   });
   const [status, setStatus] = useState<VideoPlayerStatus>(player.status);
   const [playing, setPlaying] = useState(player.playing);
@@ -352,7 +355,7 @@ function StoryPage({ story, height, active, hydrated, liked, saved, locked, redu
         <View pointerEvents="none" style={fullBleed ? StyleSheet.absoluteFill : [styles.videoFrame, { top: frameTop, height: frameHeight }]}>
           <VideoView
             player={player}
-            style={[StyleSheet.absoluteFill, !firstFrame && styles.videoHidden]}
+            style={[StyleSheet.absoluteFill, !firstFrame && Platform.OS !== 'web' && styles.videoHidden]}
             contentFit={fullBleed ? 'cover' : 'contain'}
             nativeControls={false}
             onFirstFrameRender={() => setFirstFrame(true)}

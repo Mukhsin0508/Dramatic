@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
-import { SymbolView } from 'expo-symbols';
+import { SymbolView } from '@/components/symbol-view';
 
 import { PaywallSheet, type PaywallProduct } from '@/components/experience-sheets';
 import { AppText, Header, Screen } from '@/components/primitives';

@@ -109,9 +109,9 @@ export default async function Home() {
       <nav className={styles.nav} aria-label="Primary navigation">
         <Brand />
         <div className={styles.navItems}>
+          <a href="#live">Live demo</a>
           <a href="#stories">Stories</a>
           <a href="#how">How it works</a>
-          <a href="#walkthrough">Inside the app</a>
           <a
             className={styles.navLink}
             href={githubUrl}
@@ -204,6 +204,40 @@ export default async function Home() {
               <strong>Generated and ready to play</strong>
               <span>$0.21 estimate · 10 sec · vertical</span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.liveSection} id="live" aria-label="Live interactive demo of the Dramatic app">
+        <div className={styles.liveCopy}>
+          <p className={styles.sectionKicker}>No install. No clone. No waitlist.</p>
+          <h2>This phone is real. Go ahead.</h2>
+          <p>
+            The exact app from the repository, compiled for the web and running
+            live on this page. Scroll the feed, watch the generated episodes,
+            open a story, cast your vote — it all works.
+          </p>
+          <ul className={styles.liveHints}>
+            <li><span>↑</span> Scroll inside the phone for the next story</li>
+            <li><span>▶</span> Tap the video to pause and resume</li>
+            <li><span>⑂</span> Hit “Your call” to vote on the next episode</li>
+          </ul>
+          <p className={styles.liveFootnote}>
+            Best experienced on the iOS build — this is the same code, rendered
+            with React Native Web. Demo audio starts muted.
+          </p>
+        </div>
+        <div className={styles.liveStage}>
+          <div className={styles.liveGlow} />
+          <div className={styles.livePhone}>
+            <div className={styles.liveNotch} />
+            <iframe
+              className={styles.liveFrame}
+              src="/app/"
+              title="Dramatic app — live interactive demo"
+              loading="lazy"
+              allow="autoplay; fullscreen"
+            />
           </div>
         </div>
       </section>

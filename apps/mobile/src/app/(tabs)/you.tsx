@@ -1,6 +1,6 @@
 import { Linking, Pressable, StyleSheet, View } from 'react-native';
 import { router } from 'expo-router';
-import { SymbolView } from 'expo-symbols';
+import { SymbolView } from '@/components/symbol-view';
 
 import { AppText, Divider, Header, Screen } from '@/components/primitives';
 import { colors, radius, space } from '@/constants/tokens';

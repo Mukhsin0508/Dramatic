@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "node ../../scripts/sync-series-catalog.mjs --target web && next dev",
     "prebuild": "pnpm --filter @dramatic/higgsfield build",
-    "build": "node ../../scripts/sync-series-catalog.mjs --target web && next build",
+    "build": "node ../../scripts/sync-series-catalog.mjs --target web && node ../../scripts/export-app-demo.mjs && next build",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",

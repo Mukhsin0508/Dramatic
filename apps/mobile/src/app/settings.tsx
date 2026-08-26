@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, Switch, View } from 'react-native';
 import { router } from 'expo-router';
-import { SymbolView } from 'expo-symbols';
+import { SymbolView } from '@/components/symbol-view';
 
 import { AppText, Header, Screen } from '@/components/primitives';
 import { colors, radius, space } from '@/constants/tokens';
